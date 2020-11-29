@@ -45,7 +45,7 @@ public class TestVeriday extends BasePage {
 		//Login Method
 		co.objLogin.LoginToCRM();
 	}
-	@Test(groups = {"Regression"},priority=1,enabled= false)
+	@Test(groups = {"Regression"},priority=1,enabled= true)
 	public void CreatePrimaryUserTest() throws Exception {
 		extentTest = extent.startTest("CreatePrimaryUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -54,7 +54,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.CreatePrimaryUser();
 
 	}
-	@Test(groups = {"Regression"},priority=2,enabled= false)
+	@Test(groups = {"Regression"},priority=2,enabled= true)
 	public void CreateTeamUserTest() throws Exception {
 		extentTest = extent.startTest("CreateTeamUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -64,7 +64,7 @@ public class TestVeriday extends BasePage {
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateTeamUser");
 		co.objUserManager.CreateTeamUser();	
 	}
-	@Test(groups = {"Regression"},priority=3,enabled= false)
+	@Test(groups = {"Regression"},priority=3,enabled= true)
 	public void SearchUserTest() throws Exception {
 		extentTest = extent.startTest("SearchUserTest");
 		//Assigning Excel file Data
@@ -84,7 +84,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.ImpersonateUser();
 
 	}
-	@Test(groups = {"Regression"},priority=5,enabled= false)
+	@Test(groups = {"Regression"},priority=5,enabled= true)
 	public void CreateNewEventTest() throws Exception {
 		extentTest = extent.startTest("CreateNewEventTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
