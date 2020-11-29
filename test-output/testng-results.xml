@@ -2,7 +2,7 @@
 <testng-results skipped="0" failed="6" ignored="2" total="8" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="15577" started-at="2020-11-29T16:23:14Z" finished-at="2020-11-29T16:23:29Z">
+  <suite name="Suite" duration-ms="15970" started-at="2020-11-29T16:47:36Z" finished-at="2020-11-29T16:47:52Z">
     <groups>
       <group name="Regression">
         <method signature="TestVeriday.CreateNewEventTest()[pri:5, instance:test.TestVeriday@335eadca]" name="CreateNewEventTest" class="test.TestVeriday"/>
@@ -13,13 +13,13 @@
         <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" class="test.TestVeriday"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="TestCRM" duration-ms="15577" started-at="2020-11-29T16:23:14Z" finished-at="2020-11-29T16:23:29Z">
+    <test name="TestCRM" duration-ms="15970" started-at="2020-11-29T16:47:36Z" finished-at="2020-11-29T16:47:52Z">
       <class name="test.TestVeriday">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="110" started-at="2020-11-29T16:23:14Z" finished-at="2020-11-29T16:23:14Z">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="111" started-at="2020-11-29T16:47:36Z" finished-at="2020-11-29T16:47:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="13212" started-at="2020-11-29T16:23:14Z" finished-at="2020-11-29T16:23:27Z">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="13694" started-at="2020-11-29T16:47:36Z" finished-at="2020-11-29T16:47:50Z">
           <params>
             <param index="0">
               <value>
@@ -40,13 +40,13 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="FAIL" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="10" started-at="2020-11-29T16:23:27Z" finished-at="2020-11-29T16:23:27Z">
+        <test-method status="FAIL" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="9" started-at="2020-11-29T16:47:50Z" finished-at="2020-11-29T16:47:50Z">
           <exception class="java.io.FileNotFoundException">
             <message>
-              <![CDATA[nullTestData.xlsx (The system cannot find the file specified)]]>
+              <![CDATA[D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: nullTestData.xlsx (The system cannot find the file specified)
+              <![CDATA[java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
 at java.io.FileInputStream.open0(Native Method)
 at java.io.FileInputStream.open(Unknown Source)
 at java.io.FileInputStream.<init>(Unknown Source)
@@ -84,7 +84,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="350" started-at="2020-11-29T16:23:27Z" finished-at="2020-11-29T16:23:27Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="321" started-at="2020-11-29T16:47:50Z" finished-at="2020-11-29T16:47:50Z">
           <params>
             <param index="0">
               <value>
@@ -95,13 +95,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@335eadca]" name="CreatePrimaryUserTest" duration-ms="1" started-at="2020-11-29T16:23:27Z" finished-at="2020-11-29T16:23:27Z">
+        <test-method status="FAIL" signature="CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@335eadca]" name="CreatePrimaryUserTest" duration-ms="2" started-at="2020-11-29T16:47:50Z" finished-at="2020-11-29T16:47:50Z">
           <exception class="java.io.FileNotFoundException">
             <message>
-              <![CDATA[nullTestData.xlsx (The system cannot find the file specified)]]>
+              <![CDATA[D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: nullTestData.xlsx (The system cannot find the file specified)
+              <![CDATA[java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
 at java.io.FileInputStream.open0(Native Method)
 at java.io.FileInputStream.open(Unknown Source)
 at java.io.FileInputStream.<init>(Unknown Source)
@@ -139,7 +139,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreatePrimaryUserTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="330" started-at="2020-11-29T16:23:27Z" finished-at="2020-11-29T16:23:28Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="293" started-at="2020-11-29T16:47:50Z" finished-at="2020-11-29T16:47:51Z">
           <params>
             <param index="0">
               <value>
@@ -150,13 +150,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="CreateTeamUserTest()[pri:2, instance:test.TestVeriday@335eadca]" name="CreateTeamUserTest" duration-ms="1" started-at="2020-11-29T16:23:28Z" finished-at="2020-11-29T16:23:28Z">
+        <test-method status="FAIL" signature="CreateTeamUserTest()[pri:2, instance:test.TestVeriday@335eadca]" name="CreateTeamUserTest" duration-ms="1" started-at="2020-11-29T16:47:51Z" finished-at="2020-11-29T16:47:51Z">
           <exception class="java.io.FileNotFoundException">
             <message>
-              <![CDATA[nullTestData.xlsx (The system cannot find the file specified)]]>
+              <![CDATA[D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: nullTestData.xlsx (The system cannot find the file specified)
+              <![CDATA[java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
 at java.io.FileInputStream.open0(Native Method)
 at java.io.FileInputStream.open(Unknown Source)
 at java.io.FileInputStream.<init>(Unknown Source)
@@ -194,7 +194,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateTeamUserTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="311" started-at="2020-11-29T16:23:28Z" finished-at="2020-11-29T16:23:28Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="304" started-at="2020-11-29T16:47:51Z" finished-at="2020-11-29T16:47:51Z">
           <params>
             <param index="0">
               <value>
@@ -205,13 +205,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="SearchUserTest()[pri:3, instance:test.TestVeriday@335eadca]" name="SearchUserTest" duration-ms="2" started-at="2020-11-29T16:23:28Z" finished-at="2020-11-29T16:23:28Z">
+        <test-method status="FAIL" signature="SearchUserTest()[pri:3, instance:test.TestVeriday@335eadca]" name="SearchUserTest" duration-ms="1" started-at="2020-11-29T16:47:51Z" finished-at="2020-11-29T16:47:51Z">
           <exception class="java.io.FileNotFoundException">
             <message>
-              <![CDATA[nullTestData.xlsx (The system cannot find the file specified)]]>
+              <![CDATA[D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: nullTestData.xlsx (The system cannot find the file specified)
+              <![CDATA[java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
 at java.io.FileInputStream.open0(Native Method)
 at java.io.FileInputStream.open(Unknown Source)
 at java.io.FileInputStream.<init>(Unknown Source)
@@ -249,7 +249,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SearchUserTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="316" started-at="2020-11-29T16:23:28Z" finished-at="2020-11-29T16:23:28Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="294" started-at="2020-11-29T16:47:51Z" finished-at="2020-11-29T16:47:51Z">
           <params>
             <param index="0">
               <value>
@@ -260,13 +260,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="ImpersonateUserTest()[pri:4, instance:test.TestVeriday@335eadca]" name="ImpersonateUserTest" duration-ms="1" started-at="2020-11-29T16:23:28Z" finished-at="2020-11-29T16:23:28Z">
+        <test-method status="FAIL" signature="ImpersonateUserTest()[pri:4, instance:test.TestVeriday@335eadca]" name="ImpersonateUserTest" duration-ms="1" started-at="2020-11-29T16:47:51Z" finished-at="2020-11-29T16:47:51Z">
           <exception class="java.io.FileNotFoundException">
             <message>
-              <![CDATA[nullTestData.xlsx (The system cannot find the file specified)]]>
+              <![CDATA[D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: nullTestData.xlsx (The system cannot find the file specified)
+              <![CDATA[java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
 at java.io.FileInputStream.open0(Native Method)
 at java.io.FileInputStream.open(Unknown Source)
 at java.io.FileInputStream.<init>(Unknown Source)
@@ -304,7 +304,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ImpersonateUserTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="307" started-at="2020-11-29T16:23:28Z" finished-at="2020-11-29T16:23:29Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="303" started-at="2020-11-29T16:47:51Z" finished-at="2020-11-29T16:47:52Z">
           <params>
             <param index="0">
               <value>
@@ -315,13 +315,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="CreateNewEventTest()[pri:5, instance:test.TestVeriday@335eadca]" name="CreateNewEventTest" duration-ms="1" started-at="2020-11-29T16:23:29Z" finished-at="2020-11-29T16:23:29Z">
+        <test-method status="FAIL" signature="CreateNewEventTest()[pri:5, instance:test.TestVeriday@335eadca]" name="CreateNewEventTest" duration-ms="1" started-at="2020-11-29T16:47:52Z" finished-at="2020-11-29T16:47:52Z">
           <exception class="java.io.FileNotFoundException">
             <message>
-              <![CDATA[nullTestData.xlsx (The system cannot find the file specified)]]>
+              <![CDATA[D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: nullTestData.xlsx (The system cannot find the file specified)
+              <![CDATA[java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
 at java.io.FileInputStream.open0(Native Method)
 at java.io.FileInputStream.open(Unknown Source)
 at java.io.FileInputStream.<init>(Unknown Source)
@@ -359,7 +359,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateNewEventTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="298" started-at="2020-11-29T16:23:29Z" finished-at="2020-11-29T16:23:29Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="315" started-at="2020-11-29T16:47:52Z" finished-at="2020-11-29T16:47:52Z">
           <params>
             <param index="0">
               <value>
@@ -370,7 +370,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="303" started-at="2020-11-29T16:23:29Z" finished-at="2020-11-29T16:23:29Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="295" started-at="2020-11-29T16:47:52Z" finished-at="2020-11-29T16:47:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
