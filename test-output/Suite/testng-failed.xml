@@ -16,10 +16,15 @@
     <classes>
       <class name="test.TestVeriday">
         <methods>
+          <include name="CreateTeamUserTest"/>
           <include name="initializeTestBaseSetup"/>
+          <include name="CreatePrimaryUserTest"/>
           <include name="ImpersonateUserTest"/>
+          <include name="loginTest"/>
           <include name="tearDown"/>
+          <include name="SearchUserTest"/>
           <include name="endReport"/>
+          <include name="CreateNewEventTest"/>
           <include name="setExtent"/>
         </methods>
       </class> <!-- test.TestVeriday -->

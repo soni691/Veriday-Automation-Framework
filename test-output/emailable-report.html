@@ -9,11 +9,57 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Suite</th></tr>
-<tr><td><a href="#t0">TestCRM</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">42,202</td><td>Regression</td><td></td></tr>
+<tr><td><a href="#t0">TestCRM</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">6</td><td class="num">17,111</td><td>Regression</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TestCRM &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">test.TestVeriday</td><td><a href="#m0">ImpersonateUserTest</a></td><td rowspan="1">1606650400335</td><td rowspan="1">17722</td></tr><tr class="passedeven"><td><a href="#m1">loginTest</a></td><td rowspan="1">1606650388793</td><td rowspan="1">11536</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TestCRM &#8212; failed</th></tr><tr class="failedeven"><td rowspan="6">test.TestVeriday</td><td><a href="#m0">CreateNewEventTest</a></td><td rowspan="1">1606660915787</td><td rowspan="1">1</td></tr><tr class="failedeven"><td><a href="#m1">CreatePrimaryUserTest</a></td><td rowspan="1">1606660914440</td><td rowspan="1">1</td></tr><tr class="failedeven"><td><a href="#m2">CreateTeamUserTest</a></td><td rowspan="1">1606660914779</td><td rowspan="1">1</td></tr><tr class="failedeven"><td><a href="#m3">ImpersonateUserTest</a></td><td rowspan="1">1606660915506</td><td rowspan="1">1</td></tr><tr class="failedeven"><td><a href="#m4">SearchUserTest</a></td><td rowspan="1">1606660915151</td><td rowspan="1">2</td></tr><tr class="failedeven"><td><a href="#m5">loginTest</a></td><td rowspan="1">1606660914085</td><td rowspan="1">9</td></tr></tbody>
 </table>
-<h2>TestCRM</h2><h3 id="m0">test.TestVeriday#ImpersonateUserTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">test.TestVeriday#loginTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>TestCRM</h2><h3 id="m0">test.TestVeriday#CreateNewEventTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.CreateNewEventTest(TestVeriday.java:95)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">test.TestVeriday#CreatePrimaryUserTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:53)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">test.TestVeriday#CreateTeamUserTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.CreateTeamUserTest(TestVeriday.java:64)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">test.TestVeriday#ImpersonateUserTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.ImpersonateUserTest(TestVeriday.java:80)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">test.TestVeriday#SearchUserTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.SearchUserTest(TestVeriday.java:71)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">test.TestVeriday#loginTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.loginTest(TestVeriday.java:44)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

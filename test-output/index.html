@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,26 +91,46 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">6 methods, 6 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="CreateNewEventTest">CreateNewEventTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="CreatePrimaryUserTest">CreatePrimaryUserTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="CreateTeamUserTest">CreateTeamUserTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="ImpersonateUserTest">ImpersonateUserTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="SearchUserTest">SearchUserTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,17 +142,90 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">test.TestVeriday</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="CreateNewEventTest">
+                  </a> <!-- CreateNewEventTest -->
+                  <span class="method-name">CreateNewEventTest</span>
+                  <div class="stack-trace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.CreateNewEventTest(TestVeriday.java:95)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CreatePrimaryUserTest">
+                  </a> <!-- CreatePrimaryUserTest -->
+                  <span class="method-name">CreatePrimaryUserTest</span>
+                  <div class="stack-trace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:53)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CreateTeamUserTest">
+                  </a> <!-- CreateTeamUserTest -->
+                  <span class="method-name">CreateTeamUserTest</span>
+                  <div class="stack-trace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.CreateTeamUserTest(TestVeriday.java:64)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="ImpersonateUserTest">
                   </a> <!-- ImpersonateUserTest -->
                   <span class="method-name">ImpersonateUserTest</span>
+                  <div class="stack-trace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.ImpersonateUserTest(TestVeriday.java:80)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchUserTest">
+                  </a> <!-- SearchUserTest -->
+                  <span class="method-name">SearchUserTest</span>
+                  <div class="stack-trace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.SearchUserTest(TestVeriday.java:71)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -140,10 +233,19 @@
                   <a name="loginTest">
                   </a> <!-- loginTest -->
                   <span class="method-name">loginTest</span>
+                  <div class="stack-trace">java.io.FileNotFoundException: C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\source\TestData.xlsx (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
+	at test.TestVeriday.loginTest(TestVeriday.java:44)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -195,7 +297,23 @@
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
+                <span class="method-in-group-name">CreateNewEventTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">CreatePrimaryUserTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">CreateTeamUserTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
                 <span class="method-in-group-name">ImpersonateUserTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">SearchUserTest</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
@@ -219,20 +337,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ImpersonateUserTest')
+data.setCell(0, 1, 'loginTest')
 data.setCell(0, 2, 'test.TestVeriday')
-data.setCell(0, 3, 17722);
+data.setCell(0, 3, 9);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginTest')
+data.setCell(1, 1, 'SearchUserTest')
 data.setCell(1, 2, 'test.TestVeriday')
-data.setCell(1, 3, 11536);
+data.setCell(1, 3, 2);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'CreateTeamUserTest')
+data.setCell(2, 2, 'test.TestVeriday')
+data.setCell(2, 3, 1);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'CreatePrimaryUserTest')
+data.setCell(3, 2, 'test.TestVeriday')
+data.setCell(3, 3, 1);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'ImpersonateUserTest')
+data.setCell(4, 2, 'test.TestVeriday')
+data.setCell(4, 3, 1);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'CreateNewEventTest')
+data.setCell(5, 2, 'test.TestVeriday')
+data.setCell(5, 3, 1);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 29 seconds</span>
+              <span class="suite-total-time">Total running time: 15 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -247,23 +381,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">6 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">test.TestVeriday</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">CreateTeamUserTest</span>
-                <br/>
                 <span class="ignored-method-name">CreateNewWebPageTest</span>
                 <br/>
                 <span class="ignored-method-name">CreateNewLinkedPageTest</span>
-                <br/>
-                <span class="ignored-method-name">CreatePrimaryUserTest</span>
-                <br/>
-                <span class="ignored-method-name">SearchUserTest</span>
-                <br/>
-                <span class="ignored-method-name">CreateNewEventTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -282,27 +408,71 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">initializeTestBaseSetup(chrome, http://node-1.nginx.portal.da-1.rbcus.qa.aws.veriday.net/login, log4j.properties)</span>
-                <span class="method-start">124 ms</span>
+                <span class="method-start">118 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">loginTest</span>
-                <span class="method-start">12694 ms</span>
+                <span class="method-start">14683 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=loginTest status=SUCCESS method=TestVeriday.loginTest()[pri:0, instance:test.TestVe...)</span>
-                <span class="method-start">24231 ms</span>
+                <span class="method-name">tearDown([TestResult name=loginTest status=FAILURE method=TestVeriday.loginTest()[pri:0, instance:test.TestVe...)</span>
+                <span class="method-start">14695 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">ImpersonateUserTest</span>
-                <span class="method-start">24236 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">CreatePrimaryUserTest</span>
+                <span class="method-start">15038 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=ImpersonateUserTest status=SUCCESS method=TestVeriday.ImpersonateUserTest()[pri:4, ...)</span>
-                <span class="method-start">41959 ms</span>
+                <span class="method-name">tearDown([TestResult name=CreatePrimaryUserTest status=FAILURE method=TestVeriday.CreatePrimaryUserTest()[pri...)</span>
+                <span class="method-start">15042 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">CreateTeamUserTest</span>
+                <span class="method-start">15377 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=CreateTeamUserTest status=FAILURE method=TestVeriday.CreateTeamUserTest()[pri:2, in...)</span>
+                <span class="method-start">15380 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">SearchUserTest</span>
+                <span class="method-start">15749 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=SearchUserTest status=FAILURE method=TestVeriday.SearchUserTest()[pri:3, instance:t...)</span>
+                <span class="method-start">15753 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ImpersonateUserTest</span>
+                <span class="method-start">16104 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=ImpersonateUserTest status=FAILURE method=TestVeriday.ImpersonateUserTest()[pri:4, ...)</span>
+                <span class="method-start">16106 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">CreateNewEventTest</span>
+                <span class="method-start">16385 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=CreateNewEventTest status=FAILURE method=TestVeriday.CreateNewEventTest()[pri:5, in...)</span>
+                <span class="method-start">16388 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">endReport</span>
-                <span class="method-start">41959 ms</span>
+                <span class="method-start">16690 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
