@@ -93,6 +93,9 @@ public class UserManagerPage extends BasePage {
 	void setSearchUser(String searchuser1) {
 		enterText(SearchUser,searchuser1);
 	}
+	void setSearchUserAction(String searchuseraction) {
+		enterText(SearchUserAction,searchuseraction);
+	}
 	
 	
 	public void CreatePrimaryUser() throws Exception {
@@ -231,9 +234,12 @@ public class UserManagerPage extends BasePage {
 		//click(usermanager);
 		click(SearchUser);
 		String searchuser1=ExcelUtils.getCellData(1, 0);
+		//String searchuseraction=ExcelUtils.getCellData(1, 1);
 		setSearchUser(searchuser1);
-		click(SearchUserButton);
+		click(SearchUserButton);		
 		click(SearchUserAction);
+		//setSearchUserAction(searchuseraction);
+		//selectFromText(SearchUserAction,searchuseraction);
 		Select action1 = new Select(driver.findElement(By.id("user-manager-actions")));
 		action1.selectByIndex(0);
 		click(GoButton);}
@@ -243,9 +249,16 @@ public class UserManagerPage extends BasePage {
 			String searchuser1=ExcelUtils.getCellData(1, 0);
 			setSearchUser(searchuser1);
 			click(SearchUserButton);
+			//setSearchUserAction(searchuseraction);
+			waitAndFindElement(SearchUserAction, Condition.isClickable, 5, 1000);
 			click(SearchUserAction);
+			//Thread.sleep(2000);
+			
+			//String searchuseraction=ExcelUtils.getCellData(1, 1);
+			//selectFromText(SearchUserAction,searchuseraction);
+			//System.out.println("User Action is "+ searchuseraction);
 			Select action1 = new Select(driver.findElement(By.id("user-manager-actions")));
-			action1.selectByIndex(0);
+			action1.selectByIndex(0);	
 			click(GoButton);
 		}
 	}

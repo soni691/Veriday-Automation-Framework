@@ -16,8 +16,8 @@
     <classes>
       <class name="test.TestVeriday">
         <methods>
-          <include name="CreateTeamUserTest"/>
           <include name="initializeTestBaseSetup"/>
+          <include name="ImpersonateUserTest"/>
           <include name="tearDown"/>
           <include name="endReport"/>
           <include name="setExtent"/>
