@@ -114,7 +114,7 @@
 				<configuration>
 				<testFailureIgnore>true</testFailureIgnore>
 					<suiteXmlFiles>
-						<suiteXmlFile>C:\Users\sumit.soni\Downloads\CRMtesting_02_11_2018\CRMtesting\testng.xml</suiteXmlFile>
+						<suiteXmlFile>/Veriday/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
