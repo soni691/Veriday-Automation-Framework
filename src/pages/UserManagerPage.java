@@ -167,6 +167,13 @@ public class UserManagerPage extends BasePage {
 		    JavascriptExecutor jse = (JavascriptExecutor)driver;
 		 	jse.executeScript("window.scrollBy(0,-250)");
 			click(SaveUser);
+			Thread.sleep(2000);
+			boolean UserPresent = isElementPresent(AlreadyCreatedUserModal);
+			if(UserPresent==true) {
+				System.out.println("Sorry, this account already exists.");
+				click(AlreadyCreatedUserOk);
+				waitAndFindElement(Back, Condition.isClickable, 2, 1000).click();
+			}
 		}
 		else {
 		click(usermanager);
@@ -191,6 +198,13 @@ public class UserManagerPage extends BasePage {
 	    JavascriptExecutor jse = (JavascriptExecutor)driver;
 	 	jse.executeScript("window.scrollBy(0,-250)");
 		click(SaveUser);
+		Thread.sleep(2000);
+		boolean UserPresent = isElementPresent(AlreadyCreatedUserModal);
+		if(UserPresent==true) {
+			System.out.println("Sorry, this user account already exists.");
+			click(AlreadyCreatedUserOk);
+			waitAndFindElement(Back, Condition.isClickable, 2, 1000).click();
+		}
 		}
 		}
 	
