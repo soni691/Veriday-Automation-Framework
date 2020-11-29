@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<groups>
+		<run>
+			<include name="Regression"></include>
+		</run>
+	</groups>
+	<parameter name="appURL"
+		value="http://node-1.nginx.portal.da-1.rbcus.qa.aws.veriday.net/login" />
+	<parameter name="loggerProperties" value="log4j.properties" />
+
+	<listeners>
+		<!-- <listener class-name="com.listeners.ScreenshotListener" /> -->
+		<!-- <listener class-name="org.uncommons.reportng.HTMLReporter" /> <listener 
+			class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
+		<listener
+			class-name="ExtentReportListener.ExtentReportCreate" />
+	</listeners>
+
+	<test name="TestCRM">
+		<parameter name="browserType" value="chrome" />
+		<classes>
+			<class name="test.TestVeriday" />
+		</classes>
+
+	</test> <!-- TestCRM -->
+</suite> <!-- Suite -->
