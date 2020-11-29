@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="appURL" value="http://node-1.nginx.portal.da-1.rbcus.qa.aws.veriday.net/login"/>
+  <parameter name="loggerProperties" value="log4j.properties"/>
+  <listeners>
+    <listener class-name="ExtentReportListener.ExtentReportCreate"/>
+  </listeners>
+  <test thread-count="5" name="TestCRM(failed)">
+    <parameter name="browserType" value="chrome"/>
+    <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="test.TestVeriday">
+        <methods>
+          <include name="CreateTeamUserTest"/>
+          <include name="initializeTestBaseSetup"/>
+          <include name="tearDown"/>
+          <include name="endReport"/>
+          <include name="setExtent"/>
+        </methods>
+      </class> <!-- test.TestVeriday -->
+    </classes>
+  </test> <!-- TestCRM(failed) -->
+</suite> <!-- Failed suite [Suite] -->
