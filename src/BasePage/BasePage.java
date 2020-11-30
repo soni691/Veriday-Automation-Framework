@@ -8,6 +8,8 @@
 
 package BasePage;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.File;
 import BasePage.BasePage;
 import ExtentReportListener.ExtentReportCreate;
@@ -86,15 +88,15 @@ public class BasePage {
 	public static String testDataFile;
 	public static String objectFile;
 	public static String loggerPropertiesFile;
-	public static String testLogger = "Veriday";
-	public static String pageObjectLogs = "PageObjects";
+	//public static String testLogger = "TestVeriday";
+	public static String pageObjectLogs = "BasePage";
 	public Properties pageObject = null;
 	public ExtentReportCreate objExtentReportCreate;
 	public ExtentTest extentTest;
 	public ExtentReports extent;
 	public CreateObject co;
 
-	public Logger logger = Logger.getLogger(pageObjectLogs);
+	public static Logger pageObjectLogs1 = Logger.getLogger(pageObjectLogs);
 	//public Screenshot objScreenshot;
 
 	protected enum Condition {
@@ -138,7 +140,8 @@ public class BasePage {
 		loggerPropertiesFile = loggerProperties;
 		PropertyConfigurator.configure(projectDirectory + "\\loggerProperties\\" + loggerPropertiesFile.trim());
      	setDriver(browser, url);
-	    co = new CreateObject(driver);     	
+	    co = new CreateObject(driver);
+	    pageObjectLogs1.info("This is Before Class method");
 	}
 //	@BeforeClass(alwaysRun = true)
 //	public void setUp() {
@@ -217,6 +220,7 @@ public class BasePage {
 	 */
 	private static WebDriver initChromeDriver(String appURL) {
 		System.out.println("Launching google chrome from BasePage....");
+		pageObjectLogs1.info("Launching google chrome from BasePage....");
 		System.setProperty("webdriver.chrome.driver", projectDirectory + "\\drivers\\chromedriver.exe");
 		ChromeOptions chromeoptions = new ChromeOptions();
 		chromeoptions.setAcceptInsecureCerts(true);
@@ -557,6 +561,11 @@ public class BasePage {
 		}
 	}
 	
+	public void getPageTitle(By by,String expectedPageTitle) {
+		String actualTitle = driver.getTitle();
+		String expectedTitle = "";
+		assertEquals(expectedTitle,actualTitle);
+	}
 	/**
 	 * 
 	 * @param by

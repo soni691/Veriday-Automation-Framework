@@ -24,6 +24,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+//import com.tests.LoginTest;
+
 import BasePage.BasePage;
 import BasePage.CustomListener;
 import ExtentReportListener.ExtentReportCreate;
@@ -34,8 +36,6 @@ import dashboard.Dashboard;
 
 //@Listeners(CustomListener.class)
 public class TestVeriday extends BasePage {
-	//WebDriver driver;	
-	Logger logger = getLogger(testLogger);
 
 	@Test(groups = {"Regression"},priority=0,enabled= true)
 	public void loginTest() throws Exception {
@@ -54,7 +54,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.CreatePrimaryUser();
 
 	}
-	@Test(groups = {"Regression"},priority=2,enabled= true)
+	@Test(groups = {"Regression"},priority=2,enabled= false)
 	public void CreateTeamUserTest() throws Exception {
 		extentTest = extent.startTest("CreateTeamUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -64,7 +64,7 @@ public class TestVeriday extends BasePage {
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateTeamUser");
 		co.objUserManager.CreateTeamUser();	
 	}
-	@Test(groups = {"Regression"},priority=3,enabled= true)
+	@Test(groups = {"Regression"},priority=3,enabled= false)
 	public void SearchUserTest() throws Exception {
 		extentTest = extent.startTest("SearchUserTest");
 		//Assigning Excel file Data
@@ -74,7 +74,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.SearchUser1();
 
 	}
-	@Test(groups = {"Regression"},priority=4,enabled= true)
+	@Test(groups = {"Regression"},priority=4,enabled= false)
 	public void ImpersonateUserTest() throws Exception {
 		extentTest = extent.startTest("ImpersonateUserTest");
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -84,7 +84,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.ImpersonateUser();
 
 	}
-	@Test(groups = {"Regression"},priority=5,enabled= true)
+	@Test(groups = {"Regression"},priority=5,enabled= false)
 	public void CreateNewEventTest() throws Exception {
 		extentTest = extent.startTest("CreateNewEventTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");

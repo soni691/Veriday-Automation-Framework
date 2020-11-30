@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
@@ -7,8 +8,9 @@ import org.testng.annotations.BeforeClass;
 import BasePage.BasePage;
 import pages.ExcelUtils;
 import utility.ExcelDataRead;
-public class LoginPage extends BasePage {
-
+    public class LoginPage extends BasePage {
+	public static String testLogger = "LoginPage";
+	Logger Testlogger = getLogger(testLogger);
 		//WebDriver driver;
 	
 		@BeforeClass
@@ -56,6 +58,7 @@ public class LoginPage extends BasePage {
 			setPassword(Password);
 			Thread.sleep(1000);	
 			clickLogin();
+			Testlogger.info("Login Test Case is Successful");
 		}
 		
 }

@@ -3,6 +3,7 @@ package pages;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,8 @@ import org.testng.annotations.*;
 import BasePage.BasePage;
 
 public class DigitalWorkspacePage extends BasePage{
+	public static String DW = "DigitalWorkspacePage";
+	Logger DWlog = getLogger(DW);
 	@BeforeClass
 	public void setUp() {
 		driver = getDriver();
@@ -106,7 +109,8 @@ public class DigitalWorkspacePage extends BasePage{
 		String newDate = sdf.format(cal.getTime());
 		setEndDate(newDate);
 		//EventEndDate.sendKeys(newDate);
-		click(EventSubmit);		
+		click(EventSubmit);
+		DWlog.info("New Event Created Successfully");
 	}
 	public void CreateNewPageinWebsite() throws Exception {
 //		String pname=ExcelUtils.getCellData(1, 0);
@@ -134,12 +138,14 @@ public class DigitalWorkspacePage extends BasePage{
 			 setPageURL(purl);
 			 click(Column1Template);
 			 click(CreatePage);
+			 DWlog.info("New WebSite Page Created Successfully");
 		} else if(pagetype.equals("Internal Link")) {
 			 pname=ExcelUtils.getCellData(9, 0);
 			 setPageName(pname);
 			 linkedpagetype=ExcelUtils.getCellData(9, 1);
 			 selectFromText(LinkedPage, linkedpagetype);
 			 click(CreatePage);
+			 DWlog.info("New Linked Page Created Successfully");
 		}		
 	}
 

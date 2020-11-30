@@ -6,8 +6,7 @@
 			<include name="Regression"></include>
 		</run>
 	</groups>
-	<parameter name="appURL"
-		value="http://node-1.nginx.portal.da-1.rbcus.qa.aws.veriday.net/login" />
+	<parameter name="appURL" value="http://node-1.nginx.portal.da-1.rbcus.qa.aws.veriday.net/login" />
 	<parameter name="loggerProperties" value="log4j.properties" />
 
 	<listeners>

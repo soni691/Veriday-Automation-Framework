@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>TestCRM</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/6/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Nov 29 22:17:36 IST 2020</td>
+<td>Started on:</td><td>Mon Nov 30 16:48:24 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>15 seconds (15970 ms)</td>
+<tr><td>Total time:</td><td>39 seconds (39911 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>Regression </td>
 </tr><tr>
@@ -75,67 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test.TestVeriday.CreateNewEventTest()'><b>CreateNewEventTest</b><br>Test class: test.TestVeriday</td>
-<td><div><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.CreateNewEventTest(TestVeriday.java:95)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace701119748", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace701119748'><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.CreateNewEventTest(TestVeriday.java:95)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>test.TestVeriday@335eadca</td></tr>
-<tr>
 <td title='test.TestVeriday.CreatePrimaryUserTest()'><b>CreatePrimaryUserTest</b><br>Test class: test.TestVeriday</td>
-<td><div><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:53)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace461698165", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace461698165'><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:53)
+<td><div><pre>java.lang.AssertionError: New Primary user can not be created expected [true] but found [false]
+	at pages.UserManagerPage.CreatePrimaryUser(UserManagerPage.java:121)
+	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:54)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1517758613", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1517758613'><pre>java.lang.AssertionError: New Primary user can not be created expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at pages.UserManagerPage.CreatePrimaryUser(UserManagerPage.java:121)
+	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:54)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -162,187 +112,20 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
+<td>15</td>
 <td>test.TestVeriday@335eadca</td></tr>
-<tr>
-<td title='test.TestVeriday.CreateTeamUserTest()'><b>CreateTeamUserTest</b><br>Test class: test.TestVeriday</td>
-<td><div><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.CreateTeamUserTest(TestVeriday.java:64)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace87674905", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace87674905'><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.CreateTeamUserTest(TestVeriday.java:64)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>test.TestVeriday@335eadca</td></tr>
-<tr>
-<td title='test.TestVeriday.ImpersonateUserTest()'><b>ImpersonateUserTest</b><br>Test class: test.TestVeriday</td>
-<td><div><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.ImpersonateUserTest(TestVeriday.java:80)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace89448984", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace89448984'><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.ImpersonateUserTest(TestVeriday.java:80)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>test.TestVeriday@335eadca</td></tr>
-<tr>
-<td title='test.TestVeriday.SearchUserTest()'><b>SearchUserTest</b><br>Test class: test.TestVeriday</td>
-<td><div><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.SearchUserTest(TestVeriday.java:71)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace147022238", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace147022238'><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.SearchUserTest(TestVeriday.java:71)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>test.TestVeriday@335eadca</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
 <td title='test.TestVeriday.loginTest()'><b>loginTest</b><br>Test class: test.TestVeriday</td>
-<td><div><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.loginTest(TestVeriday.java:44)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1212191909", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1212191909'><pre>java.io.FileNotFoundException: D:\VeridayAutomationGit\Veriday-Automation-FrameworkTestData.xlsx (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at pages.ExcelUtils.setExcelFile(ExcelUtils.java:26)
-	at test.TestVeriday.loginTest(TestVeriday.java:44)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
+<td></td>
+<td>11</td>
 <td>test.TestVeriday@335eadca</td></tr>
 </table><p>
 </body>
