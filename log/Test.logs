@@ -1,3 +1,4 @@
-30/11/2020 16:48:25 -- [ BasePage ] --> Launching google chrome from BasePage....
-30/11/2020 16:48:37 -- [ BasePage ] --> This is Before Class method
-30/11/2020 16:48:49 -- [ LoginPage ] --> Login Test Case is Successful
+30/11/2020 20:51:58 -- [ BasePage ] --> Launching google chrome from BasePage....
+30/11/2020 20:52:12 -- [ BasePage ] --> This is Before Class method
+30/11/2020 20:52:26 -- [ LoginPage ] --> Login Test Case is Successful
+30/11/2020 20:52:42 -- [ UserManagerPage ] --> User Is Impersonated Successfully

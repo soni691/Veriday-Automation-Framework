@@ -9,14 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Suite</th></tr>
-<tr><td><a href="#t0">TestCRM</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">39,911</td><td>Regression</td><td></td></tr>
+<tr><td><a href="#t0">TestCRM</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">75,507</td><td>Regression</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TestCRM &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">test.TestVeriday</td><td><a href="#m0">CreatePrimaryUserTest</a></td><td rowspan="1">1606735129133</td><td rowspan="1">15156</td></tr><tr><th colspan="4">TestCRM &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">test.TestVeriday</td><td><a href="#m1">loginTest</a></td><td rowspan="1">1606735117573</td><td rowspan="1">11554</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TestCRM &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">test.TestVeriday</td><td><a href="#m0">CreateNewFormTest</a></td><td rowspan="1">1606749746218</td><td rowspan="1">47236</td></tr><tr><th colspan="4">TestCRM &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">test.TestVeriday</td><td><a href="#m1">loginTest</a></td><td rowspan="1">1606749732151</td><td rowspan="1">14062</td></tr></tbody>
 </table>
-<h2>TestCRM</h2><h3 id="m0">test.TestVeriday#CreatePrimaryUserTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: New Primary user can not be created expected [true] but found [false]
-	at pages.UserManagerPage.CreatePrimaryUser(UserManagerPage.java:121)
-	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:54)
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>TestCRM</h2><h3 id="m0">test.TestVeriday#CreateNewFormTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at BasePage.BasePage.enterTextwithoutclear(BasePage.java:483)
+	at pages.DigitalWorkspacePage.setEmailRequire(DigitalWorkspacePage.java:142)
+	at pages.DigitalWorkspacePage.CreateNewForm(DigitalWorkspacePage.java:246)
+	at test.TestVeriday.CreateNewFormTest(TestVeriday.java:123)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m1">test.TestVeriday#loginTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

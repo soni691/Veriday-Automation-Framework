@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Nov 30 16:48:24 IST 2020</td>
+<td>Started on:</td><td>Mon Nov 30 20:51:58 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>39 seconds (39911 ms)</td>
+<tr><td>Total time:</td><td>75 seconds (75507 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>Regression </td>
 </tr><tr>
@@ -75,17 +75,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test.TestVeriday.CreatePrimaryUserTest()'><b>CreatePrimaryUserTest</b><br>Test class: test.TestVeriday</td>
-<td><div><pre>java.lang.AssertionError: New Primary user can not be created expected [true] but found [false]
-	at pages.UserManagerPage.CreatePrimaryUser(UserManagerPage.java:121)
-	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:54)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1517758613", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1517758613'><pre>java.lang.AssertionError: New Primary user can not be created expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertTrue(Assert.java:44)
-	at pages.UserManagerPage.CreatePrimaryUser(UserManagerPage.java:121)
-	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:54)
+<td title='test.TestVeriday.CreateNewFormTest()'><b>CreateNewFormTest</b><br>Test class: test.TestVeriday</td>
+<td><div><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at BasePage.BasePage.enterTextwithoutclear(BasePage.java:483)
+	at pages.DigitalWorkspacePage.setEmailRequire(DigitalWorkspacePage.java:142)
+	at pages.DigitalWorkspacePage.CreateNewForm(DigitalWorkspacePage.java:246)
+	at test.TestVeriday.CreateNewFormTest(TestVeriday.java:123)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2125903542", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2125903542'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at BasePage.BasePage.enterTextwithoutclear(BasePage.java:483)
+	at pages.DigitalWorkspacePage.setEmailRequire(DigitalWorkspacePage.java:142)
+	at pages.DigitalWorkspacePage.CreateNewForm(DigitalWorkspacePage.java:246)
+	at test.TestVeriday.CreateNewFormTest(TestVeriday.java:123)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -112,7 +115,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>15</td>
+<td>47</td>
 <td>test.TestVeriday@335eadca</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -125,7 +128,7 @@ function toggleAllBoxes() {
 <tr>
 <td title='test.TestVeriday.loginTest()'><b>loginTest</b><br>Test class: test.TestVeriday</td>
 <td></td>
-<td>11</td>
+<td>14</td>
 <td>test.TestVeriday@335eadca</td></tr>
 </table><p>
 </body>

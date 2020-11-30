@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" ignored="6" total="8" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="39911" started-at="2020-11-30T11:18:24Z" finished-at="2020-11-30T11:19:04Z">
+  <suite name="Suite" duration-ms="75507" started-at="2020-11-30T15:21:58Z" finished-at="2020-11-30T15:23:14Z">
     <groups>
       <group name="Regression">
-        <method signature="TestVeriday.CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@335eadca]" name="CreatePrimaryUserTest" class="test.TestVeriday"/>
+        <method signature="TestVeriday.CreateNewFormTest()[pri:7, instance:test.TestVeriday@335eadca]" name="CreateNewFormTest" class="test.TestVeriday"/>
         <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" class="test.TestVeriday"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="TestCRM" duration-ms="39911" started-at="2020-11-30T11:18:24Z" finished-at="2020-11-30T11:19:04Z">
+    <test name="TestCRM" duration-ms="75507" started-at="2020-11-30T15:21:58Z" finished-at="2020-11-30T15:23:14Z">
       <class name="test.TestVeriday">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="114" started-at="2020-11-30T11:18:24Z" finished-at="2020-11-30T11:18:25Z">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="112" started-at="2020-11-30T15:21:58Z" finished-at="2020-11-30T15:21:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="12493" started-at="2020-11-30T11:18:25Z" finished-at="2020-11-30T11:18:37Z">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="13180" started-at="2020-11-30T15:21:58Z" finished-at="2020-11-30T15:22:12Z">
           <params>
             <param index="0">
               <value>
@@ -36,11 +36,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="11554" started-at="2020-11-30T11:18:37Z" finished-at="2020-11-30T11:18:49Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="14062" started-at="2020-11-30T15:22:12Z" finished-at="2020-11-30T15:22:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="3" started-at="2020-11-30T11:18:49Z" finished-at="2020-11-30T11:18:49Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="2" started-at="2020-11-30T15:22:26Z" finished-at="2020-11-30T15:22:26Z">
           <params>
             <param index="0">
               <value>
@@ -51,18 +51,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@335eadca]" name="CreatePrimaryUserTest" duration-ms="15156" started-at="2020-11-30T11:18:49Z" finished-at="2020-11-30T11:19:04Z">
-          <exception class="java.lang.AssertionError">
+        <test-method status="FAIL" signature="CreateNewFormTest()[pri:7, instance:test.TestVeriday@335eadca]" name="CreateNewFormTest" duration-ms="47236" started-at="2020-11-30T15:22:26Z" finished-at="2020-11-30T15:23:13Z">
+          <exception class="java.lang.IllegalArgumentException">
             <message>
-              <![CDATA[New Primary user can not be created expected [true] but found [false]]]>
+              <![CDATA[Keys to send should be a not null CharSequence]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: New Primary user can not be created expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertTrue(Assert.java:44)
-at pages.UserManagerPage.CreatePrimaryUser(UserManagerPage.java:121)
-at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:54)
+              <![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+at BasePage.BasePage.enterTextwithoutclear(BasePage.java:483)
+at pages.DigitalWorkspacePage.setEmailRequire(DigitalWorkspacePage.java:142)
+at pages.DigitalWorkspacePage.CreateNewForm(DigitalWorkspacePage.java:246)
+at test.TestVeriday.CreateNewFormTest(TestVeriday.java:123)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -90,22 +90,22 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreatePrimaryUserTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="328" started-at="2020-11-30T11:19:04Z" finished-at="2020-11-30T11:19:04Z">
+        </test-method> <!-- CreateNewFormTest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="522" started-at="2020-11-30T15:23:13Z" finished-at="2020-11-30T15:23:14Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CreatePrimaryUserTest status=FAILURE method=TestVeriday.CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@335eadca] output={null}]]]>
+                <![CDATA[[TestResult name=CreateNewFormTest status=FAILURE method=TestVeriday.CreateNewFormTest()[pri:7, instance:test.TestVeriday@335eadca] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="246" started-at="2020-11-30T11:19:04Z" finished-at="2020-11-30T11:19:04Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="352" started-at="2020-11-30T15:23:14Z" finished-at="2020-11-30T15:23:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

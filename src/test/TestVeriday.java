@@ -45,7 +45,7 @@ public class TestVeriday extends BasePage {
 		//Login Method
 		co.objLogin.LoginToCRM();
 	}
-	@Test(groups = {"Regression"},priority=1,enabled= true)
+	@Test(groups = {"Regression"},priority=1,enabled= false)
 	public void CreatePrimaryUserTest() throws Exception {
 		extentTest = extent.startTest("CreatePrimaryUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -108,16 +108,19 @@ public class TestVeriday extends BasePage {
 		//Assigning Excel file Data
 		co.objDigitalWorkspacePage.CreateNewPageinWebsite();
 	}	
-	@Test(groups = {"Regression"},priority=6,enabled= false)	
-	public void CreateNewLinkedPageTest() throws Exception {
-		extentTest = extent.startTest("CreateNewLinkedPageTest");
+	@Test(groups = {"Regression"},priority=7,enabled= true)	
+	public void CreateNewFormTest() throws Exception {
+		extentTest = extent.startTest("CreateNewFormTest");
 		//Assert.assertTrue(false);
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
+		//	co.objLogin=new LoginPage(driver);
 		//	co.objLogin.LoginToCRM();
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"SearchUser");
 		co.objUserManager.ImpersonateUser();
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateNewPage");
 		//Assigning Excel file Data
-		co.objDigitalWorkspacePage.CreateNewPageinWebsite();
-	}	
+		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateNewForm");
+		co.objDigitalWorkspacePage.CreateNewForm();
+	}
+
 }

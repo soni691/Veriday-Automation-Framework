@@ -477,6 +477,11 @@ public class BasePage {
 		inputBox.clear();
 		inputBox.sendKeys(textToBeEnter);
 	}
+	public void enterTextwithoutclear(By by, String textToBeEnter) {
+		WebElement inputBox = findVisibleElement(by);
+		inputBox.click();
+		inputBox.sendKeys(textToBeEnter);
+	}
 
 	/**
 	 * 
