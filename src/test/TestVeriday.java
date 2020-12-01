@@ -39,6 +39,7 @@ public class TestVeriday extends BasePage {
 
 	@Test(groups = {"Regression"},priority=0,enabled= true)
 	public void loginTest() throws Exception {
+		Assert.assertTrue(false);
 		extentTest = extent.startTest("loginTest");
 		//Assigning Excel file Data
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
