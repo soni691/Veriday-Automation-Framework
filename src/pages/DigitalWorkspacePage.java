@@ -282,7 +282,7 @@ public class DigitalWorkspacePage extends BasePage{
 		//setCheckboxRequire(crequire);
 		click(Checkbox1Selected);
 		click(Checkbox2Selected);
-		click(AddCheckboxOption);
+		//click(AddCheckboxOption);
 		click(Step1NextButton);
 		click(HideDisclosure);
 		click(Step1NextButton);

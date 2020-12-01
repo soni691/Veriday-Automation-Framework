@@ -763,7 +763,7 @@ public class BasePage {
 	public void endReport() throws EmailException{
 		extent.flush();
 		extent.close();
-		SendEmail();
+		//SendEmail();
 		driver.quit();
 	}
 
