@@ -763,8 +763,8 @@ public class BasePage {
 	public void endReport() throws EmailException{
 		extent.flush();
 		extent.close();
-		//SendEmail();
-		//driver.quit();
+		SendEmail();
+		driver.quit();
 	}
 
 	@AfterMethod(alwaysRun = true)

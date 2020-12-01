@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import BasePage.BasePage;
@@ -87,7 +88,6 @@ public class DigitalWorkspacePage extends BasePage{
     By FieldlabelName =By.xpath("//*[@id=\"editField\"]/div/div/div[2]/div[1]/input");
     //Identify selected field is mandatory 
     By MandatoryLabel =By.xpath("//*[@id=\"editField\"]/div/div/div[2]/div[2]/label/input");
-                                  //*[@id="editField"]/div/div/div[2]/div[2]/label/input
     //Identify Checkbox1 description textbox
     By CheckboxDescription1 =By.xpath("//*[@id=\"editField\"]/div/div/div[4]/input[2]");
     //Identify Checkbox2 description textbox
@@ -96,8 +96,22 @@ public class DigitalWorkspacePage extends BasePage{
     By Checkbox1Selected =By.xpath("//*[@id=\"editField\"]/div/div/div[4]/input[1]");
     //Select Checkbox2
     By Checkbox2Selected =By.xpath("//*[@id=\"editField\"]/div/div/div[5]/input[1]");
-  //Identify AddOption button to add checkbpxes
+    //Identify AddOption button to add checkbpxes
     By AddCheckboxOption =By.xpath("//a[contains(text(),'Add option')]");
+    //Identify hide disclosure option in stage3
+    By HideDisclosure =By.xpath("//input[@id='hideDisclosures']");
+    //Identify show disclosure option in stage3
+    By ShowDisclosure =By.xpath("//input[@id='displayDisclosures']");
+    //Identify do not send email confirmation checkbox on stage4
+    By DontSendEmail =By.xpath("//input[@id='da-confirm-email-not-sent']");
+    //Identify New pAge popup text New Form
+    By NewFormPopupVerify =By.xpath("//h2[contains(text(),'New Form')]");
+    //Identify Back to Digital Workspace option
+    By BacktoDW =By.xpath("//a[@href='/guest/digital-workspace']");
+    //Identify already created url popup on Create New Webpage
+    By AlreadyCreatedpageURL =By.xpath("//p[contains(text(),'You entered a URL that is already used, please ent')]");
+    //Click on ok button for already created url popup
+    By AlreadyCreatedUserOk = By.xpath("//button[contains(text(),'Ok')]");
     
 	void setEventName(String ename) {
 		enterText(EventName, ename);
@@ -180,6 +194,7 @@ public class DigitalWorkspacePage extends BasePage{
 		//EventEndDate.sendKeys(newDate);
 		click(EventSubmit);
 		DWlog.info("New Event Created Successfully");
+		click(BacktoDW);
 	}
 	public void CreateNewPageinWebsite() throws Exception {
 //		String pname=ExcelUtils.getCellData(1, 0);
@@ -207,7 +222,17 @@ public class DigitalWorkspacePage extends BasePage{
 			 setPageURL(purl);
 			 click(Column1Template);
 			 click(CreatePage);
-			 DWlog.info("New WebSite Page Created Successfully");
+			 boolean UserPresent = isElementPresent(AlreadyCreatedpageURL);
+				if(UserPresent==true) {
+					DWlog.info("New Web Site can not be created because URL is already exist");
+					click(AlreadyCreatedUserOk);
+					click(BacktoDW);
+				}
+				else {
+					DWlog.info("New WebSite Page Created Successfully");
+					click(BacktoDW);
+				}
+			 
 		} else if(pagetype.equals("Internal Link")) {
 			 pname=ExcelUtils.getCellData(9, 0);
 			 setPageName(pname);
@@ -215,11 +240,13 @@ public class DigitalWorkspacePage extends BasePage{
 			 selectFromText(LinkedPage, linkedpagetype);
 			 click(CreatePage);
 			 DWlog.info("New Linked Page Created Successfully");
+			 click(BacktoDW);
 		}		
 	}
 	public void CreateNewForm() throws Exception{
 		click(Form);
 		click(NewForm);	
+		Assert.assertTrue(NewFormPopupVerify.equals(NewFormPopupVerify), "New Form Popup Window is not open");
 		//Thread.sleep(2000);
 		String ftitle=ExcelUtils.getCellData(1, 0);
 		String fdescription=ExcelUtils.getCellData(1, 1);
@@ -242,8 +269,8 @@ public class DigitalWorkspacePage extends BasePage{
 		click(EmailField);
 		click(FieldlabelName);
 		setEmailLabelname(elabelname);
-		click(MandatoryLabel);
-		setEmailRequire(erequire);
+		//click(MandatoryLabel);
+		//setEmailRequire(erequire);
 		click(AddnNewField);
 		click(CheckboxField);
 		setCheckboxLabelname(checkboxlabelname);
@@ -251,9 +278,17 @@ public class DigitalWorkspacePage extends BasePage{
 		setCheckboxOption1(checkboxoption1);
 		click(CheckboxDescription2);
 		setCheckboxOption2(checkboxoption2);
-		click(MandatoryLabel);
-		setCheckboxRequire(crequire);
+		//click(MandatoryLabel);
+		//setCheckboxRequire(crequire);
+		click(Checkbox1Selected);
+		click(Checkbox2Selected);
 		click(AddCheckboxOption);
+		click(Step1NextButton);
+		click(HideDisclosure);
+		click(Step1NextButton);
+		click(EventSubmit);
+		DWlog.info("New Form with send a confirmation email Created Successfully");
+		click(BacktoDW);
 	}
 
 }
