@@ -71,6 +71,8 @@ public class UserManagerPage extends BasePage {
 	By AlreadyCreatedUserOk = By.xpath("//button[contains(text(),'Ok')]");
 	//Identify Back button of Create New User
 	By Back = By.xpath("//button[contains(text(),'Back')]");
+	//Identify Province license for DEMo QA Primary User
+	By StatesofRegistration = By.xpath("//input[@id='provincial-list']");
 	
 		
 	void setAccountEmail(String uemail) {
@@ -103,6 +105,9 @@ public class UserManagerPage extends BasePage {
 	void setSearchUserAction(String searchuseraction) {
 		enterText(SearchUserAction,searchuseraction);
 	}
+	void setStatesofRegistration(String sregistration) {
+		enterText(StatesofRegistration,sregistration);
+	}
 	
 	
 	public void CreatePrimaryUser() throws Exception {
@@ -113,6 +118,7 @@ public class UserManagerPage extends BasePage {
 		String jtitle2=ExcelUtils.getCellData(1, 4);
 		String phone=ExcelUtils.getCellData(1, 5);
 		String location11=ExcelUtils.getCellData(1, 6);
+		String sregistration=ExcelUtils.getCellData(1, 7);
 		click(usermanager);
 		//Assert.assertEquals("User Manager - Digital Agent", driver.getTitle());
 		click(createsingleuser);
@@ -129,6 +135,9 @@ public class UserManagerPage extends BasePage {
 		click(Location);
 		selectFromText(Location,location11);
 	    click(Location);
+	    setStatesofRegistration(sregistration);	   
+	    waitAndFindElement(SaveUser, Condition.isClickable, 3, 1000);
+	    scrollToTop();	    
 		click(SaveUser);
 		usermanagerlog.info("New Primary User Is created");
 		Thread.sleep(2000);
@@ -152,6 +161,7 @@ public class UserManagerPage extends BasePage {
 		String phone=ExcelUtils.getCellData(1, 5);
 		String tname=ExcelUtils.getCellData(1, 6);
 		String location11=ExcelUtils.getCellData(1, 7);
+		String sregistration=ExcelUtils.getCellData(1, 8);
 		boolean present = isElementPresent(createsingleuser);
 		if(present==true) {
 			System.out.println("CreateSingleUSer Option is visible "+ present);
@@ -174,8 +184,9 @@ public class UserManagerPage extends BasePage {
 			//location1.selectByIndex(2);
 		    click(Location);
 		    setTeamName(tname);
-		    JavascriptExecutor jse = (JavascriptExecutor)driver;
-		 	jse.executeScript("window.scrollBy(0,-250)");
+		    setStatesofRegistration(sregistration);	   
+		    waitAndFindElement(SaveUser, Condition.isClickable, 3, 1000);
+		    scrollToTop();
 			click(SaveUser);
 			usermanagerlog.info("New Team User Is created");
 			Thread.sleep(2000);
@@ -206,8 +217,9 @@ public class UserManagerPage extends BasePage {
 		//location1.selectByIndex(2);
 	    click(Location);
 	    setTeamName(tname);
-	    JavascriptExecutor jse = (JavascriptExecutor)driver;
-	 	jse.executeScript("window.scrollBy(0,-250)");
+	    setStatesofRegistration(sregistration);	   
+	    waitAndFindElement(SaveUser, Condition.isClickable, 3, 1000);
+	    scrollToTop();
 		click(SaveUser);
 		usermanagerlog.info("New Team User Is created");
 		Thread.sleep(2000);

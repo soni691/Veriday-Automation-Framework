@@ -17,7 +17,7 @@
       <class name="test.TestVeriday">
         <methods>
           <include name="initializeTestBaseSetup"/>
-          <include name="CreatePrimaryUserTest"/>
+          <include name="CreateNewWebPageTest"/>
           <include name="tearDown"/>
           <include name="endReport"/>
           <include name="setExtent"/>

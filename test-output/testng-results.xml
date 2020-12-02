@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="6" total="8" passed="1">
+<testng-results skipped="0" failed="0" ignored="4" total="8" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="53336" started-at="2020-12-01T16:18:25Z" finished-at="2020-12-01T16:19:18Z">
+  <suite name="Suite" duration-ms="93174" started-at="2020-12-02T13:14:32Z" finished-at="2020-12-02T13:16:05Z">
     <groups>
       <group name="Regression">
-        <method signature="TestVeriday.CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@335eadca]" name="CreatePrimaryUserTest" class="test.TestVeriday"/>
+        <method signature="TestVeriday.CreateNewFormTest()[pri:7, instance:test.TestVeriday@335eadca]" name="CreateNewFormTest" class="test.TestVeriday"/>
+        <method signature="TestVeriday.ImpersonateUserTest()[pri:4, instance:test.TestVeriday@335eadca]" name="ImpersonateUserTest" class="test.TestVeriday"/>
+        <method signature="TestVeriday.SearchUserTest()[pri:3, instance:test.TestVeriday@335eadca]" name="SearchUserTest" class="test.TestVeriday"/>
         <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" class="test.TestVeriday"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="TestCRM" duration-ms="53336" started-at="2020-12-01T16:18:25Z" finished-at="2020-12-01T16:19:18Z">
+    <test name="TestCRM" duration-ms="93174" started-at="2020-12-02T13:14:32Z" finished-at="2020-12-02T13:16:05Z">
       <class name="test.TestVeriday">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="113" started-at="2020-12-01T16:18:25Z" finished-at="2020-12-01T16:18:25Z">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="113" started-at="2020-12-02T13:14:32Z" finished-at="2020-12-02T13:14:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="14052" started-at="2020-12-01T16:18:25Z" finished-at="2020-12-01T16:18:39Z">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="14181" started-at="2020-12-02T13:14:32Z" finished-at="2020-12-02T13:14:46Z">
           <params>
             <param index="0">
               <value>
@@ -36,11 +38,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="14951" started-at="2020-12-01T16:18:39Z" finished-at="2020-12-01T16:18:54Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="12949" started-at="2020-12-02T13:14:46Z" finished-at="2020-12-02T13:14:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="4" started-at="2020-12-01T16:18:54Z" finished-at="2020-12-01T16:18:54Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="2" started-at="2020-12-02T13:14:59Z" finished-at="2020-12-02T13:14:59Z">
           <params>
             <param index="0">
               <value>
@@ -51,68 +53,52 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@335eadca]" name="CreatePrimaryUserTest" duration-ms="22915" started-at="2020-12-01T16:18:54Z" finished-at="2020-12-01T16:19:17Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Cannot locate element with text:   Chicago
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
-System info: host: 'SUMIT-SONI', ip: '192.168.113.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: unknown]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate element with text:   Chicago
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
-System info: host: 'SUMIT-SONI', ip: '192.168.113.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:141)
-at BasePage.BasePage.selectFromText(BasePage.java:498)
-at pages.UserManagerPage.CreatePrimaryUser(UserManagerPage.java:130)
-at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:54)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method status="PASS" signature="SearchUserTest()[pri:3, instance:test.TestVeriday@335eadca]" name="SearchUserTest" duration-ms="24791" started-at="2020-12-02T13:14:59Z" finished-at="2020-12-02T13:15:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreatePrimaryUserTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="363" started-at="2020-12-01T16:19:17Z" finished-at="2020-12-01T16:19:17Z">
+        </test-method> <!-- SearchUserTest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-02T13:15:24Z" finished-at="2020-12-02T13:15:24Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CreatePrimaryUserTest status=FAILURE method=TestVeriday.CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@335eadca] output={null}]]]>
+                <![CDATA[[TestResult name=SearchUserTest status=SUCCESS method=TestVeriday.SearchUserTest()[pri:3, instance:test.TestVeriday@335eadca] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="913" started-at="2020-12-01T16:19:17Z" finished-at="2020-12-01T16:19:18Z">
+        <test-method status="PASS" signature="ImpersonateUserTest()[pri:4, instance:test.TestVeriday@335eadca]" name="ImpersonateUserTest" duration-ms="1897" started-at="2020-12-02T13:15:24Z" finished-at="2020-12-02T13:15:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ImpersonateUserTest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-12-02T13:15:26Z" finished-at="2020-12-02T13:15:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ImpersonateUserTest status=SUCCESS method=TestVeriday.ImpersonateUserTest()[pri:4, instance:test.TestVeriday@335eadca] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="CreateNewFormTest()[pri:7, instance:test.TestVeriday@335eadca]" name="CreateNewFormTest" duration-ms="38972" started-at="2020-12-02T13:15:26Z" finished-at="2020-12-02T13:16:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateNewFormTest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-02T13:16:05Z" finished-at="2020-12-02T13:16:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CreateNewFormTest status=SUCCESS method=TestVeriday.CreateNewFormTest()[pri:7, instance:test.TestVeriday@335eadca] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="243" started-at="2020-12-02T13:16:05Z" finished-at="2020-12-02T13:16:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

@@ -112,6 +112,23 @@ public class DigitalWorkspacePage extends BasePage{
     By AlreadyCreatedpageURL =By.xpath("//p[contains(text(),'You entered a URL that is already used, please ent')]");
     //Click on ok button for already created url popup
     By AlreadyCreatedUserOk = By.xpath("//button[contains(text(),'Ok')]");
+    //Identify Get Started button on CReate New PAge
+    By GetStarted = By.xpath("//*[contains(text(),'Get started!')]");
+    //Identify Copy Selected Website option on Website Generator Page
+    By CopySelectedWebsite = By.xpath("//*[contains(text(),'Copy Selected Website')]");
+    //Identify Skip this step button on Website Generator Page
+    By SkipStep = By.xpath("//*[contains(text(),'Skip this step')]");
+    //Identify 'Are you sure you want to skip website cloning option on create new page
+    By skipwebsitecloning = By.xpath("//h3[contains(text(),'Are you sure you want to skip website cloning?')]");
+    //Identify Confirm button for Are you sure you want to skip website cloning option on create new page
+    By Confirmskipwebsitecloning = By.xpath("//button[contains(text(),'Confirm')]");
+    //Identify Type of page Template1 in DEMo QA environment
+    By Column1TemplateDemo =By.xpath("//*[@id=\"page-edit\"]/div[3]/div/div[8]/div[1]/ul/li[1]/label/div/div/input");
+    //Identify Type of page Template2 in DEMo QA environment
+    By Column2TemplateDemo =By.xpath("//*[@id=\"page-edit\"]/div[3]/div/div[8]/div[1]/ul/li[2]/label/div/div/input");
+    //Identify Email on Create New page of Demo QA env.
+    By DemoPageEmailSelect =By.xpath("//input[@id='alisha.new@veriday.com']");
+    
     
 	void setEventName(String ename) {
 		enterText(EventName, ename);
@@ -175,7 +192,8 @@ public class DigitalWorkspacePage extends BasePage{
 		click(EventOption);
 		click(AddEvent);
 		setEventName(ename);
-		Thread.sleep(2000);
+		waitAndFindElement(DescriptionFrame, Condition.isPresent, 5, 1000);
+		//Thread.sleep(2000);
 		//Switch to iframe
 		WebElement iframeElement = driver.findElement(By.xpath("//iframe[@title='Rich Text Editor, da-event-description']"));		
 		driver.switchTo().frame(iframeElement);
@@ -204,6 +222,12 @@ public class DigitalWorkspacePage extends BasePage{
 //		String linkedpagetype =ExcelUtils.getCellData(1, 4);
 		click(Setting);
 		click(AddPage);
+		 boolean UserPresent = isElementPresent(GetStarted);
+			if(UserPresent==true) {
+				click(GetStarted);
+				click(SkipStep);
+				click(Confirmskipwebsitecloning);
+			}
 		String getActualpageTitle = driver.getTitle();
 		softAssert.assertEquals(getActualpageTitle, "Settings - Digital Agent");
 		click(TypeofPage);		
@@ -220,10 +244,10 @@ public class DigitalWorkspacePage extends BasePage{
 	         setPageName(pname);
 			 setPageTitle(ptitle);
 			 setPageURL(purl);
-			 click(Column1Template);
+			 click(Column1TemplateDemo);
 			 click(CreatePage);
-			 boolean UserPresent = isElementPresent(AlreadyCreatedpageURL);
-				if(UserPresent==true) {
+			 boolean UserPresent1 = isElementPresent(AlreadyCreatedpageURL);
+				if(UserPresent1==true) {
 					DWlog.info("New Web Site can not be created because URL is already exist");
 					click(AlreadyCreatedUserOk);
 					click(BacktoDW);
@@ -261,7 +285,8 @@ public class DigitalWorkspacePage extends BasePage{
 		setFormTitle(ftitle);
 		waitAndFindElement(FormDescription, Condition.isClickable, 5, 1000);
 		setFormDescription(fdescription);
-		click(FormSenDEmail);
+		//click(FormSenDEmail);
+		click(DemoPageEmailSelect);
 		setFormSubmissionButonText(fsubmission);
 		click(pageRedirectURL);
 		setFormURL(furl);

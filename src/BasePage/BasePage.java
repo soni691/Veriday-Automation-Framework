@@ -669,7 +669,8 @@ public class BasePage {
 	 *         This method is used to scroll to the top of the page
 	 */
 	public void scrollToTop() {
-		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("window.scrollBy(0,-350)", "");
 	}
 
 	/**
@@ -764,7 +765,7 @@ public class BasePage {
 		extent.flush();
 		extent.close();
 		//SendEmail();
-		driver.quit();
+		//driver.quit();
 	}
 
 	@AfterMethod(alwaysRun = true)
