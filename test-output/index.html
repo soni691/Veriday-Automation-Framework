@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="CreatePrimaryUserTest">CreatePrimaryUserTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -100,21 +114,6 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
                     <div class="method-list-content passed suite-Suite">
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="CreateNewWebPageTest">CreateNewWebPageTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="ImpersonateUserTest">ImpersonateUserTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="SearchUserTest">SearchUserTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
@@ -132,33 +131,38 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test.TestVeriday</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CreatePrimaryUserTest">
+                  </a> <!-- CreatePrimaryUserTest -->
+                  <span class="method-name">CreatePrimaryUserTest</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Cannot locate element with text:   Chicago
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.0&apos;, revision: &apos;2ecb7d9a&apos;, time: &apos;2018-10-31T20:09:30&apos;
+System info: host: &apos;SUMIT-SONI&apos;, ip: &apos;192.168.113.12&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:141)
+	at BasePage.BasePage.selectFromText(BasePage.java:498)
+	at pages.UserManagerPage.CreatePrimaryUser(UserManagerPage.java:130)
+	at test.TestVeriday.CreatePrimaryUserTest(TestVeriday.java:54)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">test.TestVeriday</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="CreateNewWebPageTest">
-                  </a> <!-- CreateNewWebPageTest -->
-                  <span class="method-name">CreateNewWebPageTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="ImpersonateUserTest">
-                  </a> <!-- ImpersonateUserTest -->
-                  <span class="method-name">ImpersonateUserTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="SearchUserTest">
-                  </a> <!-- SearchUserTest -->
-                  <span class="method-name">SearchUserTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="loginTest">
@@ -178,7 +182,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
-  &lt;parameter name=&quot;appURL&quot; value=&quot;http://node-1.nginx.portal.da-1.rbcus.qa.aws.veriday.net/login&quot;/&gt;
+  &lt;parameter name=&quot;appURL&quot; value=&quot;http://node-1.nginx.portal.da-1.demo.qa.aws.veriday.net/login&quot;/&gt;
   &lt;parameter name=&quot;loggerProperties&quot; value=&quot;log4j.properties&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;ExtentReportListener.ExtentReportCreate&quot;/&gt;
@@ -219,15 +223,7 @@
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">CreateNewWebPageTest</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">ImpersonateUserTest</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">SearchUserTest</span>
+                <span class="method-in-group-name">CreatePrimaryUserTest</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
@@ -251,28 +247,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'CreateNewWebPageTest')
+data.setCell(0, 1, 'CreatePrimaryUserTest')
 data.setCell(0, 2, 'test.TestVeriday')
-data.setCell(0, 3, 46589);
+data.setCell(0, 3, 22915);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'SearchUserTest')
+data.setCell(1, 1, 'loginTest')
 data.setCell(1, 2, 'test.TestVeriday')
-data.setCell(1, 3, 22812);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'loginTest')
-data.setCell(2, 2, 'test.TestVeriday')
-data.setCell(2, 3, 12923);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'ImpersonateUserTest')
-data.setCell(3, 2, 'test.TestVeriday')
-data.setCell(3, 3, 1852);
+data.setCell(1, 3, 14951);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 37 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -287,7 +275,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">4 ignored methods</span>
+            <span class="header-content">6 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -295,7 +283,11 @@ return data;
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">CreateTeamUserTest</span>
                 <br/>
-                <span class="ignored-method-name">CreatePrimaryUserTest</span>
+                <span class="ignored-method-name">CreateNewWebPageTest</span>
+                <br/>
+                <span class="ignored-method-name">ImpersonateUserTest</span>
+                <br/>
+                <span class="ignored-method-name">SearchUserTest</span>
                 <br/>
                 <span class="ignored-method-name">CreateNewEventTest</span>
                 <br/>
@@ -317,44 +309,30 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
-                <span class="method-name">initializeTestBaseSetup(chrome, http://node-1.nginx.portal.da-1.rbcus.qa.aws.veriday.net/login, log4j.properties)</span>
-                <span class="method-start">117 ms</span>
+                <span class="method-name">initializeTestBaseSetup(chrome, http://node-1.nginx.portal.da-1.demo.qa.aws.veriday.net/login, log4j.properties)</span>
+                <span class="method-start">119 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">12896 ms</span>
+                <span class="method-start">14176 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=loginTest status=SUCCESS method=TestVeriday.loginTest()[pri:0, instance:test.TestVe...)</span>
-                <span class="method-start">25821 ms</span>
+                <span class="method-start">29129 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">SearchUserTest</span>
-                <span class="method-start">25824 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">CreatePrimaryUserTest</span>
+                <span class="method-start">29134 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=SearchUserTest status=SUCCESS method=TestVeriday.SearchUserTest()[pri:3, instance:t...)</span>
-                <span class="method-start">48637 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">ImpersonateUserTest</span>
-                <span class="method-start">48639 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=ImpersonateUserTest status=SUCCESS method=TestVeriday.ImpersonateUserTest()[pri:4, ...)</span>
-                <span class="method-start">50492 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">CreateNewWebPageTest</span>
-                <span class="method-start">50493 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=CreateNewWebPageTest status=SUCCESS method=TestVeriday.CreateNewWebPageTest()[pri:6...)</span>
-                <span class="method-start">97083 ms</span>
+                <span class="method-name">tearDown([TestResult name=CreatePrimaryUserTest status=FAILURE method=TestVeriday.CreatePrimaryUserTest()[pri...)</span>
+                <span class="method-start">52057 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">endReport</span>
-                <span class="method-start">97084 ms</span>
+                <span class="method-start">52420 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
