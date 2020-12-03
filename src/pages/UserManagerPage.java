@@ -1,5 +1,8 @@
 package pages;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -76,6 +79,17 @@ public class UserManagerPage extends BasePage {
 	
 		
 	void setAccountEmail(String uemail) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
+		//Getting current date
+		Calendar cal = Calendar.getInstance();
+		//Number of Days to add
+	    cal.add(Calendar.DAY_OF_MONTH, 2);
+		//Date after adding the days to the current date
+		String newDate = sdf.format(cal.getTime());
+		String append;
+		append = uemail+newDate+"@gmail.com";
+		uemail=append;
+		System.out.println(uemail);
 		enterText(AccountEmail, uemail);
 	}
 	void setFName(String fname) {

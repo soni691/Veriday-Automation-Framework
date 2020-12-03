@@ -1,6 +1,4 @@
-02/12/2020 18:44:32 -- [ BasePage ] --> Launching google chrome from BasePage....
-02/12/2020 18:44:46 -- [ BasePage ] --> This is Before Class method
-02/12/2020 18:44:59 -- [ LoginPage ] --> Login Test Case is Successful
-02/12/2020 18:45:24 -- [ UserManagerPage ] --> User is Searched Successfully
-02/12/2020 18:45:26 -- [ UserManagerPage ] --> User Is Impersonated Successfully
-02/12/2020 18:46:02 -- [ DigitalWorkspacePage ] --> New Form with send a confirmation email Created Successfully
+03/12/2020 15:11:45 -- [ BasePage ] --> Launching google chrome from BasePage....
+03/12/2020 15:11:59 -- [ BasePage ] --> This is Before Class method
+03/12/2020 15:12:12 -- [ LoginPage ] --> Login Test Case is Successful
+03/12/2020 15:12:40 -- [ UserManagerPage ] --> New Primary User Is created
