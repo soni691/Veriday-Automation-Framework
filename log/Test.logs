@@ -1,4 +1,8 @@
-03/12/2020 15:11:45 -- [ BasePage ] --> Launching google chrome from BasePage....
-03/12/2020 15:11:59 -- [ BasePage ] --> This is Before Class method
-03/12/2020 15:12:12 -- [ LoginPage ] --> Login Test Case is Successful
-03/12/2020 15:12:40 -- [ UserManagerPage ] --> New Primary User Is created
+04/12/2020 16:28:42 -- [ BasePage ] --> Launching google chrome from BasePage....
+04/12/2020 16:28:56 -- [ BasePage ] --> This is Before Class method
+04/12/2020 16:29:09 -- [ LoginPage ] --> Login Test Case is Successful
+04/12/2020 16:29:33 -- [ UserManagerPage ] --> Email of the user isssr202012060429@gmail.com
+04/12/2020 16:29:34 -- [ UserManagerPage ] --> First Name of the user is Patric202012060429
+04/12/2020 16:29:34 -- [ UserManagerPage ] --> Last Name of the user is Wilson202012060429
+04/12/2020 16:29:36 -- [ UserManagerPage ] --> Team name is TestAutomation202012060429
+04/12/2020 16:29:37 -- [ UserManagerPage ] --> New Team User Is created

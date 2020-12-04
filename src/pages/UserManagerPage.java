@@ -19,6 +19,7 @@ import com.google.inject.spi.Element;
 import BasePage.BasePage;
 
 public class UserManagerPage extends BasePage {
+
 	public static String usermanager1 = "UserManagerPage";
 	Logger usermanagerlog = getLogger(usermanager1);
 	public SoftAssert softAssert = new SoftAssert();
@@ -76,7 +77,7 @@ public class UserManagerPage extends BasePage {
 	By Back = By.xpath("//button[contains(text(),'Back')]");
 	//Identify Province license for DEMo QA Primary User
 	By StatesofRegistration = By.xpath("//input[@id='provincial-list']");
-	
+	public String append;
 		
 	void setAccountEmail(String uemail) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
@@ -86,16 +87,38 @@ public class UserManagerPage extends BasePage {
 	    cal.add(Calendar.DAY_OF_MONTH, 2);
 		//Date after adding the days to the current date
 		String newDate = sdf.format(cal.getTime());
-		String append;
+		//String append;
 		append = uemail+newDate+"@gmail.com";
 		uemail=append;
-		System.out.println(uemail);
+		usermanagerlog.info("Email of the user is" +uemail);
 		enterText(AccountEmail, uemail);
 	}
 	void setFName(String fname) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
+		//Getting current date
+		Calendar cal = Calendar.getInstance();
+		//Number of Days to add
+	    cal.add(Calendar.DAY_OF_MONTH, 2);
+		//Date after adding the days to the current date
+		String newDate = sdf.format(cal.getTime());
+		//String append;
+		append = fname+newDate;
+		fname=append;
+		usermanagerlog.info("First Name of the user is " + fname);
 	    enterText(FirstName, fname);
 	}
 	void setLName(String lname) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
+		//Getting current date
+		Calendar cal = Calendar.getInstance();
+		//Number of Days to add
+	    cal.add(Calendar.DAY_OF_MONTH, 2);
+		//Date after adding the days to the current date
+		String newDate = sdf.format(cal.getTime());
+		//String append;
+		append = lname+newDate;
+		lname=append;
+		usermanagerlog.info("Last Name of the user is " + lname);
 	    enterText(LastName, lname);
 	}
 	void setJobtitle(String jtitle) {
@@ -111,6 +134,17 @@ public class UserManagerPage extends BasePage {
 		enterText(Location,location11);
 	}
 	void setTeamName(String tname) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
+		//Getting current date
+		Calendar cal = Calendar.getInstance();
+		//Number of Days to add
+	    cal.add(Calendar.DAY_OF_MONTH, 2);
+		//Date after adding the days to the current date
+		String newDate = sdf.format(cal.getTime());
+		//String append;
+		append = tname+newDate;
+		tname=append;
+		usermanagerlog.info("Team name is " + tname);
 		enterText(TeamName,tname);
 	}
 	void setSearchUser(String searchuser1) {
@@ -166,7 +200,6 @@ public class UserManagerPage extends BasePage {
 		}
 	public void CreateTeamUser() throws Exception {
 		//Thread.sleep(2000);
-		//waitAndFindElement(createsingleuser, Condition.isPresent, 30, 8000);
 		String uemail=ExcelUtils.getCellData(1, 0);
 		String fname=ExcelUtils.getCellData(1, 1);
 		String lname=ExcelUtils.getCellData(1, 2);

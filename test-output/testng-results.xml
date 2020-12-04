@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="8" passed="4">
+<testng-results skipped="0" failed="0" ignored="6" total="8" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="93174" started-at="2020-12-02T13:14:32Z" finished-at="2020-12-02T13:16:05Z">
+  <suite name="Suite" duration-ms="72517" started-at="2020-12-04T10:58:41Z" finished-at="2020-12-04T10:59:54Z">
     <groups>
       <group name="Regression">
-        <method signature="TestVeriday.CreateNewFormTest()[pri:7, instance:test.TestVeriday@335eadca]" name="CreateNewFormTest" class="test.TestVeriday"/>
-        <method signature="TestVeriday.ImpersonateUserTest()[pri:4, instance:test.TestVeriday@335eadca]" name="ImpersonateUserTest" class="test.TestVeriday"/>
-        <method signature="TestVeriday.SearchUserTest()[pri:3, instance:test.TestVeriday@335eadca]" name="SearchUserTest" class="test.TestVeriday"/>
+        <method signature="TestVeriday.CreateTeamUserTest()[pri:2, instance:test.TestVeriday@335eadca]" name="CreateTeamUserTest" class="test.TestVeriday"/>
         <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" class="test.TestVeriday"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="TestCRM" duration-ms="93174" started-at="2020-12-02T13:14:32Z" finished-at="2020-12-02T13:16:05Z">
+    <test name="TestCRM" duration-ms="72517" started-at="2020-12-04T10:58:41Z" finished-at="2020-12-04T10:59:54Z">
       <class name="test.TestVeriday">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="113" started-at="2020-12-02T13:14:32Z" finished-at="2020-12-02T13:14:32Z">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="116" started-at="2020-12-04T10:58:41Z" finished-at="2020-12-04T10:58:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="14181" started-at="2020-12-02T13:14:32Z" finished-at="2020-12-02T13:14:46Z">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="14782" started-at="2020-12-04T10:58:42Z" finished-at="2020-12-04T10:58:56Z">
           <params>
             <param index="0">
               <value>
@@ -38,11 +36,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="12949" started-at="2020-12-02T13:14:46Z" finished-at="2020-12-02T13:14:59Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="12490" started-at="2020-12-04T10:58:56Z" finished-at="2020-12-04T10:59:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="2" started-at="2020-12-02T13:14:59Z" finished-at="2020-12-02T13:14:59Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="2" started-at="2020-12-04T10:59:09Z" finished-at="2020-12-04T10:59:09Z">
           <params>
             <param index="0">
               <value>
@@ -53,52 +51,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="SearchUserTest()[pri:3, instance:test.TestVeriday@335eadca]" name="SearchUserTest" duration-ms="24791" started-at="2020-12-02T13:14:59Z" finished-at="2020-12-02T13:15:24Z">
+        <test-method status="PASS" signature="CreateTeamUserTest()[pri:2, instance:test.TestVeriday@335eadca]" name="CreateTeamUserTest" duration-ms="44855" started-at="2020-12-04T10:59:09Z" finished-at="2020-12-04T10:59:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchUserTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-02T13:15:24Z" finished-at="2020-12-02T13:15:24Z">
+        </test-method> <!-- CreateTeamUserTest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-12-04T10:59:54Z" finished-at="2020-12-04T10:59:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=SearchUserTest status=SUCCESS method=TestVeriday.SearchUserTest()[pri:3, instance:test.TestVeriday@335eadca] output={null}]]]>
+                <![CDATA[[TestResult name=CreateTeamUserTest status=SUCCESS method=TestVeriday.CreateTeamUserTest()[pri:2, instance:test.TestVeriday@335eadca] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="ImpersonateUserTest()[pri:4, instance:test.TestVeriday@335eadca]" name="ImpersonateUserTest" duration-ms="1897" started-at="2020-12-02T13:15:24Z" finished-at="2020-12-02T13:15:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ImpersonateUserTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-12-02T13:15:26Z" finished-at="2020-12-02T13:15:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=ImpersonateUserTest status=SUCCESS method=TestVeriday.ImpersonateUserTest()[pri:4, instance:test.TestVeriday@335eadca] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="CreateNewFormTest()[pri:7, instance:test.TestVeriday@335eadca]" name="CreateNewFormTest" duration-ms="38972" started-at="2020-12-02T13:15:26Z" finished-at="2020-12-02T13:16:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateNewFormTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-02T13:16:05Z" finished-at="2020-12-02T13:16:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CreateNewFormTest status=SUCCESS method=TestVeriday.CreateNewFormTest()[pri:7, instance:test.TestVeriday@335eadca] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="243" started-at="2020-12-02T13:16:05Z" finished-at="2020-12-02T13:16:05Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="254" started-at="2020-12-04T10:59:54Z" finished-at="2020-12-04T10:59:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

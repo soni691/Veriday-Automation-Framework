@@ -18,6 +18,7 @@ import pages.ConstantInterface;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -811,6 +812,7 @@ public class BasePage {
 		  // send the email
 		  email.send();
 	}
+	
 //	@AfterTest
 //	public void resultDetails(ITestResult testResult) {
 //		if (testResult.getStatus() == ITestResult.FAILURE) {
