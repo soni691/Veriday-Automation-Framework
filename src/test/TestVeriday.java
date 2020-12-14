@@ -24,6 +24,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+
 //import com.tests.LoginTest;
 
 import BasePage.BasePage;
@@ -33,11 +34,18 @@ import createObject.CreateObject;
 import pages.*;
 import utility.ExcelDataRead;
 import dashboard.Dashboard;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 
 //@Listeners(CustomListener.class)
 public class TestVeriday extends BasePage {
 
-	@Test(groups = {"Regression"},priority=0,enabled= true)
+	@Test(groups = {"Regression"},priority=0,enabled= true,description = "verifying user is able to login page")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("User is able to Login")
+	@Story("Story Name:To check Login page ")
 	public void loginTest() throws Exception {
 		extentTest = extent.startTest("loginTest");
 		//Assigning Excel file Data
@@ -55,6 +63,9 @@ public class TestVeriday extends BasePage {
 
 	}
 	@Test(groups = {"Regression"},priority=2,enabled= true)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("User is able to create a new Team User")
+	@Story("Story Name:To create a new Team User ")
 	public void CreateTeamUserTest() throws Exception {
 		extentTest = extent.startTest("CreateTeamUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");

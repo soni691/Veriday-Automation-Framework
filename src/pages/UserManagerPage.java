@@ -17,6 +17,7 @@ import org.testng.asserts.SoftAssert;
 import com.google.inject.spi.Element;
 
 import BasePage.BasePage;
+import io.qameta.allure.Step;
 
 public class UserManagerPage extends BasePage {
 
@@ -198,6 +199,7 @@ public class UserManagerPage extends BasePage {
 		}
 	
 		}
+	@Step("Create a New Team User with email {uemail}")
 	public void CreateTeamUser() throws Exception {
 		//Thread.sleep(2000);
 		String uemail=ExcelUtils.getCellData(1, 0);

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 
 import BasePage.BasePage;
+import io.qameta.allure.Step;
 import pages.ExcelUtils;
 import utility.ExcelDataRead;
     public class LoginPage extends BasePage {
@@ -34,6 +35,7 @@ import utility.ExcelDataRead;
 		public void clickLogin() {
 			click(login);
 		}
+		@Step("Login with UserName: {0} & Password: {1} to Login Page")
 		public void LoginToCRM() throws Exception {
 			
 			String LoginBy=ExcelUtils.getCellData(1, 4);

@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="6" total="8" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="72517" started-at="2020-12-04T10:58:41Z" finished-at="2020-12-04T10:59:54Z">
+  <suite name="Suite" duration-ms="87900" started-at="2020-12-14T07:26:30Z" finished-at="2020-12-14T07:27:58Z">
     <groups>
       <group name="Regression">
         <method signature="TestVeriday.CreateTeamUserTest()[pri:2, instance:test.TestVeriday@335eadca]" name="CreateTeamUserTest" class="test.TestVeriday"/>
         <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" class="test.TestVeriday"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="TestCRM" duration-ms="72517" started-at="2020-12-04T10:58:41Z" finished-at="2020-12-04T10:59:54Z">
+    <test name="TestCRM" duration-ms="87900" started-at="2020-12-14T07:26:30Z" finished-at="2020-12-14T07:27:58Z">
       <class name="test.TestVeriday">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="116" started-at="2020-12-04T10:58:41Z" finished-at="2020-12-04T10:58:42Z">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@335eadca]" name="setExtent" is-config="true" duration-ms="299" started-at="2020-12-14T07:26:30Z" finished-at="2020-12-14T07:26:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="14782" started-at="2020-12-04T10:58:42Z" finished-at="2020-12-04T10:58:56Z">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@335eadca]" name="initializeTestBaseSetup" is-config="true" duration-ms="19464" started-at="2020-12-14T07:26:30Z" finished-at="2020-12-14T07:26:49Z">
           <params>
             <param index="0">
               <value>
@@ -36,11 +36,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="12490" started-at="2020-12-04T10:58:56Z" finished-at="2020-12-04T10:59:09Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@335eadca]" name="loginTest" duration-ms="19006" started-at="2020-12-14T07:26:49Z" finished-at="2020-12-14T07:27:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="2" started-at="2020-12-04T10:59:09Z" finished-at="2020-12-04T10:59:09Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="4" started-at="2020-12-14T07:27:08Z" finished-at="2020-12-14T07:27:08Z">
           <params>
             <param index="0">
               <value>
@@ -51,11 +51,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="CreateTeamUserTest()[pri:2, instance:test.TestVeriday@335eadca]" name="CreateTeamUserTest" duration-ms="44855" started-at="2020-12-04T10:59:09Z" finished-at="2020-12-04T10:59:54Z">
+        <test-method status="PASS" signature="CreateTeamUserTest()[pri:2, instance:test.TestVeriday@335eadca]" name="CreateTeamUserTest" duration-ms="48244" started-at="2020-12-14T07:27:08Z" finished-at="2020-12-14T07:27:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateTeamUserTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-12-04T10:59:54Z" finished-at="2020-12-04T10:59:54Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="865" started-at="2020-12-14T07:27:57Z" finished-at="2020-12-14T07:27:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@335eadca]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-14T07:27:57Z" finished-at="2020-12-14T07:27:57Z">
           <params>
             <param index="0">
               <value>
@@ -66,10 +70,6 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@335eadca]" name="endReport" is-config="true" duration-ms="254" started-at="2020-12-04T10:59:54Z" finished-at="2020-12-04T10:59:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endReport -->
       </class> <!-- test.TestVeriday -->
     </test> <!-- TestCRM -->
   </suite> <!-- Suite -->
