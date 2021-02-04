@@ -78,6 +78,11 @@ public class UserManagerPage extends BasePage {
 	By Back = By.xpath("//button[contains(text(),'Back')]");
 	//Identify Province license for DEMo QA Primary User
 	By StatesofRegistration = By.xpath("//input[@id='provincial-list']");
+	//identify error while creating user
+	By UserCreationError = By.xpath("//p[contains(text(),'Sorry, an unexpected error occurred. Please contac')]");
+	//identify saving option after clicking on save button of user creation
+	By UserSave = By.xpath("//div[@class='modal-body alert-success']");
+	
 	public String append;
 		
 	void setAccountEmail(String uemail) {
@@ -188,15 +193,31 @@ public class UserManagerPage extends BasePage {
 	    waitAndFindElement(SaveUser, Condition.isClickable, 3, 1000);
 	    scrollToTop();	    
 		click(SaveUser);
-		usermanagerlog.info("New Primary User Is created");
+		//usermanagerlog.info("New Primary User Is created");
 		Thread.sleep(2000);
-		//waitAndFindElement(AlreadyCreatedUserModal, Condition.isPresent, 2, 1000);
+		waitAndFindElement(UserSave, Condition.isDisplayed, 2, 4000);
+		boolean presentuser = isElementPresent(UserSave);
+		if(presentuser==true) {
+			usermanagerlog.info("New Primary User Is created");
+		}
+		else {
+			usermanagerlog.info("Sorry, an unexpected error occurred. Please contact your system administrator for assistance.");
+			click(AlreadyCreatedUserOk);
+			waitAndFindElement(Back, Condition.isClickable, 2, 1000).click();
+		}
 		boolean present = isElementPresent(AlreadyCreatedUserModal);
 		if(present==true) {
 			usermanagerlog.info("Sorry, this account already exists.");
 			click(AlreadyCreatedUserOk);
 			waitAndFindElement(Back, Condition.isClickable, 2, 1000).click();
 		}
+		/*
+		 * boolean usercreation = isElementPresent(UserCreationError);
+		 * if(usercreation==true) { usermanagerlog.
+		 * info("Sorry, an unexpected error occurred. Please contact your system administrator for assistance."
+		 * ); click(AlreadyCreatedUserOk); waitAndFindElement(Back,
+		 * Condition.isClickable, 2, 1000).click(); }
+		 */
 	
 		}
 	@Step("Create a New Team User with email {uemail}")

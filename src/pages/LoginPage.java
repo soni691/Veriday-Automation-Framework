@@ -1,5 +1,7 @@
 package pages;
 
+import static org.testng.Assert.assertTrue;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -60,6 +62,7 @@ import utility.ExcelDataRead;
 			setPassword(Password);
 			Thread.sleep(1000);	
 			clickLogin();
+			assertTrue(driver.getTitle().contains("User Manager - Digital Agent"));
 			Testlogger.info("Login Test Case is Successful");
 		}
 		

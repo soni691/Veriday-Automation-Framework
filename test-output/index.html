@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,8 +24,9 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>D:\VeridayAutomationGit\Veriday-Automation-Framework\testng.xml</span>
+                    <span>E:\Veriday-Automation-Framework\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,26 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="CreateTeamUserTest">CreateTeamUserTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.TestVeriday" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,48 +119,49 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">test.TestVeriday</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="CreateTeamUserTest">
-                  </a> <!-- CreateTeamUserTest -->
-                  <span class="method-name">CreateTeamUserTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="loginTest">
                   </a> <!-- loginTest -->
                   <span class="method-name">loginTest</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at pages.LoginPage.LoginToCRM(LoginPage.java:65)
+	at test.TestVeriday.loginTest(TestVeriday.java:51)
+	at java.util.ArrayList.forEach(Unknown Source)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(verifying user is able to login page)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\VeridayAutomationGit\Veriday-Automation-Framework\testng.xml</span>
+            <span class="header-content">E:\Veriday-Automation-Framework\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
-  &lt;parameter name=&quot;appURL&quot; value=&quot;http://node-1.nginx.portal.da-1.demo.qa.aws.veriday.net/login&quot;/&gt;
-  &lt;parameter name=&quot;loggerProperties&quot; value=&quot;log4j.properties&quot;/&gt;
-  &lt;listeners&gt;
-    &lt;listener class-name=&quot;ExtentReportListener.ExtentReportCreate&quot;/&gt;
-  &lt;/listeners&gt;
   &lt;groups&gt;
     &lt;run&gt;
       &lt;include name=&quot;Regression&quot;/&gt;
     &lt;/run&gt;
   &lt;/groups&gt;
+  &lt;parameter name=&quot;appURL&quot; value=&quot;http://node-1.nginx.portal.da-1.demo.qa.aws.veriday.net/login&quot;/&gt;
+  &lt;parameter name=&quot;loggerProperties&quot; value=&quot;log4j.properties&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;ExtentReportListener.ExtentReportCreate&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;TestCRM&quot;&gt;
     &lt;parameter name=&quot;browserType&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
@@ -195,10 +193,6 @@
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">CreateTeamUserTest</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
                 <span class="method-in-group-name">loginTest</span>
                 <br/>
               </div> <!-- method-in-group -->
@@ -219,15 +213,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'CreateTeamUserTest')
+data.setCell(0, 1, 'loginTest')
 data.setCell(0, 2, 'test.TestVeriday')
-data.setCell(0, 3, 48244);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginTest')
-data.setCell(1, 2, 'test.TestVeriday')
-data.setCell(1, 3, 19006);
+data.setCell(0, 3, 67214);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -247,12 +237,14 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">6 ignored methods</span>
+            <span class="header-content">7 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">test.TestVeriday</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">CreateTeamUserTest</span>
+                <br/>
                 <span class="ignored-method-name">CreateNewWebPageTest</span>
                 <br/>
                 <span class="ignored-method-name">CreatePrimaryUserTest</span>
@@ -282,31 +274,26 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">initializeTestBaseSetup(chrome, http://node-1.nginx.portal.da-1.demo.qa.aws.veriday.net/login, log4j.properties)</span>
-                <span class="method-start">304 ms</span>
+                <span class="method-start">92 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">loginTest</span>
-                <span class="method-start">19772 ms</span>
+                <span class="method-start">14842 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=loginTest status=SUCCESS method=TestVeriday.loginTest()[pri:0, instance:test.TestVe...)</span>
-                <span class="method-start">38782 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">CreateTeamUserTest</span>
-                <span class="method-start">38787 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=CreateTeamUserTest status=SUCCESS method=TestVeriday.CreateTeamUserTest()[pri:2, in...)</span>
-                <span class="method-start">87033 ms</span>
+                <span class="method-name">tearDown([TestResult name=loginTest status=FAILURE method=TestVeriday.loginTest()[pri:0, instance:test.TestVe...)</span>
+                <span class="method-start">82084 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">endReport</span>
-                <span class="method-start">87033 ms</span>
+                <span class="method-start">103604 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

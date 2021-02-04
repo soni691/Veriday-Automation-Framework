@@ -801,7 +801,7 @@ public class BasePage {
 		  email.setSSLOnConnect(true);
 		  email.setSmtpPort(465);
 		  email.setAuthenticator(new DefaultAuthenticator("sumitsoni691@gmail.com", "Sumit@123"));
-		  email.addTo("sumitsoni691@gmail.com", "Sumit Soni");
+		  email.addTo("sumit.soni@veriday.com", "Sumit Soni");
 		  email.setFrom("sumitsoni691@gmail.com", "Me");
 		  email.setSubject("Veriday Automation Test Execution Report");
 		  email.setMsg("Veriday Automation Test Execution Report");

@@ -18,6 +18,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="var" path="TESTNG_HOME"/>
-	<classpathentry kind="lib" path="C:/Users/sumit.soni/Downloads/extentreports-2.41.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

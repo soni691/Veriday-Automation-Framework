@@ -1,8 +1,2 @@
-14/12/2020 13:33:03 -- [ BasePage ] --> Launching google chrome from BasePage....
-14/12/2020 13:33:23 -- [ BasePage ] --> This is Before Class method
-14/12/2020 13:33:41 -- [ LoginPage ] --> Login Test Case is Successful
-14/12/2020 13:34:33 -- [ UserManagerPage ] --> Email of the user istur202012160134@gmail.com
-14/12/2020 13:34:34 -- [ UserManagerPage ] --> First Name of the user is James202012160134
-14/12/2020 13:34:34 -- [ UserManagerPage ] --> Last Name of the user is Wilson202012160134
-14/12/2020 13:34:36 -- [ UserManagerPage ] --> Team name is TestAutomation202012160134
-14/12/2020 13:34:37 -- [ UserManagerPage ] --> New Team User Is created
+04/02/2021 17:37:38 -- [ BasePage ] --> Launching google chrome from BasePage....
+04/02/2021 17:37:53 -- [ BasePage ] --> This is Before Class method
