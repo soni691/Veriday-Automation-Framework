@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite" parallel="tests" thread-count="1">
 	<groups>
 		<run>
 			<include name="Regression"></include>
@@ -17,11 +17,25 @@
 			class-name="ExtentReportListener.ExtentReportCreate" />
 	</listeners>
 
-	<test name="TestCRM">
+	<test name="TestonChrome">
 		<parameter name="browserType" value="chrome" />
 		<classes>
 			<class name="test.TestVeriday" />
 		</classes>
+	</test> 
+	
+<!-- 	<test name="TestonFF"> -->
+<!-- 		<parameter name="browserType" value="firefox" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="test.TestVeriday" /> -->
+<!-- 		</classes> -->
 
-	</test> <!-- TestCRM -->
+<!-- 	</test> -->
+<!-- 	<test name="TestonIE">
+		<parameter name="browserType" value="ie" />
+		<classes>
+			<class name="test.TestVeriday" />
+		</classes>
+
+	</test> -->
 </suite> <!-- Suite -->

@@ -50,7 +50,7 @@ public class TestVeriday extends BasePage {
 		//Login Method
 		co.objLogin.LoginToCRM();
 	}
-	@Test(groups = {"Regression"},priority=1,enabled= false)
+	@Test(groups = {"Regression"},priority=1,enabled= true)
 	public void CreatePrimaryUserTest() throws Exception {
 		extentTest = extent.startTest("CreatePrimaryUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -59,7 +59,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.CreatePrimaryUser();
 
 	}
-	@Test(groups = {"Regression"},priority=2,enabled= false)
+	@Test(groups = {"Regression"},priority=2,enabled= true)
 	public void CreateTeamUserTest() throws Exception {
 		extentTest = extent.startTest("CreateTeamUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");

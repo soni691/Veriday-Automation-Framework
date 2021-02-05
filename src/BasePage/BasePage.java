@@ -44,6 +44,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -69,8 +71,8 @@ import com.relevantcodes.extentreports.LogStatus;
 
 /**
  * @version 1.0
- * @created : 03/04/2018
- * @author badal.gandhi
+ * @created : 03/12/2020
+ * @author Sumit Soni
  *
  *         BasePage class contains all the required utilities which can be used
  *         in entire project
@@ -192,6 +194,9 @@ public class BasePage {
 		case "firefox":
 			driver = initFirefoxDriver(appURL);
 			break;
+		case "ie":
+			driver = initIEDriver(appURL);
+			break;
 
 		default:
 			driver = initChromeDriver(appURL);
@@ -249,6 +254,28 @@ public class BasePage {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.navigate().to(appURL);
+		return driver;
+	}
+	
+
+	private static WebDriver initIEDriver(String appURL) {
+		System.out.println("Launching IE browser..");
+		
+		/*
+		 * DesiredCapabilities cap =new DesiredCapabilities();
+		 * cap.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+		 * System.setProperty("webdriver.ie.driver", projectDirectory +
+		 * "\\drivers\\IEDriverServer.exe"); WebDriver driver=new
+		 * InternetExplorerDriver(cap);
+		 */
+		//InternetExplorerOptions options = new InternetExplorerOptions();
+		//options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		//options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+		WebDriver driver = new InternetExplorerDriver();
+		driver.manage().window().maximize();
+		driver.navigate().to(appURL);		
+		driver.navigate().to("javascript:document.getElementById('overridelink').click()");
+		//driver.get("javascript:document.getElementById('overridelink').click();");
 		return driver;
 	}
 

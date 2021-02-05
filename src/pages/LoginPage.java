@@ -62,7 +62,7 @@ import utility.ExcelDataRead;
 			setPassword(Password);
 			Thread.sleep(1000);	
 			clickLogin();
-			assertTrue(driver.getTitle().contains("User Manager - Digital Agent"));
+			assertTrue(driver.getTitle().contains("Digital Workspace - Digital Agent"));
 			Testlogger.info("Login Test Case is Successful");
 		}
 		

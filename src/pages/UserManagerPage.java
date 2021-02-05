@@ -1,5 +1,7 @@
 package pages;
 
+import static org.testng.Assert.assertTrue;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -195,16 +197,8 @@ public class UserManagerPage extends BasePage {
 		click(SaveUser);
 		//usermanagerlog.info("New Primary User Is created");
 		Thread.sleep(2000);
-		waitAndFindElement(UserSave, Condition.isDisplayed, 2, 4000);
-		boolean presentuser = isElementPresent(UserSave);
-		if(presentuser==true) {
-			usermanagerlog.info("New Primary User Is created");
-		}
-		else {
-			usermanagerlog.info("Sorry, an unexpected error occurred. Please contact your system administrator for assistance.");
-			click(AlreadyCreatedUserOk);
-			waitAndFindElement(Back, Condition.isClickable, 2, 1000).click();
-		}
+		assertTrue(driver.getTitle().contains("User Manager - Digital Agent"));
+		usermanagerlog.info("New Primary User Is created");
 		boolean present = isElementPresent(AlreadyCreatedUserModal);
 		if(present==true) {
 			usermanagerlog.info("Sorry, this account already exists.");
@@ -258,6 +252,7 @@ public class UserManagerPage extends BasePage {
 		    waitAndFindElement(SaveUser, Condition.isClickable, 3, 1000);
 		    scrollToTop();
 			click(SaveUser);
+			assertTrue(driver.getTitle().contains("User Manager - Digital Agent"));
 			usermanagerlog.info("New Team User Is created");
 			Thread.sleep(2000);
 			boolean UserPresent = isElementPresent(AlreadyCreatedUserModal);
