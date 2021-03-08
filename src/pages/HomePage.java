@@ -29,9 +29,9 @@ public class HomePage extends BasePage {
 	// Identify UserManager option
 	By usermanager = By.xpath("//a[@href='/user-manager']");
 	// Identify Queues option
-	By queues = By.xpath("//h3[normalize-space()='Queues']");
+	By queues = By.xpath("//h3[contains(text(),'Queues')]");
 	// Identify Organizational Groups option
-	By ogroups = By.xpath("//h3[normalize-space()='Organizational Groups']");
+	By ogroups = By.xpath("//h3[contains(text(),'Organizational Groups')]"); 
 	// Identify Back to Digital Workspace option
 	By dworkspace = By.xpath("//a[normalize-space()='Back to Digital Workspace']");
 
