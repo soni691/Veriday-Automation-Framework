@@ -74,11 +74,6 @@
 			<version>2.41.2</version>
 		</dependency>
 		<dependency>
-		<groupId>com.aventstack</groupId>
-        <artifactId>extentreports</artifactId>
-        <version>3.0.1</version>
-        </dependency>
-		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>2.3.23</version>
@@ -122,7 +117,6 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<fork>true</fork>
-					<executable>C:\Program Files\Java\jdk1.8.0_241\bin\javac.exe</executable>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -134,15 +128,7 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjweaver</artifactId>
-						<version>${aspectj.version}</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
