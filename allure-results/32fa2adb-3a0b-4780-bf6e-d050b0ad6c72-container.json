@@ -1,0 +1,1 @@
+{"uuid":"32fa2adb-3a0b-4780-bf6e-d050b0ad6c72","name":"test.TestVeriday","children":["0ec50796-6200-4e3d-a27c-acaf9c9597ca"],"befores":[{"name":"initializeTestBaseSetup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1615197786984,"stop":1615197801632}],"afters":[],"links":[],"start":1615197786682,"stop":1615197814073}

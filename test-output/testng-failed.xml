@@ -17,10 +17,10 @@
       <class name="test.TestVeriday">
         <methods>
           <include name="initializeTestBaseSetup"/>
-          <include name="loginTest"/>
           <include name="tearDown"/>
           <include name="endReport"/>
           <include name="setExtent"/>
+          <include name="ValidateHomePgaeOptions"/>
         </methods>
       </class> <!-- test.TestVeriday -->
     </classes>

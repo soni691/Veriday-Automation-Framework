@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="7" total="9" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="15386" started-at="2021-03-08T16:15:17 IST" finished-at="2021-03-08T16:15:32 IST">
+  <suite name="Suite" duration-ms="178175" started-at="2021-03-08T16:27:00 IST" finished-at="2021-03-08T16:29:58 IST">
     <groups>
       <group name="Regression">
-        <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@7ea9e1e2]" name="loginTest" class="test.TestVeriday"/>
+        <method signature="TestVeriday.ValidateHomePgaeOptions()[pri:8, instance:test.TestVeriday@4d5b6aac]" name="ValidateHomePgaeOptions" class="test.TestVeriday"/>
+        <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@4d5b6aac]" name="loginTest" class="test.TestVeriday"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="TestonChrome" duration-ms="15386" started-at="2021-03-08T16:15:17 IST" finished-at="2021-03-08T16:15:32 IST">
+    <test name="TestonChrome" duration-ms="178175" started-at="2021-03-08T16:27:00 IST" finished-at="2021-03-08T16:29:58 IST">
       <class name="test.TestVeriday">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@7ea9e1e2]" name="setExtent" is-config="true" duration-ms="16" started-at="2021-03-08T16:15:17 IST" finished-at="2021-03-08T16:15:17 IST">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@4d5b6aac]" name="setExtent" is-config="true" duration-ms="82" started-at="2021-03-08T16:27:00 IST" finished-at="2021-03-08T16:27:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@7ea9e1e2]" name="initializeTestBaseSetup" is-config="true" duration-ms="15186" started-at="2021-03-08T16:15:17 IST" finished-at="2021-03-08T16:15:32 IST">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@4d5b6aac]" name="initializeTestBaseSetup" is-config="true" duration-ms="15104" started-at="2021-03-08T16:27:00 IST" finished-at="2021-03-08T16:27:16 IST">
           <params>
             <param index="0">
               <value>
@@ -35,17 +36,66 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="FAIL" signature="loginTest()[pri:0, instance:test.TestVeriday@7ea9e1e2]" name="loginTest" duration-ms="51" started-at="2021-03-08T16:15:32 IST" description="verifying user is able to login page" finished-at="2021-03-08T16:15:32 IST">
-          <exception class="java.lang.IllegalStateException">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@4d5b6aac]" name="loginTest" duration-ms="11565" started-at="2021-03-08T16:27:16 IST" finished-at="2021-03-08T16:27:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@4d5b6aac]" name="tearDown" is-config="true" duration-ms="3" started-at="2021-03-08T16:27:27 IST" finished-at="2021-03-08T16:27:27 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@4d5b6aac] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="FAIL" signature="ValidateHomePgaeOptions()[pri:8, instance:test.TestVeriday@4d5b6aac]" name="ValidateHomePgaeOptions" duration-ms="138758" started-at="2021-03-08T16:27:27 IST" finished-at="2021-03-08T16:29:46 IST">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[No reporters were started. Atleast 1 reporter must be started to create tests.]]>
+              <![CDATA[chrome not reachable
+  (Session info: chrome=88.0.4324.190)
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'DESKTOP-T371OBQ', ip: '192.168.113.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 88.0.4324.190, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\SUMIT~1.SON\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:52698}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 572f802b3c4e999a2f159469e9da2703
+*** Element info: {Using=xpath, value=//h3[normalize-space()='Queues']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: No reporters were started. Atleast 1 reporter must be started to create tests.
-at com.aventstack.extentreports.Report.createTest(Report.java:61)
-at com.aventstack.extentreports.ExtentReports.createTest(ExtentReports.java:230)
-at com.aventstack.extentreports.ExtentReports.createTest(ExtentReports.java:243)
-at test.TestVeriday.loginTest(TestVeriday.java:54)
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=88.0.4324.190)
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'DESKTOP-T371OBQ', ip: '192.168.113.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 88.0.4324.190, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\SUMIT~1.SON\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:52698}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 572f802b3c4e999a2f159469e9da2703
+*** Element info: {Using=xpath, value=//h3[normalize-space()='Queues']}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+at BasePage.BasePage.waitAndFindElement(BasePage.java:408)
+at BasePage.BasePage.findClickableElement(BasePage.java:378)
+at BasePage.BasePage.click(BasePage.java:622)
+at pages.HomePage.validateQueues(HomePage.java:57)
+at test.TestVeriday.ValidateHomePgaeOptions(TestVeriday.java:126)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -71,22 +121,50 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="FAIL" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@7ea9e1e2]" name="tearDown" is-config="true" duration-ms="1" started-at="2021-03-08T16:15:32 IST" finished-at="2021-03-08T16:15:32 IST">
+        </test-method> <!-- ValidateHomePgaeOptions -->
+        <test-method status="FAIL" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@4d5b6aac]" name="tearDown" is-config="true" duration-ms="12223" started-at="2021-03-08T16:29:46 IST" finished-at="2021-03-08T16:29:58 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginTest status=FAILURE method=TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@7ea9e1e2] output={null}]]]>
+                <![CDATA[[TestResult name=ValidateHomePgaeOptions status=FAILURE method=TestVeriday.ValidateHomePgaeOptions()[pri:8, instance:test.TestVeriday@4d5b6aac] output={null}]]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[chrome not reachable
+  (Session info: chrome=88.0.4324.190)
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'DESKTOP-T371OBQ', ip: '192.168.113.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 88.0.4324.190, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\SUMIT~1.SON\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:52698}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 572f802b3c4e999a2f159469e9da2703]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at BasePage.BasePage.tearDown(BasePage.java:807)
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=88.0.4324.190)
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'DESKTOP-T371OBQ', ip: '192.168.113.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 88.0.4324.190, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\SUMIT~1.SON\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:52698}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 572f802b3c4e999a2f159469e9da2703
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+at BasePage.BasePage.getScreenshot(BasePage.java:775)
+at BasePage.BasePage.tearDown(BasePage.java:805)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -117,42 +195,11 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="endReport()[pri:0, instance:test.TestVeriday@7ea9e1e2]" name="endReport" is-config="true" duration-ms="9" started-at="2021-03-08T16:15:32 IST" finished-at="2021-03-08T16:15:32 IST">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[No reporters were started. Atleast 1 reporter must be started to flush results.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: No reporters were started. Atleast 1 reporter must be started to flush results.
-at com.aventstack.extentreports.Report.flush(Report.java:129)
-at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:261)
-at BasePage.BasePage.endReport(BasePage.java:798)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
-at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:617)
-at org.testng.TestRunner.afterRun(TestRunner.java:847)
-at org.testng.TestRunner.run(TestRunner.java:588)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:425)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:66)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@4d5b6aac]" name="endReport" is-config="true" duration-ms="240" started-at="2021-03-08T16:29:58 IST" finished-at="2021-03-08T16:29:58 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
