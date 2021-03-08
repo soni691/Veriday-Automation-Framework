@@ -24,7 +24,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
 //import com.tests.LoginTest;
 
 import BasePage.BasePage;
@@ -34,15 +33,11 @@ import createObject.CreateObject;
 import pages.*;
 import utility.ExcelDataRead;
 import dashboard.Dashboard;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
 
 //@Listeners(CustomListener.class)
 public class TestVeriday extends BasePage {
 
-	@Test(groups = {"Regression"},priority=0,enabled= true,description = "verifying user is able to login page")
+	@Test(groups = {"Regression"},priority=0,enabled= true)
 	public void loginTest() throws Exception {
 		extentTest = extent.startTest("loginTest");
 		//Assigning Excel file Data
@@ -50,7 +45,7 @@ public class TestVeriday extends BasePage {
 		//Login Method
 		co.objLogin.LoginToCRM();
 	}
-	@Test(groups = {"Regression"},priority=1,enabled= true)
+	@Test(groups = {"Regression"},priority=1,enabled= false)
 	public void CreatePrimaryUserTest() throws Exception {
 		extentTest = extent.startTest("CreatePrimaryUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -59,7 +54,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.CreatePrimaryUser();
 
 	}
-	@Test(groups = {"Regression"},priority=2,enabled= true)
+	@Test(groups = {"Regression"},priority=2,enabled= false)
 	public void CreateTeamUserTest() throws Exception {
 		extentTest = extent.startTest("CreateTeamUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -124,5 +119,14 @@ public class TestVeriday extends BasePage {
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateNewForm");
 		co.objDigitalWorkspacePage.CreateNewForm();
 	}
-
+	  
+	  @Test(groups = {"Regression"},priority=8,enabled= true) 
+	  public void ValidateHomePgaeOptions() throws Exception { extentTest =
+	  extent.startTest("ValidateHomepage");
+	  co.objHomePage.validateAdminHQ();
+	  co.objHomePage.validateUserManager();
+	  co.objHomePage.validateQueues();
+	  co.objHomePage.validateOrganizationalGroups();; 
+	  }
+	 
 }

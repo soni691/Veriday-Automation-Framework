@@ -19,6 +19,7 @@ import org.testng.asserts.SoftAssert;
 import com.google.inject.spi.Element;
 
 import BasePage.BasePage;
+import ExtraData.variables;
 import io.qameta.allure.Step;
 
 public class UserManagerPage extends BasePage {

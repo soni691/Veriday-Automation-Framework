@@ -1,2 +1,5 @@
-05/02/2021 16:42:22 -- [ BasePage ] --> Launching google chrome from BasePage....
-05/02/2021 16:42:39 -- [ BasePage ] --> This is Before Class method
+08/03/2021 16:27:00 -- [ BasePage ] --> Launching google chrome from BasePage....
+08/03/2021 16:27:16 -- [ BasePage ] --> This is Before Class method
+08/03/2021 16:27:27 -- [ LoginPage ] --> Login Test Case is Successful
+08/03/2021 16:27:39 -- [ Homepage ] --> AdminHQ option is visible & working fine
+08/03/2021 16:28:01 -- [ Homepage ] --> User manager option is visible & working fine

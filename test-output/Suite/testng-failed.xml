@@ -6,8 +6,8 @@
   <listeners>
     <listener class-name="ExtentReportListener.ExtentReportCreate"/>
   </listeners>
-  <test thread-count="1" name="TestonIE(failed)" parallel="tests">
-    <parameter name="browserType" value="ie"/>
+  <test thread-count="1" name="TestonChrome(failed)" parallel="tests">
+    <parameter name="browserType" value="chrome"/>
     <groups>
       <run>
         <include name="Regression"/>
@@ -16,9 +16,7 @@
     <classes>
       <class name="test.TestVeriday">
         <methods>
-          <include name="CreateTeamUserTest"/>
           <include name="initializeTestBaseSetup"/>
-          <include name="CreatePrimaryUserTest"/>
           <include name="loginTest"/>
           <include name="tearDown"/>
           <include name="endReport"/>
@@ -26,5 +24,5 @@
         </methods>
       </class> <!-- test.TestVeriday -->
     </classes>
-  </test> <!-- TestonIE(failed) -->
+  </test> <!-- TestonChrome(failed) -->
 </suite> <!-- Failed suite [Suite] -->
