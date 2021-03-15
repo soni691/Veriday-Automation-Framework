@@ -19,8 +19,8 @@
           <include name="initializeTestBaseSetup"/>
           <include name="tearDown"/>
           <include name="endReport"/>
+          <include name="DeleteGroup"/>
           <include name="setExtent"/>
-          <include name="ValidateHomePgaeOptions"/>
         </methods>
       </class> <!-- test.TestVeriday -->
     </classes>

@@ -120,13 +120,61 @@ public class TestVeriday extends BasePage {
 		co.objDigitalWorkspacePage.CreateNewForm();
 	}
 	  
-	  @Test(groups = {"Regression"},priority=8,enabled= true) 
-	  public void ValidateHomePgaeOptions() throws Exception { extentTest =
-	  extent.startTest("ValidateHomepage");
+	  @Test(groups = {"Regression"},priority=8,enabled= false) 
+	  public void ValidateHomePgaeOptions() throws Exception { 
+	  extentTest = extent.startTest("ValidateHomepage");
 	  co.objHomePage.validateAdminHQ();
 	  co.objHomePage.validateUserManager();
 	  co.objHomePage.validateQueues();
 	  co.objHomePage.validateOrganizationalGroups();; 
+	  }
+	  
+	  @Test(groups = {"Regression"},priority=9,enabled= false) 
+	  public void ValidateAdminHQOptions() throws Exception
+	  { 
+      extentTest = extent.startTest("ValidateAdminHQOptions");
+	  co.objHomePage.validateHubManager();
+	  co.objHomePage.validateGlobalSettings();
+	  co.objHomePage.validateEmailTemplates();
+	  co.objHomePage.validateMaintenance();
+	  }
+	  @Test(groups = {"Regression"},priority=10,enabled= false) 
+	  public void ValidateDigitalWorkSpaceOptions() throws Exception
+	  { 
+      extentTest = extent.startTest("ValidateDigitalWorkSpaceOptions");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"SearchUser");
+	  co.objUserManager.SearchUser1();
+	  ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"SearchUser");
+	  co.objUserManager.ImpersonateUser();
+	  co.objDigitalWorkspacePage.validateDWSettings();
+	  co.objDigitalWorkspacePage.validateDWMyWebsite();
+	  co.objDigitalWorkspacePage.validateDWBlog();
+	  co.objDigitalWorkspacePage.validateDWForm();
+	  co.objDigitalWorkspacePage.validateDWEvents();
+	  co.objDigitalWorkspacePage.validateDWPolls();
+	  co.objDigitalWorkspacePage.validateDWRecycleBin();
+	  co.objDigitalWorkspacePage.validateDWMyProfile();
+	  co.objDigitalWorkspacePage.validateDWUpdates();
+	  co.objDigitalWorkspacePage.validateDWCampaignManager();
+	  co.objDigitalWorkspacePage.validateDWContentCollection();
+	  }
+	  
+	  @Test(groups = {"Regression"},priority=10,enabled= false) 
+	  public void CreateGroup() throws Exception
+	  { 
+      extentTest = extent.startTest("CreateNewGroup");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
+      co.objHomePage.CreateNewGroup();
+      co.objHomePage.UpdateGroup();
+      co.objHomePage.DeleteGroup();
+	  }
+	  @Test(groups = {"Regression"},priority=11,enabled= true) 
+	  public void DeleteGroup() throws Exception
+	  { 
+      extentTest = extent.startTest("DeleteNewGroup");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
+      co.objHomePage.CreateNewGroup();
+      co.objHomePage.DeleteGroup();
 	  }
 	 
 }

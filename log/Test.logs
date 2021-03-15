@@ -1,7 +1,4 @@
-08/03/2021 19:47:50 -- [ BasePage ] --> Launching google chrome from BasePage....
-08/03/2021 19:48:06 -- [ BasePage ] --> This is Before Class method
-08/03/2021 19:48:21 -- [ LoginPage ] --> Login Test Case is Successful
-08/03/2021 19:48:33 -- [ Homepage ] --> AdminHQ option is visible & working fine
-08/03/2021 19:49:05 -- [ Homepage ] --> User manager option is visible & working fine
-08/03/2021 19:49:24 -- [ Homepage ] --> Queues option is visible & working fine
-08/03/2021 19:49:48 -- [ Homepage ] --> Organizational Groups option is visible & working fine
+15/03/2021 16:14:32 -- [ BasePage ] --> Launching google chrome from BasePage....
+15/03/2021 16:14:49 -- [ BasePage ] --> This is Before Class method
+15/03/2021 16:15:04 -- [ LoginPage ] --> Login Test Case is Successful
+15/03/2021 16:15:21 -- [ Homepage ] --> New Group Is created with Name AutomationGroup202103170415

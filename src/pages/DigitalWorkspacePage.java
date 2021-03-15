@@ -1,5 +1,7 @@
 package pages;
 
+import static org.testng.Assert.assertTrue;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -128,6 +130,28 @@ public class DigitalWorkspacePage extends BasePage{
     By Column2TemplateDemo =By.xpath("//*[@id=\"page-edit\"]/div[3]/div/div[8]/div[1]/ul/li[2]/label/div/div/input");
     //Identify Email on Create New page of Demo QA env.
     By DemoPageEmailSelect =By.xpath("//input[@id='alisha.new@veriday.com']");
+    //Identify My Website option on Digital Workspace page
+    By MyWebsite =By.xpath("//h3[contains(text(),'My Website')]");
+    //Identify Blog option on Digital Workspace page
+    By Blog =By.xpath("//h3[contains(text(),'Blog')]");
+    //Identify polls option on Digital Workspace page
+    By Polls =By.xpath("//h3[contains(text(),'Polls')]");
+    //Identify RecycleBin option on Digital Workspace page
+    By RecycleBin =By.xpath("//h3[contains(text(),'Recycle Bin')]");
+    //Identify MyProfile option on Digital Workspace page
+    By MyProfile =By.xpath("//h3[contains(text(),'My Profile')]");
+    //Identify Updates option on Digital Workspace page
+    By Updates =By.xpath("//h3[contains(text(),'Updates')]");
+    //Identify Campaign Manager option on Digital Workspace page
+    By CampaignManager =By.xpath("//h3[contains(text(),'Campaign Manager')]");
+    //Identify Content Collection option on Digital Workspace page
+    By ContentCollection =By.xpath("//h3[contains(text(),'Content Collections')]");
+    //Identify File Manager option on Digital Workspace page
+    By FileManager =By.xpath("//h3[contains(text(),'File Manager')]");
+    //Identify Dashboard 2.0 option on Digital Workspace page
+    By Dashboard2 =By.xpath("//h3[contains(text(),'Dashboard 2.0 (Beta)')]");
+    //Identify content add button the website
+    By ContentAdd =By.xpath("//a[@id='da-app-add-dropdown']");
     
     
 	void setEventName(String ename) {
@@ -315,5 +339,83 @@ public class DigitalWorkspacePage extends BasePage{
 		DWlog.info("New Form with send a confirmation email Created Successfully");
 		click(BacktoDW);
 	}
-
+	public void validateDWSettings() throws InterruptedException {
+		click(Setting);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Settings - Digital Agent"));
+		DWlog.info("Settings option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWMyWebsite() throws InterruptedException {
+		click(MyWebsite);
+		waitAndFindElement(ContentAdd, Condition.isDisplayed, 5000, 1);
+		boolean present = isElementPresent(ContentAdd);
+		if(present==true) {
+			DWlog.info("My website option is visible & working fine");
+		}
+		click(BacktoDW);
+	}
+	public void validateDWBlog() throws InterruptedException {
+		click(Blog);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Blog - Digital Agent"));
+		DWlog.info("Blog option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWForm() throws InterruptedException {
+		click(Form);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Forms - Digital Agent"));
+		DWlog.info("Form option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWEvents() throws InterruptedException {
+		click(EventOption);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Events - Digital Agent"));
+		DWlog.info("Event option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWPolls() throws InterruptedException {
+		click(Polls);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Polls - Digital Agent"));
+		DWlog.info("Polls option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWRecycleBin() throws InterruptedException {
+		click(RecycleBin);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Recycle Bin - Digital Agent"));
+		DWlog.info("Recycle Bin option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWMyProfile() throws InterruptedException {
+		click(MyProfile);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("My Profile - Digital Agent"));
+		DWlog.info("My Profile option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWUpdates() throws InterruptedException {
+		click(Updates);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Updates - Digital Agent"));
+		DWlog.info("Updates option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWCampaignManager() throws InterruptedException {
+		click(CampaignManager);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Campaign Manager - Digital Agent"));
+		DWlog.info("Campaign Manager option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWContentCollection() throws InterruptedException {
+		click(ContentCollection);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Content Collections - Digital Agent"));
+		DWlog.info("Content Collection option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
 }
