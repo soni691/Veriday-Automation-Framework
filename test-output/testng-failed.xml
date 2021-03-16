@@ -17,9 +17,9 @@
       <class name="test.TestVeriday">
         <methods>
           <include name="initializeTestBaseSetup"/>
+          <include name="CreateRegion"/>
           <include name="tearDown"/>
           <include name="endReport"/>
-          <include name="DeleteGroup"/>
           <include name="setExtent"/>
         </methods>
       </class> <!-- test.TestVeriday -->

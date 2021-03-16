@@ -162,19 +162,34 @@ public class TestVeriday extends BasePage {
 	  @Test(groups = {"Regression"},priority=10,enabled= false) 
 	  public void CreateGroup() throws Exception
 	  { 
-      extentTest = extent.startTest("CreateNewGroup");
+      extentTest = extent.startTest("CreateUpdateGroup");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
+      co.objHomePage.CreateNewGroup();
+	  }
+	  @Test(groups = {"Regression"},priority=11,enabled= false) 
+	  public void CreateUpdateGroup() throws Exception
+	  { 
+      extentTest = extent.startTest("CreateUpdateGroup");
       ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
       co.objHomePage.CreateNewGroup();
       co.objHomePage.UpdateGroup();
-      co.objHomePage.DeleteGroup();
 	  }
-	  @Test(groups = {"Regression"},priority=11,enabled= true) 
+	  @Test(groups = {"Regression"},priority=12,enabled= false) 
 	  public void DeleteGroup() throws Exception
 	  { 
       extentTest = extent.startTest("DeleteNewGroup");
       ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
       co.objHomePage.CreateNewGroup();
       co.objHomePage.DeleteGroup();
+	  }
+	  @Test(groups = {"Regression"},priority=13,enabled= true) 
+	  public void CreateRegion() throws Exception
+	  { 
+      extentTest = extent.startTest("CreateNewRegion");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
+      co.objHomePage.CreateNewGroup();
+      co.objHomePage.CreateNewRegion();
+      co.objHomePage.CreateNewBranch();
 	  }
 	 
 }
