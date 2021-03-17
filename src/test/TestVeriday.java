@@ -24,6 +24,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+//import com.tests.LoginTest;
+
 import BasePage.BasePage;
 import BasePage.CustomListener;
 import ExtentReportListener.ExtentReportCreate;
@@ -34,8 +36,6 @@ import dashboard.Dashboard;
 
 //@Listeners(CustomListener.class)
 public class TestVeriday extends BasePage {
-	//WebDriver driver;	
-	Logger logger = getLogger(testLogger);
 
 	@Test(groups = {"Regression"},priority=0,enabled= true)
 	public void loginTest() throws Exception {
@@ -45,7 +45,7 @@ public class TestVeriday extends BasePage {
 		//Login Method
 		co.objLogin.LoginToCRM();
 	}
-	@Test(groups = {"Regression"},priority=1,enabled= true)
+	@Test(groups = {"Regression"},priority=1,enabled= false)
 	public void CreatePrimaryUserTest() throws Exception {
 		extentTest = extent.startTest("CreatePrimaryUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -54,7 +54,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.CreatePrimaryUser();
 
 	}
-	@Test(groups = {"Regression"},priority=2,enabled= true)
+	@Test(groups = {"Regression"},priority=2,enabled= false)
 	public void CreateTeamUserTest() throws Exception {
 		extentTest = extent.startTest("CreateTeamUserTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -64,7 +64,7 @@ public class TestVeriday extends BasePage {
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateTeamUser");
 		co.objUserManager.CreateTeamUser();	
 	}
-	@Test(groups = {"Regression"},priority=3,enabled= true)
+	@Test(groups = {"Regression"},priority=3,enabled= false)
 	public void SearchUserTest() throws Exception {
 		extentTest = extent.startTest("SearchUserTest");
 		//Assigning Excel file Data
@@ -74,7 +74,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.SearchUser1();
 
 	}
-	@Test(groups = {"Regression"},priority=4,enabled= true)
+	@Test(groups = {"Regression"},priority=4,enabled= false)
 	public void ImpersonateUserTest() throws Exception {
 		extentTest = extent.startTest("ImpersonateUserTest");
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -84,7 +84,7 @@ public class TestVeriday extends BasePage {
 		co.objUserManager.ImpersonateUser();
 
 	}
-	@Test(groups = {"Regression"},priority=5,enabled= true)
+	@Test(groups = {"Regression"},priority=5,enabled= false)
 	public void CreateNewEventTest() throws Exception {
 		extentTest = extent.startTest("CreateNewEventTest");
 		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
@@ -103,21 +103,93 @@ public class TestVeriday extends BasePage {
 		//	co.objLogin=new LoginPage(driver);
 		//	co.objLogin.LoginToCRM();
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"SearchUser");
-		co.objUserManager.ImpersonateUser();
+		//co.objUserManager.ImpersonateUser();
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateNewPage");
 		//Assigning Excel file Data
 		co.objDigitalWorkspacePage.CreateNewPageinWebsite();
 	}	
-	@Test(groups = {"Regression"},priority=6,enabled= false)	
-	public void CreateNewLinkedPageTest() throws Exception {
-		extentTest = extent.startTest("CreateNewLinkedPageTest");
+	@Test(groups = {"Regression"},priority=7,enabled= false)	
+	public void CreateNewFormTest() throws Exception {
+		extentTest = extent.startTest("CreateNewFormTest");
 		//Assert.assertTrue(false);
-		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"Login");
-		//	co.objLogin.LoginToCRM();
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"SearchUser");
-		co.objUserManager.ImpersonateUser();
-		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateNewPage");
+		//co.objUserManager.ImpersonateUser();
+		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateNewPage");
 		//Assigning Excel file Data
-		co.objDigitalWorkspacePage.CreateNewPageinWebsite();
-	}	
+		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"CreateNewForm");
+		co.objDigitalWorkspacePage.CreateNewForm();
+	}
+	  
+	  @Test(groups = {"Regression"},priority=8,enabled= false) 
+	  public void ValidateHomePgaeOptions() throws Exception { 
+	  extentTest = extent.startTest("ValidateHomepage");
+	  co.objHomePage.validateAdminHQ();
+	  co.objHomePage.validateUserManager();
+	  co.objHomePage.validateQueues();
+	  co.objHomePage.validateOrganizationalGroups();; 
+	  }
+	  
+	  @Test(groups = {"Regression"},priority=9,enabled= false) 
+	  public void ValidateAdminHQOptions() throws Exception
+	  { 
+      extentTest = extent.startTest("ValidateAdminHQOptions");
+	  co.objHomePage.validateHubManager();
+	  co.objHomePage.validateGlobalSettings();
+	  co.objHomePage.validateEmailTemplates();
+	  co.objHomePage.validateMaintenance();
+	  }
+	  @Test(groups = {"Regression"},priority=10,enabled= false) 
+	  public void ValidateDigitalWorkSpaceOptions() throws Exception
+	  { 
+      extentTest = extent.startTest("ValidateDigitalWorkSpaceOptions");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"SearchUser");
+	  co.objUserManager.SearchUser1();
+	  ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"SearchUser");
+	  co.objUserManager.ImpersonateUser();
+	  co.objDigitalWorkspacePage.validateDWSettings();
+	  co.objDigitalWorkspacePage.validateDWMyWebsite();
+	  co.objDigitalWorkspacePage.validateDWBlog();
+	  co.objDigitalWorkspacePage.validateDWForm();
+	  co.objDigitalWorkspacePage.validateDWEvents();
+	  co.objDigitalWorkspacePage.validateDWPolls();
+	  co.objDigitalWorkspacePage.validateDWRecycleBin();
+	  co.objDigitalWorkspacePage.validateDWMyProfile();
+	  co.objDigitalWorkspacePage.validateDWUpdates();
+	  co.objDigitalWorkspacePage.validateDWCampaignManager();
+	  co.objDigitalWorkspacePage.validateDWContentCollection();
+	  }
+	  
+	  @Test(groups = {"Regression"},priority=10,enabled= false) 
+	  public void CreateGroup() throws Exception
+	  { 
+      extentTest = extent.startTest("CreateUpdateGroup");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
+      co.objHomePage.CreateNewGroup();
+	  }
+	  @Test(groups = {"Regression"},priority=11,enabled= false) 
+	  public void CreateUpdateGroup() throws Exception
+	  { 
+      extentTest = extent.startTest("CreateUpdateGroup");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
+      co.objHomePage.CreateNewGroup();
+      co.objHomePage.UpdateGroup();
+	  }
+	  @Test(groups = {"Regression"},priority=12,enabled= false) 
+	  public void DeleteGroup() throws Exception
+	  { 
+      extentTest = extent.startTest("DeleteNewGroup");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
+      co.objHomePage.CreateNewGroup();
+      co.objHomePage.DeleteGroup();
+	  }
+	  @Test(groups = {"Regression"},priority=13,enabled= true) 
+	  public void CreateRegion() throws Exception
+	  { 
+      extentTest = extent.startTest("CreateNewRegion");
+      ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
+      co.objHomePage.CreateNewGroup();
+      co.objHomePage.CreateNewRegion();
+      co.objHomePage.CreateNewBranch();
+	  }
+	 
 }

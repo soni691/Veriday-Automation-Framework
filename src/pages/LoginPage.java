@@ -1,14 +1,22 @@
 package pages;
 
+import static org.testng.Assert.assertTrue;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import BasePage.BasePage;
+import ExtraData.variables;
+import io.qameta.allure.Step;
 import pages.ExcelUtils;
 import utility.ExcelDataRead;
-public class LoginPage extends BasePage {
-
+    public class LoginPage extends BasePage {
+	public static String testLogger = "LoginPage";
+	Logger Testlogger = getLogger(testLogger);
 		//WebDriver driver;
 	
 		@BeforeClass
@@ -32,6 +40,8 @@ public class LoginPage extends BasePage {
 		public void clickLogin() {
 			click(login);
 		}
+		@Step("Login with UserName: {0} & Password: {1} to Login Page")
+
 		public void LoginToCRM() throws Exception {
 			
 			String LoginBy=ExcelUtils.getCellData(1, 4);
@@ -39,6 +49,8 @@ public class LoginPage extends BasePage {
 			String Password="";
 			if(LoginBy.equals("RBCUS")) {
 				UserName = ExcelUtils.getCellData(1, 1);
+				variables.Fname = UserName;
+			System.out.println(variables.Fname);
 				Password = ExcelUtils.getCellData(1, 2);
 			} else if(LoginBy.equals("Branch")) {
 				UserName = ExcelUtils.getCellData(2, 1);
@@ -56,6 +68,9 @@ public class LoginPage extends BasePage {
 			setPassword(Password);
 			Thread.sleep(1000);	
 			clickLogin();
+			assertTrue(driver.getTitle().contains("Digital Workspace - Digital Agent"));
+			Testlogger.info("Login Test Case is Successful");
+			
 		}
 		
 }
