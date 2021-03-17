@@ -157,6 +157,9 @@ public class TestVeriday extends BasePage {
 	  co.objDigitalWorkspacePage.validateDWUpdates();
 	  co.objDigitalWorkspacePage.validateDWCampaignManager();
 	  co.objDigitalWorkspacePage.validateDWContentCollection();
+	  co.objDigitalWorkspacePage.validateDWDashboard();
+	  co.objDigitalWorkspacePage.validateDWFileManager();
+	  co.objDigitalWorkspacePage.validateDWDashboard2();
 	  }
 	  
 	  @Test(groups = {"Regression"},priority=10,enabled= false) 
@@ -189,7 +192,9 @@ public class TestVeriday extends BasePage {
       ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
       co.objHomePage.CreateNewGroup();
       co.objHomePage.CreateNewRegion();
+      co.objHomePage.UpdateReligion();
       co.objHomePage.CreateNewBranch();
+      co.objHomePage.UpdateBranch();
 	  }
 	 
 }
