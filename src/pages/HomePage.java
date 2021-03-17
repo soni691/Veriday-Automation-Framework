@@ -362,4 +362,40 @@ public class HomePage extends BasePage {
 		waitAndFindElement(BranchSavedPopup, Condition.isDisplayed, 3000, 1);
 		homepageoptionlog.info("New Branch Is Created with Name " + gname);
 	}
+	public void UpdateReligion() throws Exception {
+		click(EditGroup);
+		String raddress1=ExcelUtils.getCellData(1, 1);
+		String raddress2=ExcelUtils.getCellData(1, 2);
+		String rcity=ExcelUtils.getCellData(1, 3);
+		String rstate=ExcelUtils.getCellData(1, 4);
+		String rzcode=ExcelUtils.getCellData(1, 5);
+		String rcountry=ExcelUtils.getCellData(1, 6);
+		setRegionAddress1(raddress1);
+		setRegionAddress2(raddress2);
+		setRegionCity(rcity);
+		setRegionState(rstate);
+		setRegionZipcode(rzcode);
+		setRegionCountry(rcountry);
+		click(SaveChange);
+		waitAndFindElement(RegionSavedPopup, Condition.isDisplayed, 3000, 1);
+		homepageoptionlog.info("Region is updated successfully " + gname);
+	}
+	public void UpdateBranch() throws Exception {
+		click(EditGroup);
+		String raddress1=ExcelUtils.getCellData(1, 1);
+		String raddress2=ExcelUtils.getCellData(1, 2);
+		String rcity=ExcelUtils.getCellData(1, 3);
+		String rstate=ExcelUtils.getCellData(1, 4);
+		String rzcode=ExcelUtils.getCellData(1, 5);
+		String rcountry=ExcelUtils.getCellData(1, 6);
+		setRegionAddress1(raddress1);
+		setRegionAddress2(raddress2);
+		setRegionCity(rcity);
+		setRegionState(rstate);
+		setRegionZipcode(rzcode);
+		setRegionCountry(rcountry);
+		click(SaveChange);
+		waitAndFindElement(BranchSavedPopup, Condition.isDisplayed, 3000, 1);
+		homepageoptionlog.info("Branch is updated successfully " + gname);
+	}
 }
