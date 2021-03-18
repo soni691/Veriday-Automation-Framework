@@ -399,7 +399,7 @@ public class HomePage extends BasePage {
 		setRegionCountry(rcountry);
 		click(SaveChange);
 		//waitAndFindElement(RegionSavedPopup, Condition.isDisplayed, 3000, 1);
-		homepageoptionlog.info("Region is updated successfully " + rname);
+		homepageoptionlog.info("Region is updated successfully " + this.rname);
 		Thread.sleep(2000);
 	}
 	public void UpdateBranch() throws Exception {
@@ -418,6 +418,6 @@ public class HomePage extends BasePage {
 		setRegionCountry(rcountry);
 		click(SaveChange);
 		//waitAndFindElement(BranchSavedPopup, Condition.isDisplayed, 3000, 1);
-		homepageoptionlog.info("Branch is updated successfully " + bname);
+		homepageoptionlog.info("Branch is updated successfully " + this.bname);
 	}
 }
