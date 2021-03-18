@@ -192,9 +192,9 @@ public class TestVeriday extends BasePage {
       ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData,"NewGroup");
       co.objHomePage.CreateNewGroup();
       co.objHomePage.CreateNewRegion();
-      co.objHomePage.UpdateReligion();
+     // co.objHomePage.UpdateRegion();
       co.objHomePage.CreateNewBranch();
-      co.objHomePage.UpdateBranch();
+     // co.objHomePage.UpdateBranch();
 	  }
 	 
 }

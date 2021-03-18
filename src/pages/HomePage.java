@@ -113,6 +113,8 @@ public class HomePage extends BasePage {
 
 	public String append;
 	public String gname;
+	public String rname;
+	public String bname;
 
 	// Method to enter New Group Name
 	void setGroupName(String gname) {
@@ -125,9 +127,9 @@ public class HomePage extends BasePage {
 		String newDate = sdf.format(cal.getTime());
 		System.out.println(newDate);
 		// String append;
-		gname = gname + newDate;
+		this.gname = gname + newDate;
 		// gname=append;
-		enterText(GroupName, gname);
+		enterText(GroupName, this.gname);
 		System.out.println(gname);
 	}
 
@@ -140,9 +142,9 @@ public class HomePage extends BasePage {
 		cal.add(Calendar.DAY_OF_MONTH, 2);
 		// Date after adding the days to the current date
 		String newDate = sdf.format(cal.getTime());
-		rname = rname + newDate;
-		enterText(RegionName, rname);
-		System.out.println(rname);
+		this.rname = rname + newDate;
+		enterText(RegionName,this.rname);
+		System.out.println(this.rname);
 	}
 	// Method to add Branch name
 		void setBranchName(String bname) {
@@ -153,9 +155,9 @@ public class HomePage extends BasePage {
 			cal.add(Calendar.DAY_OF_MONTH, 2);
 			// Date after adding the days to the current date
 			String newDate = sdf.format(cal.getTime());
-			bname = bname + newDate;
-			enterText(BranchName, bname);
-			System.out.println(bname);
+			this.bname = bname + newDate;
+			enterText(BranchName, this.bname);
+			System.out.println(this.bname);
 		}
 
 	// Method to search Group Name
@@ -275,6 +277,7 @@ public class HomePage extends BasePage {
 
 	public void CreateNewGroup() throws Exception {
 		click(ogroups);
+		driver.navigate().refresh();
 		Thread.sleep(2000);
 		assertTrue(driver.getTitle().contains("Organizational Groups - Digital Agent"));
 		waitAndFindElement(NewGroup, Condition.isDisplayed, 5000, 1);
@@ -282,7 +285,7 @@ public class HomePage extends BasePage {
 		click(CreateGroup);
 		gname = ExcelUtils.getCellData(1, 0);
 		setGroupName(gname);
-		homepageoptionlog.info("New Group Is created with Name " + gname);
+		homepageoptionlog.info("New Group Is created with Name " + this.gname);
 		click(SaveChange);
 		//waitAndFindElement(GroupSavedPopup, Condition.isDisplayed, 3000, 1);
 		System.out.println("Group Is created");
@@ -337,7 +340,7 @@ public class HomePage extends BasePage {
 		//waitAndFindElement(NewGroup, Condition.isDisplayed, 3000, 1);
 		click(NewGroup);
 		click(NewRegion);
-		String rname=ExcelUtils.getCellData(1, 7);
+		rname=ExcelUtils.getCellData(1, 7);
 		setRegionName(rname);
 		System.out.println(rname);
 		String raddress1=ExcelUtils.getCellData(1, 1);
@@ -354,14 +357,14 @@ public class HomePage extends BasePage {
 		setRegionCountry(rcountry);
 		click(SaveChange);
 		//waitAndFindElement(RegionSavedPopup, Condition.isDisplayed, 3000, 1);
-		homepageoptionlog.info("New Region Is Created with Name " + rname);
+		homepageoptionlog.info("New Region Is Created with Name " + this.rname);
 		Thread.sleep(2000);
 	}
 	public void CreateNewBranch() throws Exception {
 		//waitAndFindElement(NewGroup, Condition.isClickable, 2000, 1);
 		click(NewGroup);
 		click(NewBranch);
-		String bname=ExcelUtils.getCellData(1, 8);
+		bname=ExcelUtils.getCellData(1, 8);
 		setBranchName(bname);
 		System.out.println(bname);
 		String raddress1=ExcelUtils.getCellData(1, 1);
@@ -378,9 +381,9 @@ public class HomePage extends BasePage {
 		setRegionCountry(rcountry);
 		click(SaveChange);
 		//waitAndFindElement(BranchSavedPopup, Condition.isDisplayed, 3000, 1);
-		homepageoptionlog.info("New Branch Is Created with Name " + bname);
+		homepageoptionlog.info("New Branch Is Created with Name " + this.bname);
 	}
-	public void UpdateReligion() throws Exception {
+	public void UpdateRegion() throws Exception {
 		click(EditGroup);
 		String raddress1=ExcelUtils.getCellData(1, 1);
 		String raddress2=ExcelUtils.getCellData(1, 2);
@@ -396,7 +399,7 @@ public class HomePage extends BasePage {
 		setRegionCountry(rcountry);
 		click(SaveChange);
 		//waitAndFindElement(RegionSavedPopup, Condition.isDisplayed, 3000, 1);
-		homepageoptionlog.info("Region is updated successfully " + gname);
+		homepageoptionlog.info("Region is updated successfully " + rname);
 		Thread.sleep(2000);
 	}
 	public void UpdateBranch() throws Exception {
@@ -415,6 +418,6 @@ public class HomePage extends BasePage {
 		setRegionCountry(rcountry);
 		click(SaveChange);
 		//waitAndFindElement(BranchSavedPopup, Condition.isDisplayed, 3000, 1);
-		homepageoptionlog.info("Branch is updated successfully " + gname);
+		homepageoptionlog.info("Branch is updated successfully " + bname);
 	}
 }

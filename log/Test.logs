@@ -1,8 +1,6 @@
-18/03/2021 14:05:57 -- [ BasePage ] --> Launching google chrome from BasePage....
-18/03/2021 14:06:10 -- [ BasePage ] --> This is Before Class method
-18/03/2021 14:06:24 -- [ LoginPage ] --> Login Test Case is Successful
-18/03/2021 14:07:06 -- [ Homepage ] --> New Group Is created with Name AutomationGroup
-18/03/2021 14:07:10 -- [ Homepage ] --> New Region Is Created with Name AutomationRegion
-18/03/2021 14:07:17 -- [ Homepage ] --> Region is updated successfully AutomationGroup
-18/03/2021 14:07:22 -- [ Homepage ] --> New Branch Is Created with Name AutomationBranch
-18/03/2021 14:07:28 -- [ Homepage ] --> Branch is updated successfully AutomationGroup
+18/03/2021 14:40:11 -- [ BasePage ] --> Launching google chrome from BasePage....
+18/03/2021 14:40:25 -- [ BasePage ] --> This is Before Class method
+18/03/2021 14:40:39 -- [ LoginPage ] --> Login Test Case is Successful
+18/03/2021 14:40:56 -- [ Homepage ] --> New Group Is created with Name AutomationGroup202103200240
+18/03/2021 14:41:00 -- [ Homepage ] --> New Region Is Created with Name AutomationRegion202103200240
+18/03/2021 14:41:27 -- [ Homepage ] --> New Branch Is Created with Name AutomationBranch202103200241

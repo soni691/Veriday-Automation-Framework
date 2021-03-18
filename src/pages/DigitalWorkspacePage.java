@@ -12,8 +12,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 import org.testng.Assert;
-import org.testng.annotations.*;
-
 import BasePage.BasePage;
 
 public class DigitalWorkspacePage extends BasePage{
