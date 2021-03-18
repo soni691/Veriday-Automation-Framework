@@ -125,21 +125,37 @@ public class HomePage extends BasePage {
 		String newDate = sdf.format(cal.getTime());
 		System.out.println(newDate);
 		// String append;
-		this.gname = gname + newDate;
+		gname = gname + newDate;
 		// gname=append;
-		enterText(GroupName, this.gname);
+		enterText(GroupName, gname);
 		System.out.println(gname);
 	}
 
 	// Method to add Region name
-	void setRegionName(String gname) {
-		enterText(RegionName, this.gname);
-		System.out.println(gname);
+	void setRegionName(String rname) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
+		// Getting current date
+		Calendar cal = Calendar.getInstance();
+		// Number of Days to add
+		cal.add(Calendar.DAY_OF_MONTH, 2);
+		// Date after adding the days to the current date
+		String newDate = sdf.format(cal.getTime());
+		rname = rname + newDate;
+		enterText(RegionName, rname);
+		System.out.println(rname);
 	}
 	// Method to add Branch name
-		void setBranchName(String gname) {
-			enterText(BranchName, this.gname);
-			System.out.println(gname);
+		void setBranchName(String bname) {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
+			// Getting current date
+			Calendar cal = Calendar.getInstance();
+			// Number of Days to add
+			cal.add(Calendar.DAY_OF_MONTH, 2);
+			// Date after adding the days to the current date
+			String newDate = sdf.format(cal.getTime());
+			bname = bname + newDate;
+			enterText(BranchName, bname);
+			System.out.println(bname);
 		}
 
 	// Method to search Group Name
@@ -268,8 +284,9 @@ public class HomePage extends BasePage {
 		setGroupName(gname);
 		homepageoptionlog.info("New Group Is created with Name " + gname);
 		click(SaveChange);
-		waitAndFindElement(GroupSavedPopup, Condition.isDisplayed, 3000, 1);
+		//waitAndFindElement(GroupSavedPopup, Condition.isDisplayed, 3000, 1);
 		System.out.println("Group Is created");
+		Thread.sleep(2000);
 		/*
 		 * waitAndFindElement(dworkspace, Condition.isDisplayed, 3000, 1);
 		 * click(dworkspace); Thread.sleep(2000); driver.switchTo().alert().accept();
@@ -283,8 +300,9 @@ public class HomePage extends BasePage {
 		selectFromText(GroupAttribute, "Regional");
 		click(GroupAttribute);
 		click(SaveChange);
-		waitAndFindElement(GroupSavedPopup, Condition.isDisplayed, 3000, 1);
+		//waitAndFindElement(GroupSavedPopup, Condition.isDisplayed, 3000, 1);
 		homepageoptionlog.info("New Group Is Updated successfully " + gname);
+		Thread.sleep(2000);
 		//waitAndFindElement(dworkspace, Condition.isDisplayed, 3000, 1);
 		//click(dworkspace);
 	//	Thread.sleep(2000);
@@ -316,10 +334,12 @@ public class HomePage extends BasePage {
 	}
 
 	public void CreateNewRegion() throws Exception {
-		waitAndFindElement(NewGroup, Condition.isDisplayed, 3000, 1);
+		//waitAndFindElement(NewGroup, Condition.isDisplayed, 3000, 1);
 		click(NewGroup);
 		click(NewRegion);
-		setRegionName(gname);
+		String rname=ExcelUtils.getCellData(1, 7);
+		setRegionName(rname);
+		System.out.println(rname);
 		String raddress1=ExcelUtils.getCellData(1, 1);
 		String raddress2=ExcelUtils.getCellData(1, 2);
 		String rcity=ExcelUtils.getCellData(1, 3);
@@ -333,14 +353,17 @@ public class HomePage extends BasePage {
 		setRegionZipcode(rzcode);
 		setRegionCountry(rcountry);
 		click(SaveChange);
-		waitAndFindElement(RegionSavedPopup, Condition.isDisplayed, 3000, 1);
-		homepageoptionlog.info("New Region Is Created with Name " + gname);
+		//waitAndFindElement(RegionSavedPopup, Condition.isDisplayed, 3000, 1);
+		homepageoptionlog.info("New Region Is Created with Name " + rname);
+		Thread.sleep(2000);
 	}
 	public void CreateNewBranch() throws Exception {
-		waitAndFindElement(NewGroup, Condition.isClickable, 4000, 1);
+		//waitAndFindElement(NewGroup, Condition.isClickable, 2000, 1);
 		click(NewGroup);
 		click(NewBranch);
-		setBranchName(gname);
+		String bname=ExcelUtils.getCellData(1, 8);
+		setBranchName(bname);
+		System.out.println(bname);
 		String raddress1=ExcelUtils.getCellData(1, 1);
 		String raddress2=ExcelUtils.getCellData(1, 2);
 		String rcity=ExcelUtils.getCellData(1, 3);
@@ -354,8 +377,8 @@ public class HomePage extends BasePage {
 		setRegionZipcode(rzcode);
 		setRegionCountry(rcountry);
 		click(SaveChange);
-		waitAndFindElement(BranchSavedPopup, Condition.isDisplayed, 3000, 1);
-		homepageoptionlog.info("New Branch Is Created with Name " + gname);
+		//waitAndFindElement(BranchSavedPopup, Condition.isDisplayed, 3000, 1);
+		homepageoptionlog.info("New Branch Is Created with Name " + bname);
 	}
 	public void UpdateReligion() throws Exception {
 		click(EditGroup);
@@ -372,8 +395,9 @@ public class HomePage extends BasePage {
 		setRegionZipcode(rzcode);
 		setRegionCountry(rcountry);
 		click(SaveChange);
-		waitAndFindElement(RegionSavedPopup, Condition.isDisplayed, 3000, 1);
+		//waitAndFindElement(RegionSavedPopup, Condition.isDisplayed, 3000, 1);
 		homepageoptionlog.info("Region is updated successfully " + gname);
+		Thread.sleep(2000);
 	}
 	public void UpdateBranch() throws Exception {
 		click(EditGroup);
@@ -390,7 +414,7 @@ public class HomePage extends BasePage {
 		setRegionZipcode(rzcode);
 		setRegionCountry(rcountry);
 		click(SaveChange);
-		waitAndFindElement(BranchSavedPopup, Condition.isDisplayed, 3000, 1);
+		//waitAndFindElement(BranchSavedPopup, Condition.isDisplayed, 3000, 1);
 		homepageoptionlog.info("Branch is updated successfully " + gname);
 	}
 }
