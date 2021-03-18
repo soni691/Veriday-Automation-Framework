@@ -150,6 +150,8 @@ public class DigitalWorkspacePage extends BasePage{
     By FileManager =By.xpath("//h3[contains(text(),'File Manager')]");
     //Identify Dashboard 2.0 option on Digital Workspace page
     By Dashboard2 =By.xpath("//h3[contains(text(),'Dashboard 2.0 (Beta)')]");
+  //Identify Dashboard option on Digital Workspace page
+    By Dashboard =By.xpath("//h3[(text()='Dashboard')]");
     //Identify content add button the website
     By ContentAdd =By.xpath("//a[@id='da-app-add-dropdown']");
     
@@ -417,5 +419,25 @@ public class DigitalWorkspacePage extends BasePage{
 		assertTrue(driver.getTitle().contains("Content Collections - Digital Agent"));
 		DWlog.info("Content Collection option of Digital Workspace page is visible & working fine");
 		click(BacktoDW);
+	}
+	public void validateDWDashboard() throws InterruptedException {
+		click(Dashboard);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Dashboard - Digital Agent"));
+		DWlog.info("Content Collection option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWFileManager() throws InterruptedException {
+		click(FileManager);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("File Manager - Digital Agent"));
+		DWlog.info("Content Collection option of Digital Workspace page is visible & working fine");
+		click(BacktoDW);
+	}
+	public void validateDWDashboard2() throws InterruptedException {
+		click(Dashboard2);
+		Thread.sleep(2000);
+		assertTrue(driver.getTitle().contains("Dashboard V2 - Digital Agent"));
+		DWlog.info("Content Collection option of Digital Workspace page is visible & working fine");
 	}
 }

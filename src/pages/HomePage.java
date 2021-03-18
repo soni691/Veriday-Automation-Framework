@@ -278,11 +278,6 @@ public class HomePage extends BasePage {
 	}
 
 	public void UpdateGroup() throws Exception {
-		click(GroupSearch);
-		click(GroupSearchName);
-		enterText(GroupSearchName, gname);
-		click(GroupSearchText);
-		click(SelectGroup);
 		click(EditGroup);
 		click(GroupAttribute);
 		selectFromText(GroupAttribute, "Regional");
