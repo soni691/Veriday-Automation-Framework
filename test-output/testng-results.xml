@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="13" total="15" passed="2">
+<testng-results skipped="0" failed="0" ignored="14" total="15" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="77438" started-at="2021-03-18T14:40:10 IST" finished-at="2021-03-18T14:41:28 IST">
+  <suite name="Suite" duration-ms="26868" started-at="2021-03-19T17:47:38 IST" finished-at="2021-03-19T17:48:05 IST">
     <groups>
       <group name="Regression">
-        <method signature="TestVeriday.CreateRegion()[pri:13, instance:test.TestVeriday@6f46426d]" name="CreateRegion" class="test.TestVeriday"/>
-        <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@6f46426d]" name="loginTest" class="test.TestVeriday"/>
+        <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@3d5c822d]" name="loginTest" class="test.TestVeriday"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="TestonChrome" duration-ms="77438" started-at="2021-03-18T14:40:10 IST" finished-at="2021-03-18T14:41:28 IST">
+    <test name="TestonChrome" duration-ms="26868" started-at="2021-03-19T17:47:38 IST" finished-at="2021-03-19T17:48:05 IST">
       <class name="test.TestVeriday">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@6f46426d]" name="setExtent" is-config="true" duration-ms="99" started-at="2021-03-18T14:40:11 IST" finished-at="2021-03-18T14:40:11 IST">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@3d5c822d]" name="setExtent" is-config="true" duration-ms="303" started-at="2021-03-19T17:47:38 IST" finished-at="2021-03-19T17:47:39 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@6f46426d]" name="initializeTestBaseSetup" is-config="true" duration-ms="13976" started-at="2021-03-18T14:40:11 IST" finished-at="2021-03-18T14:40:25 IST">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@3d5c822d]" name="initializeTestBaseSetup" is-config="true" duration-ms="11429" started-at="2021-03-19T17:47:39 IST" finished-at="2021-03-19T17:47:50 IST">
           <params>
             <param index="0">
               <value>
@@ -36,37 +35,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@6f46426d]" name="loginTest" duration-ms="14581" started-at="2021-03-18T14:40:25 IST" finished-at="2021-03-18T14:40:39 IST">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@3d5c822d]" name="loginTest" duration-ms="13954" started-at="2021-03-19T17:47:50 IST" finished-at="2021-03-19T17:48:04 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@6f46426d]" name="tearDown" is-config="true" duration-ms="4" started-at="2021-03-18T14:40:39 IST" finished-at="2021-03-18T14:40:39 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@6f46426d] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="CreateRegion()[pri:13, instance:test.TestVeriday@6f46426d]" name="CreateRegion" duration-ms="48240" started-at="2021-03-18T14:40:39 IST" finished-at="2021-03-18T14:41:27 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateRegion -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.TestVeriday@6f46426d]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-03-18T14:41:27 IST" finished-at="2021-03-18T14:41:27 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CreateRegion status=SUCCESS method=TestVeriday.CreateRegion()[pri:13, instance:test.TestVeriday@6f46426d] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@6f46426d]" name="endReport" is-config="true" duration-ms="292" started-at="2021-03-18T14:41:27 IST" finished-at="2021-03-18T14:41:28 IST">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@3d5c822d]" name="endReport" is-config="true" duration-ms="904" started-at="2021-03-19T17:48:04 IST" finished-at="2021-03-19T17:48:05 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

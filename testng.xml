@@ -13,8 +13,8 @@
 		<!-- <listener class-name="com.listeners.ScreenshotListener" /> -->
 		<!-- <listener class-name="org.uncommons.reportng.HTMLReporter" /> <listener 
 			class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
-		<listener
-			class-name="ExtentReportListener.ExtentReportCreate" />
+		<!-- <listener
+			class-name="ExtentReportListener.ExtentReportCreate" />  -->
 	</listeners>
 
 	<test name="TestonChrome">
@@ -24,13 +24,13 @@
 		</classes>
 	</test> 
 	
-<!-- 	<test name="TestonFF"> -->
-<!-- 		<parameter name="browserType" value="firefox" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="test.TestVeriday" /> -->
-<!-- 		</classes> -->
+	<!-- <test name="TestonFF">
+		<parameter name="browserType" value="firefox" />
+		<classes>
+			<class name="test.TestVeriday" />
+		</classes>
 
-<!-- 	</test> -->
+     </test>  -->
 <!-- 	<test name="TestonIE">
 		<parameter name="browserType" value="ie" />
 		<classes>

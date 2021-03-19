@@ -10,7 +10,10 @@ package BasePage;
 
 import static org.testng.Assert.assertEquals;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.io.FileInputStream;
+
 import BasePage.BasePage;
 import ExtentReportListener.ExtentReportCreate;
 import createObject.CreateObject;
@@ -18,12 +21,14 @@ import pages.ConstantInterface;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
@@ -63,10 +68,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 
 /**
@@ -77,12 +83,12 @@ import com.relevantcodes.extentreports.LogStatus;
  *         BasePage class contains all the required utilities which can be used
  *         in entire project
  */
-public class BasePage {
+public class BasePage extends ExtentReportCreate {
 
 	public String browser = null;
 	public String url = null;
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	Wait<WebDriver> wait;
 	public int MAX_TIMEOUT = 150;
 	public int POLLING_MAX_TIME_IN_MILLISEC = 400;
@@ -93,9 +99,9 @@ public class BasePage {
 	public static String loggerPropertiesFile;
 	//public static String testLogger = "TestVeriday";
 	public static String pageObjectLogs = "BasePage";
-	public Properties pageObject = null;
-	public ExtentReportCreate objExtentReportCreate;
-	public ExtentTest extentTest;
+	public Properties pageObject = null;	
+	ExtentReportCreate objExtentReportCreate = new ExtentReportCreate();
+	//public ExtentTest extentTest;
 	public ExtentReports extent;
 	public CreateObject co;
 
@@ -212,7 +218,7 @@ public class BasePage {
 	 *         which user will execute the tests
 	 */
 	public WebDriver getDriver() {
-		return this.driver;
+		return BasePage.driver;
 	}
 
 	/**
@@ -769,51 +775,83 @@ public class BasePage {
 //		} 	
 //		}
 //	}
-	public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException{
+	public static String getScreenshot() throws IOException{
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File source = ts.getScreenshotAs(OutputType.FILE);
+		//TakesScreenshot ts = (TakesScreenshot) driver;
+		//File source = ts.getScreenshotAs(OutputType.FILE);
 		// after execution, you could see a folder "FailedTestsScreenshots"
 		// under src folder
-		String destination = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + screenshotName + dateName
-				+ ".png";
-		File finalDestination = new File(destination);
-		FileUtils.copyFile(source, finalDestination);
-		return destination;
+		//String destination = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + screenshotName + dateName+ ".png";
+		//File finalDestination = new File(destination);
+		//FileUtils.copyFile(source, finalDestination);
+		//return destination;
+		File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + "image" + dateName+ ".png";
+		FileUtils.copyFile(source, new File(path));
+		return path;
 	}
+	public static String getScreenshotBase64() throws IOException{
+		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + "image" + dateName+ ".png";
+		FileUtils.copyFile(source, new File(path));
+		byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(path)); 
+		return Base64.getEncoder().encodeToString(imageBytes);
+	}
+	public static String getBase64() throws IOException{
+		 
+		return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64);
+	}
+	
 	@BeforeTest(alwaysRun = true)
-	public void setExtent(){
-		extent = new ExtentReports(System.getProperty("user.dir")+"/test-output/Extent.html", true);
-		extent.addSystemInfo("Host Name", "Sumit Soni");
-		extent.addSystemInfo("User Name", "Sumit Soni");
-		extent.addSystemInfo("Environment", "QA");
+	public void setExtent() throws IOException{
+	  extent = new ExtentReports(); 
+	  ExtentSparkReporter spark = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/PassedExtentReport.html");
+	  ExtentSparkReporter failspark = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/FailedExtent.html").filter().statusFilter().as(new Status [] {Status.FAIL}).apply();
+	  failspark.config().setDocumentTitle("Failed Tests");
+	  extent.attachReporter(spark);
+	  extent.attachReporter(failspark);
+	  final File CONF = new File("extentconfig.xml");
+	 // ExtentSparkReporter spark = new ExtentSparkReporter("target/spark/spark.html");
+	  spark.loadXMLConfig(CONF);
+	  //spark.config().setTheme(Theme.DARK);
+	 // spark.config().setDocumentTitle("AutomationReport");
+	//  spark.config().setReportName("Extent Report");
+	 
+		//extent.flush();
 	}
 	@AfterTest(alwaysRun = true)
-	public void endReport() throws EmailException{
+	public void endReport() throws EmailException, IOException{
+		//ExtentReports extent = new ExtentReports();
 		extent.flush();
-		extent.close();
+		Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/test-output/PassedExtentReport.html").toURI());
+		//Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/test-output/FailedExtent.html").toURI());
+	//	extent.close();
 		//SendEmail();
 		//driver.quit();
 	}
 
-	@AfterMethod(alwaysRun = true)
-	public void tearDown(ITestResult result) throws IOException, EmailException {
-
-		if (result.getStatus() == ITestResult.FAILURE) {
-			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getName()); // to add name in extent report
-			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getThrowable()); // to add error/exception in extent report
-			String screenshotPath = getScreenshot(driver, result.getName());
-			System.out.println("ScreenshotPath is " + screenshotPath );
-			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(screenshotPath)); 
-			System.out.println("ScreenshotPath is added to report");
-		   // extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath)); //to add screencast/video in extent report
-		} else if (result.getStatus() == ITestResult.SKIP) {
-			extentTest.log(LogStatus.SKIP, "Test Case SKIPPED IS " + result.getName());
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			extentTest.log(LogStatus.PASS, "Test Case PASSED IS " + result.getName());
-		}
-		extent.endTest(extentTest); // ending test and ends the current test and prepare to create html report
-	}
+	/*
+	 * @AfterMethod(alwaysRun = true) public void tearDown(ITestResult result)
+	 * throws IOException, EmailException {
+	 * 
+	 * if (result.getStatus() == ITestResult.FAILURE) {
+	 * extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getName()); //
+	 * to add name in extent report extentTest.log(LogStatus.FAIL,
+	 * "TEST CASE FAILED IS " + result.getThrowable()); // to add error/exception in
+	 * extent report String screenshotPath = getScreenshot(driver,
+	 * result.getName()); System.out.println("ScreenshotPath is " + screenshotPath
+	 * ); extentTest.log(LogStatus.FAIL,
+	 * extentTest.addScreenCapture(screenshotPath));
+	 * System.out.println("ScreenshotPath is added to report"); //
+	 * extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath));
+	 * //to add screencast/video in extent report } else if (result.getStatus() ==
+	 * ITestResult.SKIP) { extentTest.log(LogStatus.SKIP, "Test Case SKIPPED IS " +
+	 * result.getName()); } else if (result.getStatus() == ITestResult.SUCCESS) {
+	 * extentTest.log(LogStatus.PASS, "Test Case PASSED IS " + result.getName()); }
+	 * extent.endTest(extentTest); // ending test and ends the current test and
+	 * prepare to create html report }
+	 */
 	public void SendEmail() throws EmailException {
 		// Create the attachment
 		  EmailAttachment attachment = new EmailAttachment();

@@ -5,9 +5,14 @@ import static org.testng.Assert.assertTrue;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+
+//import com.relevantcodes.extentreports.LogStatus;
 
 import BasePage.BasePage;
 import ExtraData.variables;
@@ -42,9 +47,10 @@ import utility.ExcelDataRead;
 		}
 		@Step("Login with UserName: {0} & Password: {1} to Login Page")
 
-		public void LoginToCRM() throws Exception {
-			
-			String LoginBy=ExcelUtils.getCellData(1, 4);
+		public void LoginToCRM()  {
+			String LoginBy;
+			try {
+				LoginBy = ExcelUtils.getCellData(1, 4);
 			String UserName="";
 			String Password="";
 			if(LoginBy.equals("RBCUS")) {
@@ -56,21 +62,20 @@ import utility.ExcelDataRead;
 				UserName = ExcelUtils.getCellData(2, 1);
 				Password = ExcelUtils.getCellData(2, 2);
 			}
-			
-			//ExcelDataRead eat = new ExcelDataRead("D:\\Eclipse Workspace\\CRMtesting\\Source\\TestData.xlsx");        
-	        //System.out.println(ExcelDataRead.getCellData("ExcelAdmin","loginName",2));
-			
-			//String sUserName=ExcelDataRead.getCellData("ExcelAdmin","uname",2);
-			//String sPassword=ExcelDataRead.getCellData("ExcelAdmin","loginPassword",2);
-			
 			System.out.println("Username : "+UserName+"\nPassword : "+Password);
 			setUsername(UserName);
 			setPassword(Password);
 			Thread.sleep(1000);	
 			clickLogin();
 			assertTrue(driver.getTitle().contains("Digital Workspace - Digital Agent"));
-			Testlogger.info("Login Test Case is Successful");
-			
+			Testlogger.info("Login Test Case is Successful");		
 		}
+			
+		catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
 		
 }
+    }
