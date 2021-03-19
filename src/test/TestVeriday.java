@@ -3,17 +3,15 @@ package test;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 //import com.tests.LoginTest;
 
 import BasePage.BasePage;
+import ExtentReportListener.ExtentManager;
 import ExtentReportListener.ExtentReportCreate;
 import pages.*;
 
@@ -22,19 +20,20 @@ public class TestVeriday extends BasePage {
 
 	@Test(groups = { "Regression" }, priority = 0, enabled = true)
 	public void loginTest() throws Exception {
-		ExtentTest test = extent.createTest("Login Test").assignCategory("Regression").assignDevice("Chrome 89");
-     	test.pass(MarkupHelper.createLabel("Login Test Started successfully", ExtentColor.GREEN));
+		//ExtentTest test = extent.createTest("Login Test").assignCategory("Regression").assignDevice("Chrome 89");
+		ExtentReportCreate.createTest("Login Test", "Regression", "Chrome 89");
+     	ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Login Test Started successfully", ExtentColor.GREEN));
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "Login");
 		co.objLogin.LoginToCRM();
-		System.out.println(test.getStatus());
-		if(test.getStatus().getName().equals("Pass")) {
+		System.out.println(ExtentManager.getExtentTest().getStatus());
+		if(ExtentManager.getExtentTest().getStatus().getName().equals("Pass")) {
 			assertTrue(driver.getTitle().contains("Digital Workspace - Digital Agent"));
-		test.pass(MarkupHelper.createLabel("Login Test Ended successfully", ExtentColor.GREEN));
-		test.pass("Login Test screenshot", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+			ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Login Test Ended successfully", ExtentColor.GREEN));
+			ExtentManager.getExtentTest().pass("Login Test screenshot", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 		}
 		else{			
-		test.fail("Login Test failed screenshot", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
-		test.fail(MarkupHelper.createLabel("Login Unsuccessfull", ExtentColor.RED));
+			ExtentManager.getExtentTest().fail("Login Test failed screenshot", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+			ExtentManager.getExtentTest().fail(MarkupHelper.createLabel("Login Unsuccessfull", ExtentColor.RED));
 		}		
 	}
 

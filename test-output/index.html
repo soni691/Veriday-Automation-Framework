@@ -151,6 +151,9 @@
   &lt;/groups&gt;
   &lt;parameter name=&quot;appURL&quot; value=&quot;http://node-1.nginx.portal.da-1.demo.qa.aws.veriday.net/login&quot;/&gt;
   &lt;parameter name=&quot;loggerProperties&quot; value=&quot;log4j.properties&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;ExtentReportListener.ExtentReportCreate&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;1&quot; name=&quot;TestonChrome&quot; parallel=&quot;tests&quot;&gt;
     &lt;parameter name=&quot;browserType&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
@@ -206,12 +209,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginTest')
 data.setCell(0, 2, 'test.TestVeriday')
-data.setCell(0, 3, 13954);
+data.setCell(0, 3, 15702);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 26 seconds</span>
+              <span class="suite-total-time">Total running time: 32 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -277,15 +280,15 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">initializeTestBaseSetup(chrome, http://node-1.nginx.portal.da-1.demo.qa.aws.veriday.net/login, log4j.properties)</span>
-                <span class="method-start">310 ms</span>
+                <span class="method-start">704 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">11747 ms</span>
+                <span class="method-start">14801 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">endReport</span>
-                <span class="method-start">25781 ms</span>
+                <span class="method-start">30509 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
