@@ -13,8 +13,8 @@
 		<!-- <listener class-name="com.listeners.ScreenshotListener" /> -->
 		<!-- <listener class-name="org.uncommons.reportng.HTMLReporter" /> <listener 
 			class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
-		<!-- <listener
-			class-name="ExtentReportListener.ExtentReportCreate" />  -->
+		<listener
+			class-name="ExtentReportListener.ExtentReportCreate" />
 	</listeners>
 
 	<test name="TestonChrome">

@@ -102,7 +102,7 @@ public class BasePage extends ExtentReportCreate {
 	public Properties pageObject = null;	
 	ExtentReportCreate objExtentReportCreate = new ExtentReportCreate();
 	//public ExtentTest extentTest;
-	public ExtentReports extent;
+	//public ExtentReports extent;
 	public CreateObject co;
 
 	public static Logger pageObjectLogs1 = Logger.getLogger(pageObjectLogs);
@@ -805,30 +805,32 @@ public class BasePage extends ExtentReportCreate {
 	
 	@BeforeTest(alwaysRun = true)
 	public void setExtent() throws IOException{
-	  extent = new ExtentReports(); 
-	  ExtentSparkReporter spark = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/PassedExtentReport.html");
-	  ExtentSparkReporter failspark = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/FailedExtent.html").filter().statusFilter().as(new Status [] {Status.FAIL}).apply();
-	  failspark.config().setDocumentTitle("Failed Tests");
-	  extent.attachReporter(spark);
-	  extent.attachReporter(failspark);
-	  final File CONF = new File("extentconfig.xml");
+	 // extent = new ExtentReports(); 
+	 // ExtentSparkReporter spark = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/PassedExtentReport.html");
+	 // ExtentSparkReporter failspark = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/FailedExtent.html").filter().statusFilter().as(new Status [] {Status.FAIL}).apply();
+	 // failspark.config().setDocumentTitle("Failed Tests");
+	 // extent.attachReporter(spark);
+	 // extent.attachReporter(failspark);
+	 // final File CONF = new File("extentconfig.xml");
 	 // ExtentSparkReporter spark = new ExtentSparkReporter("target/spark/spark.html");
-	  spark.loadXMLConfig(CONF);
+	 // spark.loadXMLConfig(CONF);
 	  //spark.config().setTheme(Theme.DARK);
 	 // spark.config().setDocumentTitle("AutomationReport");
 	//  spark.config().setReportName("Extent Report");
 	 
 		//extent.flush();
+		ExtentReportCreate.generateReport();
 	}
 	@AfterTest(alwaysRun = true)
 	public void endReport() throws EmailException, IOException{
 		//ExtentReports extent = new ExtentReports();
-		extent.flush();
-		Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/test-output/PassedExtentReport.html").toURI());
+		//extent.flush();
+		//Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/test-output/PassedExtentReport.html").toURI());
 		//Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/test-output/FailedExtent.html").toURI());
 	//	extent.close();
 		//SendEmail();
 		//driver.quit();
+		ExtentReportCreate.flushReports();
 	}
 
 	/*
