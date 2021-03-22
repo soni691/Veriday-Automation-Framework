@@ -15,7 +15,7 @@ public class ConstantInterface {
 	 //public static String Path_TestData  = System.getProperty("user.dir"+"\\source");
 	
 	 //File src = new File(Path_TestData);
-     public static final String Path_TestData = "E:\\Veriday-Automation-Framework\\source\\";
+     public static final String Path_TestData = "D:\\Veriday-Automation-Framework-DEMOQA\\Veriday-Automation-Framework-DEMOQA\\source\\";
 
      public static final String File_TestData = "TestData.xlsx";
      

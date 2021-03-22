@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="14" total="15" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="32245" started-at="2021-03-19T19:44:34 IST" finished-at="2021-03-19T19:45:06 IST">
+  <suite name="Suite" duration-ms="27964" started-at="2021-03-22T14:02:34 IST" finished-at="2021-03-22T14:03:02 IST">
     <groups>
       <group name="Regression">
         <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@3d5c822d]" name="loginTest" class="test.TestVeriday"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="TestonChrome" duration-ms="32245" started-at="2021-03-19T19:44:34 IST" finished-at="2021-03-19T19:45:06 IST">
+    <test name="TestonChrome" duration-ms="27964" started-at="2021-03-22T14:02:34 IST" finished-at="2021-03-22T14:03:02 IST">
       <class name="test.TestVeriday">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@3d5c822d]" name="setExtent" is-config="true" duration-ms="687" started-at="2021-03-19T19:44:34 IST" finished-at="2021-03-19T19:44:35 IST">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@3d5c822d]" name="setExtent" is-config="true" duration-ms="271" started-at="2021-03-22T14:02:34 IST" finished-at="2021-03-22T14:02:34 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@3d5c822d]" name="initializeTestBaseSetup" is-config="true" duration-ms="14088" started-at="2021-03-19T19:44:35 IST" finished-at="2021-03-19T19:44:49 IST">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@3d5c822d]" name="initializeTestBaseSetup" is-config="true" duration-ms="12534" started-at="2021-03-22T14:02:34 IST" finished-at="2021-03-22T14:02:47 IST">
           <params>
             <param index="0">
               <value>
@@ -35,11 +35,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@3d5c822d]" name="loginTest" duration-ms="15702" started-at="2021-03-19T19:44:49 IST" finished-at="2021-03-19T19:45:05 IST">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@3d5c822d]" name="loginTest" duration-ms="14063" started-at="2021-03-22T14:02:47 IST" finished-at="2021-03-22T14:03:01 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@3d5c822d]" name="endReport" is-config="true" duration-ms="1375" started-at="2021-03-19T19:45:05 IST" finished-at="2021-03-19T19:45:06 IST">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@3d5c822d]" name="endReport" is-config="true" duration-ms="909" started-at="2021-03-22T14:03:01 IST" finished-at="2021-03-22T14:03:02 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

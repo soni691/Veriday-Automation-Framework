@@ -3,6 +3,9 @@
 <suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
   <parameter name="appURL" value="http://node-1.nginx.portal.da-1.demo.qa.aws.veriday.net/login"/>
   <parameter name="loggerProperties" value="log4j.properties"/>
+  <listeners>
+    <listener class-name="ExtentReportListener.ExtentReportCreate"/>
+  </listeners>
   <test thread-count="1" name="TestonChrome(failed)" parallel="tests">
     <parameter name="browserType" value="chrome"/>
     <groups>
