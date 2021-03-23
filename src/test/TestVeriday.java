@@ -27,124 +27,157 @@ public class TestVeriday extends BasePage {
 		co.objLogin.LoginToCRM();
 		System.out.println(ExtentManager.getExtentTest().getStatus());
 		if(ExtentManager.getExtentTest().getStatus().getName().equals("Pass")) {
-			assertTrue(driver.getTitle().contains("Digital Workspace - Digital Agent"));
 			ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Login Test Ended successfully", ExtentColor.GREEN));
 			ExtentManager.getExtentTest().pass("Login Test screenshot", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 		}
-		else{			
+		else if(ExtentManager.getExtentTest().getStatus().getName().equals("Fail")){			
 			ExtentManager.getExtentTest().fail("Login Test failed screenshot", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 			ExtentManager.getExtentTest().fail(MarkupHelper.createLabel("Login Unsuccessfull", ExtentColor.RED));
 		}		
 	}
 
-	@Test(groups = { "Regression" }, priority = 1, enabled = false)
+	@Test(groups = { "Regression" }, priority = 1, enabled = true)
 	public void CreatePrimaryUserTest() throws Exception {
-		ExtentTest test = extent.createTest("Create Primary User Test").assignCategory("Regression").assignDevice("Chrome 89");
-		test.pass(MarkupHelper.createLabel("Create Primary User Test Started successfully", ExtentColor.GREEN));
+		ExtentReportCreate.createTest("Create Primary User Test", "Regression", "Chrome 89");
+     	ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create Primary User Started successfully", ExtentColor.GREEN));
 		// Assigning Excel file Data
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "CreateUser");
 		co.objUserManager.CreatePrimaryUser();
-		test.pass(MarkupHelper.createLabel("Primary User created successfully", ExtentColor.GREEN));
-		test.pass("Primary User test screenshot",
-		MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
-		test.pass(MarkupHelper.createLabel("Create Primary User Test Started successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Primary User created successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create Primary User Test Ended successfully", ExtentColor.GREEN));
 	}
 
-	@Test(groups = { "Regression" }, priority = 2, enabled =false)
+	@Test(groups = { "Regression" }, priority = 2, enabled =true)
 	public void CreateTeamUserTest() throws Exception {
 		// Assigning Excel file Data
-		ExtentTest test = extent.createTest("Create Team User Test").assignCategory("Regression").assignDevice("Chrome 89");
+		ExtentReportCreate.createTest("Create Team User Test", "Regression", "Chrome 89");
+     	ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create Team User test started successfully", ExtentColor.GREEN));
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "CreateTeamUser");
-		test.pass(MarkupHelper.createLabel("Create Team User Test Started successfully", ExtentColor.GREEN));
 		co.objUserManager.CreateTeamUser();
-		test.pass(MarkupHelper.createLabel("Team User created successfully", ExtentColor.GREEN));
-		test.pass("Team User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
-		test.pass(MarkupHelper.createLabel("Team User test ended successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Team User created successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass("Team User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create Team User test ended successfully", ExtentColor.GREEN));
 	}
 
-	@Test(groups = { "Regression" }, priority = 3, enabled = false)
+	@Test(groups = { "Regression" }, priority = 3, enabled = true)
 	public void SearchUserTest() throws Exception {
-		ExtentTest test = extent.createTest("Search User Test").assignCategory("Regression").assignDevice("Chrome 89");
+		ExtentReportCreate.createTest("Search User Test", "Regression", "Chrome 89");
+     	ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Search User test Started successfully", ExtentColor.GREEN));
 		// Assigning Excel file Data
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "Login");
 		// co.objLogin.LoginToCRM();
-		test.pass(MarkupHelper.createLabel("Search Team User Test Started successfully", ExtentColor.GREEN));
+		//ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Search User Test Started successfully", ExtentColor.GREEN));
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "SearchUser");
-		co.objUserManager.SearchUser1();
-		test.pass("Search User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
-		test.pass(MarkupHelper.createLabel("Search Team User Test Ended successfully", ExtentColor.GREEN));
+		co.objUserManager.SearchUser1();		
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Search User Test Ended successfully", ExtentColor.GREEN));
 	}
 
-	@Test(groups = { "Regression" }, priority = 4, enabled = false)
+	@Test(groups = { "Regression" }, priority = 4, enabled = true)
 	public void ImpersonateUserTest() throws Exception {
+		ExtentReportCreate.createTest("Impersonate User Test", "Regression", "Chrome 89");
 		// extentTest = extent.startTest("ImpersonateUserTest");
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "Login");
 		// co.objLogin.LoginToCRM();
 		// Assigning Excel file Data
-		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "SearchUser");
-		co.objUserManager.ImpersonateUser();
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Impersonate User Test Started successfully", ExtentColor.GREEN));
+		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "SearchUser");
+		co.objUserManager.ImpersonateUser();		
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Impersonate User Test Ended successfully", ExtentColor.GREEN));
 
 	}
 
 	@Test(groups = { "Regression" }, priority = 5, enabled = false)
 	public void CreateNewEventTest() throws Exception {
-		// extentTest = extent.startTest("CreateNewEventTest");
-		// ExcelUtils.setExcelFile(ConstantInterface.Path_TestData +
-		// ConstantInterface.File_TestData,"Login");
-		// co.objLogin.LoginToCRM();
-		// ExcelUtils.setExcelFile(ConstantInterface.Path_TestData +
-		// ConstantInterface.File_TestData,"SearchUser");
-		// co.objUserManager.ImpersonateUser();
+		ExtentReportCreate.createTest("Create New Event Test", "Regression", "Chrome 89");
 		// Assigning Excel file Data
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "NewEventDetails");
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Event Test Started successfully", ExtentColor.GREEN));
 		co.objDigitalWorkspacePage.CreateNewEvent();
-	}
+		ExtentManager.getExtentTest().pass("Create New Event test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Event Test Ended successfully", ExtentColor.GREEN));
 
+	}
 	@Test(groups = { "Regression" }, priority = 6, enabled = false)
-	public void CreateNewWebPageTest() throws Exception {
-		// extentTest = extent.startTest("CreateNewPageTest");
-		// Assert.assertTrue(false);
-		// ExcelUtils.setExcelFile(ConstantInterface.Path_TestData +
-		// ConstantInterface.File_TestData,"Login");
-		// co.objLogin=new LoginPage(driver);
-		// co.objLogin.LoginToCRM();
-		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "SearchUser");
+	public void CreateNewWebSiteTest() throws Exception {
+		ExtentReportCreate.createTest("Create New Web Page Test", "Regression", "Chrome 89");
+     	ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Web Site test", ExtentColor.GREEN));
+		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "SearchUser");
 		// co.objUserManager.ImpersonateUser();
-		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "CreateNewPage");
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Web Site Test Started successfully", ExtentColor.GREEN));
+		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "NewEventDetails");
+		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "CreateWebSite");
 		// Assigning Excel file Data
-		co.objDigitalWorkspacePage.CreateNewPageinWebsite();
+		co.objDigitalWorkspacePage.CreateNewWebsite();
+		ExtentManager.getExtentTest().pass("Create New Web Site test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Web Site Test Ended successfully", ExtentColor.GREEN));
 	}
 
 	@Test(groups = { "Regression" }, priority = 7, enabled = false)
-	public void CreateNewFormTest() throws Exception {
-		// extentTest = extent.startTest("CreateNewFormTest");
-		// Assert.assertTrue(false);
-		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "SearchUser");
+	public void CreateNewWebPageTest() throws Exception {
+		ExtentReportCreate.createTest("Create New Web Page Test", "Regression", "Chrome 89");
+     	ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Web Page test", ExtentColor.GREEN));
+		//ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "SearchUser");
 		// co.objUserManager.ImpersonateUser();
-		// ExcelUtils.setExcelFile(ConstantInterface.Path_TestData +
-		// ConstantInterface.File_TestData,"CreateNewPage");
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Web Page Test Started successfully", ExtentColor.GREEN));
+		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "CreateNewPage");
 		// Assigning Excel file Data
-		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "CreateNewForm");
-		co.objDigitalWorkspacePage.CreateNewForm();
+		co.objDigitalWorkspacePage.CreateNewPageinWebsite();
+		ExtentManager.getExtentTest().pass("Create New Web Page test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Web Page Test Ended successfully", ExtentColor.GREEN));
 	}
 
 	@Test(groups = { "Regression" }, priority = 8, enabled = false)
-	public void ValidateHomePgaeOptions() throws Exception {
-		// extentTest = extent.startTest("ValidateHomepage");
-		co.objHomePage.validateAdminHQ();
-		co.objHomePage.validateUserManager();
-		co.objHomePage.validateQueues();
-		co.objHomePage.validateOrganizationalGroups();
-		;
+	public void CreateNewFormTest() throws Exception {
+		ExtentReportCreate.createTest("Create New Form Test", "Regression", "Chrome 89");
+     	ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Form test", ExtentColor.GREEN));
+		// Assigning Excel file Data
+		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "CreateNewForm");
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Form Test Started successfully", ExtentColor.GREEN));
+		co.objDigitalWorkspacePage.CreateNewForm();
+		ExtentManager.getExtentTest().pass("Create New Form test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Create New Form Test Ended successfully", ExtentColor.GREEN));
 	}
 
 	@Test(groups = { "Regression" }, priority = 9, enabled = false)
+	public void ValidateHomePgaeOptions() throws Exception {
+		ExtentReportCreate.createTest("Validate HomePage option Test", "Regression", "Chrome 89");
+     	ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate AdminHQ option test started successfully", ExtentColor.GREEN));
+		co.objHomePage.validateAdminHQ();
+		ExtentManager.getExtentTest().pass("Validate AdminHQ option test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate AdminHQ test ended successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate User Manager option test started successfully", ExtentColor.GREEN));
+		co.objHomePage.validateUserManager();
+		ExtentManager.getExtentTest().pass("Validate User Manager option test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate User Manager option test ended successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Queues option test started successfully", ExtentColor.GREEN));
+		co.objHomePage.validateQueues();
+		ExtentManager.getExtentTest().pass("Validate Queues option test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Queues option test ended successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Organizational Groups option test started successfully", ExtentColor.GREEN));
+		co.objHomePage.validateOrganizationalGroups();
+		ExtentManager.getExtentTest().pass("Validate Organizational Groups option test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Organizational Groups option test ended", ExtentColor.GREEN));
+	}
+
+	@Test(groups = { "Regression" }, priority = 10, enabled = false)
 	public void ValidateAdminHQOptions() throws Exception {
-		// extentTest = extent.startTest("ValidateAdminHQOptions");
+		ExtentReportCreate.createTest("Validate AdinHQ option Test", "Regression", "Chrome 89");
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Hub Manager option test started successfully", ExtentColor.GREEN));
 		co.objHomePage.validateHubManager();
+		ExtentManager.getExtentTest().pass("Validate Hub Manager option test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Hub Manager option test ended successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Global Settings option test started successfully", ExtentColor.GREEN));
 		co.objHomePage.validateGlobalSettings();
+		ExtentManager.getExtentTest().pass("Validate Global Settings option test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Global Settings option test ended successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Email Templates option test started successfully", ExtentColor.GREEN));
 		co.objHomePage.validateEmailTemplates();
+		ExtentManager.getExtentTest().pass("Validate Email Templates option test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Email Templates option test ended successfully", ExtentColor.GREEN));
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Maintenance option test started successfully", ExtentColor.GREEN));
 		co.objHomePage.validateMaintenance();
+		ExtentManager.getExtentTest().pass("Validate Maintenance option test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		ExtentManager.getExtentTest().pass(MarkupHelper.createLabel("Validate Maintenance option test ended successfully", ExtentColor.GREEN));
 	}
 
 	@Test(groups = { "Regression" }, priority = 10, enabled = false)
@@ -152,7 +185,6 @@ public class TestVeriday extends BasePage {
 		// extentTest = extent.startTest("ValidateDigitalWorkSpaceOptions");
 		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "SearchUser");
 		co.objUserManager.SearchUser1();
-		ExcelUtils.setExcelFile(ConstantInterface.Path_TestData + ConstantInterface.File_TestData, "SearchUser");
 		co.objUserManager.ImpersonateUser();
 		co.objDigitalWorkspacePage.validateDWSettings();
 		co.objDigitalWorkspacePage.validateDWMyWebsite();

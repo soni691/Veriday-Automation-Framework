@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="14" total="15" passed="1">
+<testng-results skipped="0" failed="0" ignored="12" total="16" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="27964" started-at="2021-03-22T14:02:34 IST" finished-at="2021-03-22T14:03:02 IST">
+  <suite name="Suite" duration-ms="108939" started-at="2021-03-23T14:53:31 IST" finished-at="2021-03-23T14:55:20 IST">
     <groups>
       <group name="Regression">
+        <method signature="TestVeriday.CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@3d5c822d]" name="CreatePrimaryUserTest" class="test.TestVeriday"/>
+        <method signature="TestVeriday.CreateTeamUserTest()[pri:2, instance:test.TestVeriday@3d5c822d]" name="CreateTeamUserTest" class="test.TestVeriday"/>
+        <method signature="TestVeriday.SearchUserTest()[pri:3, instance:test.TestVeriday@3d5c822d]" name="SearchUserTest" class="test.TestVeriday"/>
         <method signature="TestVeriday.loginTest()[pri:0, instance:test.TestVeriday@3d5c822d]" name="loginTest" class="test.TestVeriday"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="TestonChrome" duration-ms="27964" started-at="2021-03-22T14:02:34 IST" finished-at="2021-03-22T14:03:02 IST">
+    <test name="TestonChrome" duration-ms="108939" started-at="2021-03-23T14:53:31 IST" finished-at="2021-03-23T14:55:20 IST">
       <class name="test.TestVeriday">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@3d5c822d]" name="setExtent" is-config="true" duration-ms="271" started-at="2021-03-22T14:02:34 IST" finished-at="2021-03-22T14:02:34 IST">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:test.TestVeriday@3d5c822d]" name="setExtent" is-config="true" duration-ms="261" started-at="2021-03-23T14:53:31 IST" finished-at="2021-03-23T14:53:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@3d5c822d]" name="initializeTestBaseSetup" is-config="true" duration-ms="12534" started-at="2021-03-22T14:02:34 IST" finished-at="2021-03-22T14:02:47 IST">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestVeriday@3d5c822d]" name="initializeTestBaseSetup" is-config="true" duration-ms="13209" started-at="2021-03-23T14:53:32 IST" finished-at="2021-03-23T14:53:45 IST">
           <params>
             <param index="0">
               <value>
@@ -35,11 +38,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@3d5c822d]" name="loginTest" duration-ms="14063" started-at="2021-03-22T14:02:47 IST" finished-at="2021-03-22T14:03:01 IST">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:test.TestVeriday@3d5c822d]" name="loginTest" duration-ms="14856" started-at="2021-03-23T14:53:45 IST" finished-at="2021-03-23T14:54:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@3d5c822d]" name="endReport" is-config="true" duration-ms="909" started-at="2021-03-22T14:03:01 IST" finished-at="2021-03-22T14:03:02 IST">
+        <test-method status="PASS" signature="CreatePrimaryUserTest()[pri:1, instance:test.TestVeriday@3d5c822d]" name="CreatePrimaryUserTest" duration-ms="42533" started-at="2021-03-23T14:54:00 IST" finished-at="2021-03-23T14:54:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreatePrimaryUserTest -->
+        <test-method status="PASS" signature="CreateTeamUserTest()[pri:2, instance:test.TestVeriday@3d5c822d]" name="CreateTeamUserTest" duration-ms="29963" started-at="2021-03-23T14:54:42 IST" finished-at="2021-03-23T14:55:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateTeamUserTest -->
+        <test-method status="PASS" signature="SearchUserTest()[pri:3, instance:test.TestVeriday@3d5c822d]" name="SearchUserTest" duration-ms="3239" started-at="2021-03-23T14:55:12 IST" finished-at="2021-03-23T14:55:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchUserTest -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test.TestVeriday@3d5c822d]" name="endReport" is-config="true" duration-ms="4557" started-at="2021-03-23T14:55:15 IST" finished-at="2021-03-23T14:55:20 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

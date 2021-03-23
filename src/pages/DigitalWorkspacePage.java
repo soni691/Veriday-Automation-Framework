@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 import org.testng.Assert;
 import BasePage.BasePage;
+//import BasePageCondition;
 
 public class DigitalWorkspacePage extends BasePage{
 	public static String DW = "DigitalWorkspacePage";
@@ -152,7 +153,19 @@ public class DigitalWorkspacePage extends BasePage{
     By Dashboard =By.xpath("//h3[(text()='Dashboard')]");
     //Identify content add button the website
     By ContentAdd =By.xpath("//a[@id='da-app-add-dropdown']");
+    //Identify activate button of site page
+    By ActivateTheme =By.xpath("//*[contains(@class, 'btn btn-success btn-activate-theme pull-right')]");
+    //Identify website url textbox of site page
+    By SiteURl =By.xpath("//input[@id='websiteUrl']");
+    //Identify website title textbox of site page
+    By SiteTitle =By.xpath("//input[@id='websiteTitle']");
+    //Identify Generate button to cerate website
+    By Generate =By.xpath("//a[contains(text(),'Generate!')]");
+    //Identify Start your Journey button to create website
+    By StartJourney =By.xpath("//a[contains(text(),'Start your Digital Journey')]");
     
+   // public String append;
+   
     
 	void setEventName(String ename) {
 		enterText(EventName, ename);
@@ -207,6 +220,35 @@ public class DigitalWorkspacePage extends BasePage{
 	}
 	void setCheckboxRequire(String crequire) {
 		enterText(MandatoryLabel,crequire);
+	}
+	public String append;
+	
+	void setWebsiteURL(String wurl) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
+		//Getting current date
+		Calendar cal = Calendar.getInstance();
+		//Number of Days to add
+	    cal.add(Calendar.DAY_OF_MONTH, 2);
+		//Date after adding the days to the current date
+		String newDate = sdf.format(cal.getTime());
+		//String append;
+		append = wurl+newDate;
+		wurl=append;
+		enterText(SiteURl,wurl);
+	}
+	void setWebsiteTitle(String utitle) {
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
+//		//Getting current date
+//		Calendar cal = Calendar.getInstance();
+//		//Number of Days to add
+//	    cal.add(Calendar.DAY_OF_MONTH, 2);
+//		//Date after adding the days to the current date
+//		String newDate = sdf.format(cal.getTime());
+//		//String append;
+//		String append = utitle+newDate;
+//		utitle=append;
+		enterText(SiteTitle,utitle);
+		
 	}
 	
 	public void CreateNewEvent() throws Exception {
@@ -289,7 +331,29 @@ public class DigitalWorkspacePage extends BasePage{
 			 click(CreatePage);
 			 DWlog.info("New Linked Page Created Successfully");
 			 click(BacktoDW);
-		}		
+		}
+			
+	}
+	public void CreateNewWebsite() throws Exception {
+		click(Setting);
+		click(GetStarted);
+		click(SkipStep);
+		click(Confirmskipwebsitecloning);
+		String getActualpageTitle = driver.getTitle();
+		softAssert.assertEquals(getActualpageTitle, "Settings - Digital Agent");
+		click(ActivateTheme);
+		Thread.sleep(2000);
+		String wurl=ExcelUtils.getCellData(1, 0);
+		String utitle=ExcelUtils.getCellData(1, 1);
+		click(SiteURl);
+		setWebsiteURL(wurl);
+		click(SiteTitle);
+		setWebsiteTitle(utitle);
+		//waitAndFindElement(Generate, Condition.isClickable, 1, 2000);	
+		click(Generate);
+		//waitAndFindElement(ActivateTheme, Condition.isClickable, 1, 2000);		
+		click(StartJourney);
+		
 	}
 	public void CreateNewForm() throws Exception{
 		click(Form);

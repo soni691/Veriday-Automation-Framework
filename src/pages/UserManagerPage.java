@@ -16,9 +16,11 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.google.inject.spi.Element;
 
 import BasePage.BasePage;
+import ExtentReportListener.ExtentManager;
 import ExtraData.variables;
 import io.qameta.allure.Step;
 
@@ -87,6 +89,7 @@ public class UserManagerPage extends BasePage {
 	By UserSave = By.xpath("//div[@class='modal-body alert-success']");
 	
 	public String append;
+	public String uemail;
 		
 	void setAccountEmail(String uemail) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
@@ -97,12 +100,12 @@ public class UserManagerPage extends BasePage {
 		//Date after adding the days to the current date
 		String newDate = sdf.format(cal.getTime());
 		//String append;
-		append = uemail+newDate+"@gmail.com";
-		uemail=append;
-		usermanagerlog.info("Email of the user is" +uemail);
-		enterText(AccountEmail, uemail);
+		append = this.uemail+newDate+"@gmail.com";
+		this.uemail=append;
+		usermanagerlog.info("Email of the user is" +this.uemail);
+		enterText(AccountEmail, this.uemail);
 	}
-	void setFName(String fname) {
+	String setFName(String fname) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
 		//Getting current date
 		Calendar cal = Calendar.getInstance();
@@ -115,8 +118,9 @@ public class UserManagerPage extends BasePage {
 		fname=append;
 		usermanagerlog.info("First Name of the user is " + fname);
 	    enterText(FirstName, fname);
+		return fname;
 	}
-	void setLName(String lname) {
+	String setLName(String lname) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
 		//Getting current date
 		Calendar cal = Calendar.getInstance();
@@ -129,6 +133,7 @@ public class UserManagerPage extends BasePage {
 		lname=append;
 		usermanagerlog.info("Last Name of the user is " + lname);
 	    enterText(LastName, lname);
+		return lname;
 	}
 	void setJobtitle(String jtitle) {
 	    enterText(JobTitle, jtitle);
@@ -142,7 +147,7 @@ public class UserManagerPage extends BasePage {
 	void setLocation(String location11) {
 		enterText(Location,location11);
 	}
-	void setTeamName(String tname) {
+	String setTeamName(String tname) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmm");
 		//Getting current date
 		Calendar cal = Calendar.getInstance();
@@ -155,6 +160,7 @@ public class UserManagerPage extends BasePage {
 		tname=append;
 		usermanagerlog.info("Team name is " + tname);
 		enterText(TeamName,tname);
+		return tname;
 	}
 	void setSearchUser(String searchuser1) {
 		enterText(SearchUser,searchuser1);
@@ -168,8 +174,8 @@ public class UserManagerPage extends BasePage {
 	
 	
 	public void CreatePrimaryUser() throws Exception {
-		String uemail=ExcelUtils.getCellData(1, 0);
-		String fname=ExcelUtils.getCellData(1, 1);
+		uemail=ExcelUtils.getCellData(1, 0);
+		String fname=ExcelUtils.getCellData(1, 1);		
 		String lname=ExcelUtils.getCellData(1, 2);
 		String jtitle=ExcelUtils.getCellData(1, 3);
 		String jtitle2=ExcelUtils.getCellData(1, 4);
@@ -183,28 +189,41 @@ public class UserManagerPage extends BasePage {
 		WebElement UserCreationLabel = driver.findElement(By.xpath("//*[@id=\"edit-user-container\"]/h2"));
 		Assert.assertTrue(UserCreationLabel.isDisplayed(),"New Primary user can not be created");
 		setAccountEmail(uemail);
-		setFName(fname);
-		setLName(lname);
+		ExtentManager.getExtentTest().info("Email Entered successfully " + uemail);
+		String fname1 =setFName(fname);
+		ExtentManager.getExtentTest().info("FirstName Entered successfully " +  fname1);
+		String lname1=setLName(lname);
+		ExtentManager.getExtentTest().info("LastName Entered successfully " +  lname1);
 		setJobtitle(jtitle);
+		ExtentManager.getExtentTest().info("Jobtitle Entered successfully " +  jtitle);
 		setJobtitle2(jtitle2);
+		ExtentManager.getExtentTest().info("Jobtitle2 Entered successfully " +  jtitle2);
 		setPhoneNumber(phone);
+		ExtentManager.getExtentTest().info("Phone Number Entered successfully " +  phone);
 		click(Primarymember);
 		click(Location);
 		selectFromText(Location,location11);
+		ExtentManager.getExtentTest().info("Location Entered successfully " +  location11);
 	    click(Location);
 	    setStatesofRegistration(sregistration);	   
+	    ExtentManager.getExtentTest().info("State Registrayion Entered successfully " +  sregistration);
 	    waitAndFindElement(SaveUser, Condition.isClickable, 3, 1000);
-	    scrollToTop();	    
+	    scrollToTop();	
+	    //ExtentManager.getExtentTest().pass("Primary User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 		click(SaveUser);
-		//usermanagerlog.info("New Primary User Is created");
+		ExtentManager.getExtentTest().pass("Primary User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+		usermanagerlog.info("New Primary User Is created");
 		Thread.sleep(2000);
 		assertTrue(driver.getTitle().contains("User Manager - Digital Agent"));
+		ExtentManager.getExtentTest().info("Primary User is created with First Name " +  fname1 + "Last Name " +  lname1 + "Email " + uemail );
 		usermanagerlog.info("New Primary User Is created");
 		boolean present = isElementPresent(AlreadyCreatedUserModal);
 		if(present==true) {
 			usermanagerlog.info("Sorry, this account already exists.");
 			click(AlreadyCreatedUserOk);
 			waitAndFindElement(Back, Condition.isClickable, 2, 1000).click();
+			ExtentManager.getExtentTest().info("Primary User account already exists. ");
+			ExtentManager.getExtentTest().pass("Primary User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 		}
 		/*
 		 * boolean usercreation = isElementPresent(UserCreationError);
@@ -218,7 +237,7 @@ public class UserManagerPage extends BasePage {
 	@Step("Create a New Team User with email {uemail}")
 	public void CreateTeamUser() throws Exception {
 		//Thread.sleep(2000);
-		String uemail=ExcelUtils.getCellData(1, 0);
+		uemail=ExcelUtils.getCellData(1, 0);
 		String fname=ExcelUtils.getCellData(1, 1);
 		String lname=ExcelUtils.getCellData(1, 2);
 		String jtitle=ExcelUtils.getCellData(1, 3);
@@ -235,25 +254,36 @@ public class UserManagerPage extends BasePage {
 			//Thread.sleep(5000);
 			click(Teammember);
 			setAccountEmail(uemail);
-			setFName(fname);
-			setLName(lname);
+			ExtentManager.getExtentTest().info("Email Entered successfully " + uemail);
+			String fname1=setFName(fname);
+			ExtentManager.getExtentTest().info("FirstName Entered successfully " +  fname1);
+			String lname1=setLName(lname);
+			ExtentManager.getExtentTest().info("LastName Entered successfully " +  lname1);
 			setJobtitle(jtitle);
+			ExtentManager.getExtentTest().info("Jobtitle Entered successfully " +  jtitle);
 			setJobtitle2(jtitle2);
+			ExtentManager.getExtentTest().info("Jobtitle2 Entered successfully " +  jtitle2);
 			setPhoneNumber(phone);
+			ExtentManager.getExtentTest().info("Phone Number Entered successfully " +  phone);
 			//setLocation(location11);		
 			//enterText(PhoneNumber,String.valueOf(PNumber));
 			click(Location);
 			selectFromText(Location,location11);
+			ExtentManager.getExtentTest().info("Location Entered successfully " +  location11);
 		    click(Location);
 			//Select location1 = new Select(driver.findElement(By.id("branchSelector")));
 			//location1.selectByIndex(2);
 		    click(Location);
-		    setTeamName(tname);
-		    setStatesofRegistration(sregistration);	   
+		    String tname1=setTeamName(tname);
+		    ExtentManager.getExtentTest().info("Team Name Entered successfully " +  tname1);
+		    setStatesofRegistration(sregistration);	
+		    ExtentManager.getExtentTest().info("State Registrayion Entered successfully " +  sregistration);
 		    waitAndFindElement(SaveUser, Condition.isClickable, 3, 1000);
 		    scrollToTop();
 			click(SaveUser);
+			ExtentManager.getExtentTest().pass("Team User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 			assertTrue(driver.getTitle().contains("User Manager - Digital Agent"));
+			MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build();
 			usermanagerlog.info("New Team User Is created");
 			Thread.sleep(2000);
 			boolean UserPresent = isElementPresent(AlreadyCreatedUserModal);
@@ -261,6 +291,8 @@ public class UserManagerPage extends BasePage {
 				usermanagerlog.info("Sorry, this account already exists.");
 				click(AlreadyCreatedUserOk);
 				waitAndFindElement(Back, Condition.isClickable, 2, 1000).click();
+				ExtentManager.getExtentTest().info("Team User account already exists. ");
+				ExtentManager.getExtentTest().pass("Team User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 			}
 		}
 		else {
@@ -269,24 +301,34 @@ public class UserManagerPage extends BasePage {
 		//Thread.sleep(5000);
 		click(Teammember);
 		setAccountEmail(uemail);
-		setFName(fname);
-		setLName(lname);
+		ExtentManager.getExtentTest().info("Email Entered successfully " + uemail);
+		String fname1=setFName(fname);
+		ExtentManager.getExtentTest().info("FirstName Entered successfully " +  fname1);
+		String lname1=setLName(lname);
+		ExtentManager.getExtentTest().info("LastName Entered successfully " +  lname1);
 		setJobtitle(jtitle);
+		ExtentManager.getExtentTest().info("Jobtitle Entered successfully " +  jtitle);
 		setJobtitle2(jtitle2);
+		ExtentManager.getExtentTest().info("Jobtitle2 Entered successfully " +  jtitle2);
 		setPhoneNumber(phone);
+		ExtentManager.getExtentTest().info("Phone Number Entered successfully " +  phone);
 		//setLocation(location11);		
 		//enterText(PhoneNumber,String.valueOf(PNumber));
 		click(Location);
 		selectFromText(Location,location11);
+		ExtentManager.getExtentTest().info("Location Entered successfully " +  location11);
 	    click(Location);
 		//Select location1 = new Select(driver.findElement(By.id("branchSelector")));
 		//location1.selectByIndex(2);
 	    click(Location);
-	    setTeamName(tname);
-	    setStatesofRegistration(sregistration);	   
+	    String tname1=setTeamName(tname);
+	    ExtentManager.getExtentTest().info("Team Name Entered successfully " +  tname1);
+	    setStatesofRegistration(sregistration);	
+	    ExtentManager.getExtentTest().info("State Registrayion Entered successfully " +  sregistration);
 	    waitAndFindElement(SaveUser, Condition.isClickable, 3, 1000);
 	    scrollToTop();
 		click(SaveUser);
+		MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build();
 		usermanagerlog.info("New Team User Is created");
 		Thread.sleep(2000);
 		boolean UserPresent = isElementPresent(AlreadyCreatedUserModal);
@@ -294,19 +336,24 @@ public class UserManagerPage extends BasePage {
 			usermanagerlog.info("Sorry, this user account already exists.");
 			click(AlreadyCreatedUserOk);
 			waitAndFindElement(Back, Condition.isClickable, 2, 1000).click();
+			ExtentManager.getExtentTest().info("Team User account already exists. ");
+			ExtentManager.getExtentTest().pass("Team User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 		}
 		}
 		}
 	
 	public void SearchUser1() throws Exception {
-		String searchuser1=ExcelUtils.getCellData(1, 0);
+		//String searchuser1=ExcelUtils.getCellData(1, 0);
+		String searchuser1=uemail;
 		Thread.sleep(2000);
 		boolean present = isElementPresent(SearchUser);
 		if(present==true) {
 		//click(usermanager);
 		click(SearchUser);
 		setSearchUser(searchuser1);
+		ExtentManager.getExtentTest().info("Search User Name Entered successfully " +  searchuser1);
 		click(SearchUserButton);
+		ExtentManager.getExtentTest().pass("Search User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 		usermanagerlog.info("User is Searched Successfully");
 		}
 		else {
@@ -314,6 +361,7 @@ public class UserManagerPage extends BasePage {
 			click(SearchUser);
 			setSearchUser(searchuser1);
 			click(SearchUserButton);
+			ExtentManager.getExtentTest().pass("Search User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 			usermanagerlog.info("User is Searched Successfully");
 		}
 	}
@@ -322,7 +370,8 @@ public class UserManagerPage extends BasePage {
 		if(present==true) {
 		//click(usermanager);
 		click(SearchUser);
-		String searchuser1=ExcelUtils.getCellData(1, 0);
+		//String searchuser1=ExcelUtils.getCellData(1, 0);
+		String searchuser1=uemail;
 		//String searchuseraction=ExcelUtils.getCellData(1, 1);
 		setSearchUser(searchuser1);
 		click(SearchUserButton);		
@@ -332,6 +381,7 @@ public class UserManagerPage extends BasePage {
 		Select action1 = new Select(driver.findElement(By.id("user-manager-actions")));
 		action1.selectByIndex(0);
 		click(GoButton);
+		ExtentManager.getExtentTest().pass("Impersonate User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 		usermanagerlog.info("User Is Impersonated Successfully");}		
 		else {
 			click(usermanager);
@@ -345,6 +395,7 @@ public class UserManagerPage extends BasePage {
 			Select action1 = new Select(driver.findElement(By.id("user-manager-actions")));
 			action1.selectByIndex(0);	
 			click(GoButton);
+			ExtentManager.getExtentTest().pass("Impersonate User test screenshot",MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
 			usermanagerlog.info("User Is Impersonated Successfully");
 		}
 	}
