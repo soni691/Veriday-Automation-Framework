@@ -8,7 +8,12 @@
 
 package BasePage;
 
+import static org.testng.Assert.assertEquals;
+
+import java.awt.Desktop;
 import java.io.File;
+import java.io.FileInputStream;
+
 import BasePage.BasePage;
 import ExtentReportListener.ExtentReportCreate;
 import createObject.CreateObject;
@@ -16,11 +21,14 @@ import pages.ConstantInterface;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
@@ -41,6 +49,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -58,26 +68,27 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 
 /**
  * @version 1.0
- * @created : 03/04/2018
- * @author badal.gandhi
+ * @created : 03/12/2020
+ * @author Sumit Soni
  *
  *         BasePage class contains all the required utilities which can be used
  *         in entire project
  */
-public class BasePage {
+public class BasePage extends ExtentReportCreate {
 
 	public String browser = null;
 	public String url = null;
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	Wait<WebDriver> wait;
 	public int MAX_TIMEOUT = 150;
 	public int POLLING_MAX_TIME_IN_MILLISEC = 400;
@@ -86,15 +97,15 @@ public class BasePage {
 	public static String testDataFile;
 	public static String objectFile;
 	public static String loggerPropertiesFile;
-	public static String testLogger = "Veriday";
-	public static String pageObjectLogs = "PageObjects";
-	public Properties pageObject = null;
-	public ExtentReportCreate objExtentReportCreate;
-	public ExtentTest extentTest;
-	public ExtentReports extent;
+	//public static String testLogger = "TestVeriday";
+	public static String pageObjectLogs = "BasePage";
+	public Properties pageObject = null;	
+	ExtentReportCreate objExtentReportCreate = new ExtentReportCreate();
+	//public ExtentTest extentTest;
+	//public ExtentReports extent;
 	public CreateObject co;
 
-	public Logger logger = Logger.getLogger(pageObjectLogs);
+	public static Logger pageObjectLogs1 = Logger.getLogger(pageObjectLogs);
 	//public Screenshot objScreenshot;
 
 	protected enum Condition {
@@ -138,7 +149,8 @@ public class BasePage {
 		loggerPropertiesFile = loggerProperties;
 		PropertyConfigurator.configure(projectDirectory + "\\loggerProperties\\" + loggerPropertiesFile.trim());
      	setDriver(browser, url);
-	    co = new CreateObject(driver);     	
+	    co = new CreateObject(driver);
+	    pageObjectLogs1.info("This is Before Class method");
 	}
 //	@BeforeClass(alwaysRun = true)
 //	public void setUp() {
@@ -188,6 +200,9 @@ public class BasePage {
 		case "firefox":
 			driver = initFirefoxDriver(appURL);
 			break;
+		case "ie":
+			driver = initIEDriver(appURL);
+			break;
 
 		default:
 			driver = initChromeDriver(appURL);
@@ -203,7 +218,7 @@ public class BasePage {
 	 *         which user will execute the tests
 	 */
 	public WebDriver getDriver() {
-		return this.driver;
+		return BasePage.driver;
 	}
 
 	/**
@@ -217,6 +232,7 @@ public class BasePage {
 	 */
 	private static WebDriver initChromeDriver(String appURL) {
 		System.out.println("Launching google chrome from BasePage....");
+		pageObjectLogs1.info("Launching google chrome from BasePage....");
 		System.setProperty("webdriver.chrome.driver", projectDirectory + "\\drivers\\chromedriver.exe");
 		ChromeOptions chromeoptions = new ChromeOptions();
 		chromeoptions.setAcceptInsecureCerts(true);
@@ -244,6 +260,28 @@ public class BasePage {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.navigate().to(appURL);
+		return driver;
+	}
+	
+
+	private static WebDriver initIEDriver(String appURL) {
+		System.out.println("Launching IE browser..");
+		
+		/*
+		 * DesiredCapabilities cap =new DesiredCapabilities();
+		 * cap.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+		 * System.setProperty("webdriver.ie.driver", projectDirectory +
+		 * "\\drivers\\IEDriverServer.exe"); WebDriver driver=new
+		 * InternetExplorerDriver(cap);
+		 */
+		//InternetExplorerOptions options = new InternetExplorerOptions();
+		//options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		//options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+		WebDriver driver = new InternetExplorerDriver();
+		driver.manage().window().maximize();
+		driver.navigate().to(appURL);		
+		driver.navigate().to("javascript:document.getElementById('overridelink').click()");
+		//driver.get("javascript:document.getElementById('overridelink').click();");
 		return driver;
 	}
 
@@ -473,6 +511,11 @@ public class BasePage {
 		inputBox.clear();
 		inputBox.sendKeys(textToBeEnter);
 	}
+	public void enterTextwithoutclear(By by, String textToBeEnter) {
+		WebElement inputBox = findVisibleElement(by);
+		inputBox.click();
+		inputBox.sendKeys(textToBeEnter);
+	}
 
 	/**
 	 * 
@@ -557,6 +600,11 @@ public class BasePage {
 		}
 	}
 	
+	public void getPageTitle(By by,String expectedPageTitle) {
+		String actualTitle = driver.getTitle();
+		String expectedTitle = "";
+		assertEquals(expectedTitle,actualTitle);
+	}
 	/**
 	 * 
 	 * @param by
@@ -655,7 +703,8 @@ public class BasePage {
 	 *         This method is used to scroll to the top of the page
 	 */
 	public void scrollToTop() {
-		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("window.scrollBy(0,-350)", "");
 	}
 
 	/**
@@ -726,51 +775,85 @@ public class BasePage {
 //		} 	
 //		}
 //	}
-	public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException{
+	public static String getScreenshot() throws IOException{
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File source = ts.getScreenshotAs(OutputType.FILE);
+		//TakesScreenshot ts = (TakesScreenshot) driver;
+		//File source = ts.getScreenshotAs(OutputType.FILE);
 		// after execution, you could see a folder "FailedTestsScreenshots"
 		// under src folder
-		String destination = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + screenshotName + dateName
-				+ ".png";
-		File finalDestination = new File(destination);
-		FileUtils.copyFile(source, finalDestination);
-		return destination;
+		//String destination = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + screenshotName + dateName+ ".png";
+		//File finalDestination = new File(destination);
+		//FileUtils.copyFile(source, finalDestination);
+		//return destination;
+		File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + "image" + dateName+ ".png";
+		FileUtils.copyFile(source, new File(path));
+		return path;
 	}
+	public static String getScreenshotBase64() throws IOException{
+		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + "image" + dateName+ ".png";
+		FileUtils.copyFile(source, new File(path));
+		byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(path)); 
+		return Base64.getEncoder().encodeToString(imageBytes);
+	}
+	public static String getBase64() throws IOException{
+		 
+		return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64);
+	}
+	
 	@BeforeTest(alwaysRun = true)
-	public void setExtent(){
-		extent = new ExtentReports(System.getProperty("user.dir")+"/test-output/Extent.html", true);
-		extent.addSystemInfo("Host Name", "Sumit Soni");
-		extent.addSystemInfo("User Name", "Sumit Soni");
-		extent.addSystemInfo("Environment", "QA");
+	public void setExtent() throws IOException{
+	 // extent = new ExtentReports(); 
+	 // ExtentSparkReporter spark = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/PassedExtentReport.html");
+	 // ExtentSparkReporter failspark = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/FailedExtent.html").filter().statusFilter().as(new Status [] {Status.FAIL}).apply();
+	 // failspark.config().setDocumentTitle("Failed Tests");
+	 // extent.attachReporter(spark);
+	 // extent.attachReporter(failspark);
+	 // final File CONF = new File("extentconfig.xml");
+	 // ExtentSparkReporter spark = new ExtentSparkReporter("target/spark/spark.html");
+	 // spark.loadXMLConfig(CONF);
+	  //spark.config().setTheme(Theme.DARK);
+	 // spark.config().setDocumentTitle("AutomationReport");
+	//  spark.config().setReportName("Extent Report");
+	 
+		//extent.flush();
+		ExtentReportCreate.generateReport();
 	}
 	@AfterTest(alwaysRun = true)
-	public void endReport() throws EmailException{
-		extent.flush();
-		extent.close();
+	public void endReport() throws EmailException, IOException{
+		//ExtentReports extent = new ExtentReports();
+		//extent.flush();
+		//Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/test-output/PassedExtentReport.html").toURI());
+		//Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/test-output/FailedExtent.html").toURI());
+	//	extent.close();
 		//SendEmail();
 		//driver.quit();
+		ExtentReportCreate.flushReports();
 	}
 
-	@AfterMethod(alwaysRun = true)
-	public void tearDown(ITestResult result) throws IOException, EmailException {
-
-		if (result.getStatus() == ITestResult.FAILURE) {
-			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getName()); // to add name in extent report
-			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getThrowable()); // to add error/exception in extent report
-			String screenshotPath = getScreenshot(driver, result.getName());
-			System.out.println("ScreenshotPath is " + screenshotPath );
-			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(screenshotPath)); 
-			System.out.println("ScreenshotPath is added to report");
-		   // extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath)); //to add screencast/video in extent report
-		} else if (result.getStatus() == ITestResult.SKIP) {
-			extentTest.log(LogStatus.SKIP, "Test Case SKIPPED IS " + result.getName());
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			extentTest.log(LogStatus.PASS, "Test Case PASSED IS " + result.getName());
-		}
-		extent.endTest(extentTest); // ending test and ends the current test and prepare to create html report
-	}
+	/*
+	 * @AfterMethod(alwaysRun = true) public void tearDown(ITestResult result)
+	 * throws IOException, EmailException {
+	 * 
+	 * if (result.getStatus() == ITestResult.FAILURE) {
+	 * extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getName()); //
+	 * to add name in extent report extentTest.log(LogStatus.FAIL,
+	 * "TEST CASE FAILED IS " + result.getThrowable()); // to add error/exception in
+	 * extent report String screenshotPath = getScreenshot(driver,
+	 * result.getName()); System.out.println("ScreenshotPath is " + screenshotPath
+	 * ); extentTest.log(LogStatus.FAIL,
+	 * extentTest.addScreenCapture(screenshotPath));
+	 * System.out.println("ScreenshotPath is added to report"); //
+	 * extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath));
+	 * //to add screencast/video in extent report } else if (result.getStatus() ==
+	 * ITestResult.SKIP) { extentTest.log(LogStatus.SKIP, "Test Case SKIPPED IS " +
+	 * result.getName()); } else if (result.getStatus() == ITestResult.SUCCESS) {
+	 * extentTest.log(LogStatus.PASS, "Test Case PASSED IS " + result.getName()); }
+	 * extent.endTest(extentTest); // ending test and ends the current test and
+	 * prepare to create html report }
+	 */
 	public void SendEmail() throws EmailException {
 		// Create the attachment
 		  EmailAttachment attachment = new EmailAttachment();
@@ -785,7 +868,7 @@ public class BasePage {
 		  email.setSSLOnConnect(true);
 		  email.setSmtpPort(465);
 		  email.setAuthenticator(new DefaultAuthenticator("sumitsoni691@gmail.com", "Sumit@123"));
-		  email.addTo("sumitsoni691@gmail.com", "Sumit Soni");
+		  email.addTo("sumit.soni@veriday.com", "Sumit Soni");
 		  email.setFrom("sumitsoni691@gmail.com", "Me");
 		  email.setSubject("Veriday Automation Test Execution Report");
 		  email.setMsg("Veriday Automation Test Execution Report");
@@ -796,6 +879,7 @@ public class BasePage {
 		  // send the email
 		  email.send();
 	}
+	
 //	@AfterTest
 //	public void resultDetails(ITestResult testResult) {
 //		if (testResult.getStatus() == ITestResult.FAILURE) {

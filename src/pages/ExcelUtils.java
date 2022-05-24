@@ -2,6 +2,9 @@ package pages;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -15,6 +18,7 @@ public class ExcelUtils {
 	private static XSSFWorkbook ExcelWBook;
 	private static XSSFCell Cell;
 	private static XSSFRow Row;
+	public static DataFormatter formatter = new DataFormatter();
 
 	// THIS METHOD IS TO SET THE FILE PATH AND TO OPEN THE EXCEL FILE, PASS EXCEL
 	// PATH AND SHEETNAME AS ARGUMENTS TO THIS METHOD
@@ -67,6 +71,9 @@ public class ExcelUtils {
 		}
 
 	}
+	
+      
+	
 
 	// THIS METHOD IS TO WRITE IN THE EXCEL CELL, ROW NUM AND COL NUM ARE THE
 	// PARAMETERS

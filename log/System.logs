@@ -1,20 +1,22 @@
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent.ftl"): Found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/sumit.soni/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent.ftl"): Found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/sumit.soni/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent.ftl"): Found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/sumit.soni/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent.ftl"): Found
-28/11/2020 17:55:38 -- [ freemarker.cache ] --> Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/sumit.soni/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+30/11/2020 14:34:20 -- [ BasePage ] --> This is Before Class method
+30/11/2020 14:34:28 -- [ TestVeriday ] --> Login Test Case is Successful
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent.ftl"): Found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/sumit.soni/Downloads/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent.ftl"): Found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/sumit.soni/Downloads/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent.ftl"): Found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/sumit.soni/Downloads/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> TemplateLoader.findTemplateSource("Extent.ftl"): Found
+30/11/2020 14:34:28 -- [ freemarker.cache ] --> Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/sumit.soni/Downloads/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"

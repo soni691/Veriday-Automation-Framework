@@ -3,7 +3,9 @@ package createObject;
 import org.openqa.selenium.WebDriver;
 
 import BasePage.BasePage;
+import ExtentReportListener.ExtentReportCreate;
 import pages.DigitalWorkspacePage;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.UserManagerPage;
 
@@ -13,11 +15,15 @@ public class CreateObject extends BasePage {
 	public UserManagerPage objUserManager;
 	public DigitalWorkspacePage objDigitalWorkspacePage;
 	public BasePage objBasePage;
+	public HomePage objHomePage;
+	public ExtentReportCreate objExtentReportCreate;
 	
 	public CreateObject(WebDriver driver) {
 		objBasePage = new BasePage();
 		objLogin = new LoginPage(driver);
 		objUserManager = new UserManagerPage(driver) ;
 		objDigitalWorkspacePage=new DigitalWorkspacePage(driver);
+		objHomePage = new HomePage(driver);
+		objExtentReportCreate = new ExtentReportCreate();
 	}
 }
